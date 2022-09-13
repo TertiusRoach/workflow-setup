@@ -181,13 +181,3 @@ The [markdown cheat sheet](https://www.markdownguide.org/cheat-sheet/) for READM
     package-lock.json
 
 ---
-
-# ateljee-admin-2023
-
-# ateljee-admin-2022
-
-#   a t e l j e e - a d m i n - 2 0 2 2 
- 
- 
-
-# workflow-setup
