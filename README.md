@@ -39,6 +39,8 @@ Paperwork is an integral part for any company and that's where this system comes
 Press (Ctrl + ,) to open Settings and search for 'Exclude' to hide files and folders that clutter the workspace.
 Alternative Way: File -> Preferences -> Settings -> Search for 'Exclude'
 
+Press (Ctrl + alt + s) to save without formatting
+
 ## Search for
 
 ## Gulp (Setup)
@@ -127,7 +129,7 @@ The [markdown cheat sheet](https://www.markdownguide.org/cheat-sheet/) for READM
     npm install --save-dev typescript
     npm install --save-dev gulp-sass
     npm install --save bootstrap
-    npm install --save requirejs
+    npm install --save-dev requirejs
     npm install --save-dev sass
     npm install --save-dev gulp
     npm install --save-dev fs
