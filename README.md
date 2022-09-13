@@ -17,18 +17,22 @@ Paperwork is an integral part for any company and that's where this system comes
     npm install --save-dev gulp-concat
     npm install --save-dev gulp-uglify
     npm install --save-dev gulp-rename
+    npm install --save-dev gulp-htmlmin
     npm install --save-dev gulp-uglifycss
     npm install --save-dev gulp-typescript
     npm install --save-dev gulp-sourcemaps
     npm install --save-dev gulp-delete-file
     npm install --save-dev gulp-string-replace
     npm install --save-dev gulp-strip-css-comments
+    npm install --save-dev gulp-remove-html-comments
 
     npm install --save-dev @types/jquery
 
 ---
 
 # Test First
+
+---
 
 ## Visual Studio Code (Setup)
 

@@ -4,6 +4,7 @@ const { src, dest } = require('gulp');
 const uglify = require('gulp-uglify');
 const rename = require('gulp-rename');
 const concat = require('gulp-concat');
+const htmlmin = require('gulp-htmlmin');
 const uglifycss = require('gulp-uglifycss');
 const sourcemaps = require('gulp-sourcemaps');
 const typescript = require('gulp-typescript');
@@ -11,6 +12,7 @@ const replace = require('gulp-string-replace');
 const deletefile = require('gulp-delete-file');
 const sass = require('gulp-sass')(require('sass'));
 const stripCssComments = require('gulp-strip-css-comments');
+const removeHtmlComments = require('gulp-remove-html-comments');
 
 const compileSASS = (pageName) => {
   //--|▼| Compile all the Sass files in design to CSS and copy to 'dist' folder |▼|--//
@@ -92,16 +94,44 @@ const deleteCSS = (pageName) => {
   };
   setTimeout(erase, 15000, pageName);
 };
-const copyHTML = (pageName) => {};
-gulp.task('copyIndex', async () => {
-  let pageName = 'index';
+const copyHTML = (pageName) => {
+  //--|▼| Copy design HTML files to 'dist' |▼|--//
+  gulp
+    //--| Find *.html reference files in the 'src' folder |--//
+    .src(`src/design/html/${pageName}.html`)
+    .pipe(removeHtmlComments())
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    //--| Copy the *.html reference files into the 'dist' folder |--//
+    .pipe(gulp.dest(`dist/design/html/`));
 
-  compileSASS(pageName);
-  cleanupCSS(pageName);
-  concatCSS(pageName);
-  deleteCSS(pageName);
+  //--|▲| Copy design HTML files to 'dist' |▲|--//
+  //--|▼| Copy the main HTML file into the 'dist' folder |▼|--//
+  let htmlFiles = ['body', 'header', 'main', 'sidebar', 'footer', 'overlay', 'data'];
+  let copy = (item, index, array) => {
+    gulp
+      //--| Find the index.html file in the 'src' folder |--//
+      .src(`src/design/html/${pageName}-${array[index]}/*.html`)
+      .pipe(removeHtmlComments())
+      .pipe(htmlmin({ collapseWhitespace: true }))
+      //--| Copy the index.html file to the 'dist' folder |--//
+      .pipe(gulp.dest(`dist/design/html/${pageName}-${array[index]}/`));
+  };
+  htmlFiles.forEach(copy);
+  //--|▲| Copy the main HTML file into the 'dist' folder |▲|--//
+};
+gulp.task('copyIndex', async () => {
+  // let pageName = 'index';
+
+  const copyDesign = (pageName) => {
+    compileSASS(pageName);
+    cleanupCSS(pageName);
+    concatCSS(pageName);
+    deleteCSS(pageName);
+    copyHTML(pageName);
+  };
+  copyDesign('index');
 });
-gulp.task('test', async () => {});
+
 //---------------------------------------//
 const distFolderName = 'dist/';
 const distFolder = gulp.dest(distFolderName);
