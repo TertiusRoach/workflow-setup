@@ -178,4 +178,12 @@ gulp.task('backupDependencies', async () => {
     //--| Set Destination |--//
     .pipe(gulp.dest('dist/vendors/'));
   //--|▲| Copy vendors to 'dist' folder |▲|--//
+  //--|▼| Copy RequireJS to 'dist' folder |▼|--//
+  gulp
+    //--| Find the *.js file |--//
+    .src('src/config.js')
+    .pipe(uglify())
+    //--| Set Destination |--//
+    .pipe(gulp.dest('dist/'));
+  //--|▲| Copy Require.js to 'dist' folder |▲|--//
 });
