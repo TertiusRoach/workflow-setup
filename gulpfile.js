@@ -129,7 +129,40 @@ gulp.task('copyDesign', async () => {
   deleteCSS(pageName);
   copyHTML(pageName);
 });
+gulp.task('compileCode', function (callback) {
+  const distFolder = gulp.dest('dist/');
+  const typesRoot = gulp.dest('types/');
 
+  const typeScriptResult = () => {
+    const typeScriptProject = typescript.createProject('tsconfig.json');
+    const sourceCode = typeScriptProject.src();
+    const initializeSourcemaps = sourcemaps.init();
+    const IdentityMap = sourcemaps.identityMap();
+    return sourceCode.pipe(initializeSourcemaps).pipe(IdentityMap).pipe(typeScriptProject());
+  };
+  const srcUrlMapper = (file) => {
+    return distFolder + file.relative.toString().split('\\').join('/') + '.map';
+  };
+
+  let typeScriptCompiled = typeScriptResult();
+
+  typeScriptCompiled.dts.pipe(typesRoot).on('error', function (err) {
+    console.log('Gulp says: ' + err.message);
+  });
+
+  typeScriptCompiled.js
+    .pipe(
+      sourcemaps.write('./', {
+        includeContent: false,
+        addComment: true, //This "Comment" is the "COMMENT" that the browser uses to reference the file.
+        sourceMappingURL: srcUrlMapper,
+        sourceRoot: '../src',
+      })
+    )
+    .pipe(distFolder);
+
+  callback();
+});
 gulp.task('backupDependencies', async () => {
   //--|▼| Copy images to 'dist' folder |▼|--//
   gulp
@@ -146,83 +179,3 @@ gulp.task('backupDependencies', async () => {
     .pipe(gulp.dest('dist/vendors/'));
   //--|▲| Copy vendors to 'dist' folder |▲|--//
 });
-//---------------------------------------//
-const distFolderName = 'dist/';
-const distFolder = gulp.dest(distFolderName);
-
-exports.Compile_TypeScript = function (callback) {
-  const typesRoot = gulp.dest('types/');
-
-  const tsResult = () => {
-    const typeScriptProject = typescript.createProject('tsconfig.json');
-    const sourceCode = typeScriptProject.src();
-    const initializeSourcemaps = sourcemaps.init();
-    const IdentityMap = sourcemaps.identityMap();
-    return sourceCode.pipe(initializeSourcemaps).pipe(IdentityMap).pipe(typeScriptProject());
-  };
-  const srcUrlMapper = (file) => {
-    let x = distFolderName + file.relative.toString().split('\\').join('/') + '.map';
-    console.log('RootForSourceMaps: ' + x);
-    return x;
-  };
-
-  let typeScriptResult = tsResult();
-
-  typeScriptResult.dts.pipe(typesRoot).on('error', function (err) {
-    console.log('Gulp says: ' + err.message);
-  });
-
-  typeScriptResult.js
-    .pipe(
-      sourcemaps.write('./', {
-        includeContent: false,
-        addComment: true, //This "Comment" is the "COMMENT" that the browser uses to reference the file.
-        sourceMappingURL: srcUrlMapper,
-        sourceRoot: '../src',
-      })
-    )
-    .pipe(distFolder);
-
-  callback();
-};
-
-/*-----------------------------------*/
-
-/*
-exports.copyTS = function (callback) {
-  const typesRoot = gulp.dest('types/');
-
-  const tsResult = () => {
-    const tsPrj = gts.createProject('tsconfig.json');
-    const tsSourceCode = tsPrj.src();
-    const mapsInit = gsmaps.init();
-    const IdentityMap = gsmaps.identityMap();
-    return tsSourceCode.pipe(mapsInit).pipe(IdentityMap).pipe(tsPrj());
-  };
-  const srcUrlMapper = (file) => {
-    let x = distFolderName + file.relative.toString().split('\\').join('/') + '.map';
-    console.log('RootForSourceMaps: ' + x);
-    return x;
-  };
-
-  let tsR = tsResult();
-
-  tsR.dts.pipe(typesRoot).on('error', function (err) {
-    console.log('Gulp says: ' + err.message);
-  });
-
-  tsR.js
-    .pipe(
-      gsmaps.write('./', {
-        includeContent: false,
-        addComment: true, //This "Comment" is the "COMMENT" that the browser uses to reference the file.
-        sourceMappingURL: srcUrlMapper,
-        sourceRoot: '../src',
-      })
-    )
-    .pipe(distFolder);
-
-  callback();
-};
-*/
-/*-----------------------------------*/
