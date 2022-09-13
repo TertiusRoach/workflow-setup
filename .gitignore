@@ -1,0 +1,17 @@
+src/projects
+types
+bin
+
+.git
+.cache
+.vscode
+
+node_modules
+package-lock.json
+src/vendors
+
+*.ini
+*.txt
+*.lnk
+*.js.map
+
