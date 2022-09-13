@@ -119,19 +119,33 @@ const copyHTML = (pageName) => {
   htmlFiles.forEach(copy);
   //--|▲| Copy the main HTML file into the 'dist' folder |▲|--//
 };
-gulp.task('copyIndex', async () => {
-  // let pageName = 'index';
 
-  const copyDesign = (pageName) => {
-    compileSASS(pageName);
-    cleanupCSS(pageName);
-    concatCSS(pageName);
-    deleteCSS(pageName);
-    copyHTML(pageName);
-  };
-  copyDesign('index');
+gulp.task('copyDesign', async () => {
+  let pageName = 'index';
+
+  compileSASS(pageName);
+  cleanupCSS(pageName);
+  concatCSS(pageName);
+  deleteCSS(pageName);
+  copyHTML(pageName);
 });
 
+gulp.task('backupDependencies', async () => {
+  //--|▼| Copy images to 'dist' folder |▼|--//
+  gulp
+    //--| Find the *.js file |--//
+    .src('src/images/**/*')
+    //--| Set Destination |--//
+    .pipe(gulp.dest('dist/images/'));
+  //--|▲| Copy images to 'dist' folder |▲|--//
+  //--|▼| Copy vendors to 'dist' folder |▼|--//
+  gulp
+    //--| Find the *.js file |--//
+    .src('src/vendors/**/*')
+    //--| Set Destination |--//
+    .pipe(gulp.dest('dist/vendors/'));
+  //--|▲| Copy vendors to 'dist' folder |▲|--//
+});
 //---------------------------------------//
 const distFolderName = 'dist/';
 const distFolder = gulp.dest(distFolderName);
