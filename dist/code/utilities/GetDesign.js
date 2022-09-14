@@ -13,7 +13,23 @@ define(["require", "exports", "./GetEvents"], function (require, exports, GetEve
                 $.get("".concat(dist, "/design/html/").concat(blockElement.id, "/").concat(pageName, ".html"), function (callback) {
                     applyStyle(blockElement, pageName);
                     $(blockElement).html(callback);
-                    new GetEvents_1.GetEvents.forPage(pageName);
+                    switch (page) {
+                        case 'index':
+                            new GetEvents_1.GetEvents.forIndex(pageName);
+                            break;
+                        case 'uitsendings':
+                            new GetEvents_1.GetEvents.forUitsendings(pageName);
+                            break;
+                        case 'akademici':
+                            new GetEvents_1.GetEvents.forAkademici(pageName);
+                            break;
+                        case 'administrasie':
+                            new GetEvents_1.GetEvents.forAdministrasie(pageName);
+                            break;
+                        case 'operasioneel':
+                            new GetEvents_1.GetEvents.forOperasioneel(pageName);
+                            break;
+                    }
                 });
             }
             return forPage;

@@ -10,7 +10,23 @@ export namespace GetDesign {
       $.get(`${dist}/design/html/${blockElement.id}/${pageName}.html`, function (callback) {
         applyStyle(blockElement, pageName);
         $(blockElement).html(callback);
-        new GetEvents.forPage(pageName);
+        switch (page) {
+          case 'index':
+            new GetEvents.forIndex(pageName);
+            break;
+          case 'uitsendings':
+            new GetEvents.forUitsendings(pageName);
+            break;
+          case 'akademici':
+            new GetEvents.forAkademici(pageName);
+            break;
+          case 'administrasie':
+            new GetEvents.forAdministrasie(pageName);
+            break;
+          case 'operasioneel':
+            new GetEvents.forOperasioneel(pageName);
+            break;
+        }
       });
     }
   }
