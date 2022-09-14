@@ -8,9 +8,10 @@ define(["require", "exports", "./GetEvents"], function (require, exports, GetEve
             function forPage(pageName) {
                 var page = window.location.href.split('/').pop().split('.')[0];
                 var block = pageName.split('-')[1];
-                var dist = '../../../dist';
+                var distLocal = '../../../dist';
+                var distOnline = '../../../dist';
                 var blockElement = document.querySelector("#".concat(page, "-").concat(block));
-                $.get("".concat(dist, "/design/html/").concat(blockElement.id, "/").concat(pageName, ".html"), function (callback) {
+                $.get("".concat(distOnline, "/design/html/").concat(blockElement.id, "/").concat(pageName, ".html"), function (callback) {
                     applyStyle(blockElement, pageName);
                     $(blockElement).html(callback);
                     switch (page) {

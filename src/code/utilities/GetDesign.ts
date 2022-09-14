@@ -4,12 +4,16 @@ export namespace GetDesign {
     constructor(pageName: String) {
       const page: String = window.location.href.split('/').pop().split('.')[0];
       const block: String = pageName.split('-')[1];
-      const dist: String = '../../../dist';
+      const distLocal: String = '../../../dist';
+      const distOnline: String = '../../../dist';
+
+      console.log(window.location.href);
 
       let blockElement: HTMLElement = document.querySelector(`#${page}-${block}`);
-      $.get(`${dist}/design/html/${blockElement.id}/${pageName}.html`, function (callback) {
+      $.get(`${distOnline}/design/html/${blockElement.id}/${pageName}.html`, function (callback) {
         applyStyle(blockElement, pageName);
         $(blockElement).html(callback);
+
         switch (page) {
           case 'index':
             new GetEvents.forIndex(pageName);
