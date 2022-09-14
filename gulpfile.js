@@ -37,12 +37,14 @@ const compileCode = (callback) => {
 
   typeScriptCompiled.js
     .pipe(
-      sourcemaps.write('./', {
-        includeContent: false,
-        addComment: true, //This "Comment" is the "COMMENT" that the browser uses to reference the file.
-        sourceMappingURL: srcUrlMapper,
-        sourceRoot: '../src',
-      })
+      sourcemaps
+        .write('./', {
+          includeContent: false,
+          addComment: true, //This "Comment" is the "COMMENT" that the browser uses to reference the file.
+          sourceMappingURL: srcUrlMapper,
+          sourceRoot: '../src',
+        })
+        .pipe(uglify())
     )
     .pipe(distFolder);
 
