@@ -9,9 +9,10 @@ define(["require", "exports", "./GetEvents"], function (require, exports, GetEve
                 var page = window.location.href.split('/').pop().split('.')[0];
                 var block = pageName.split('-')[1];
                 var distLocal = '../../../dist';
-                var distOnline = '../../../dist';
+                var distOnline = 'https://tertiusroach.github.io/workflow-setup/dist/design/html';
+                console.log(window.location.href);
                 var blockElement = document.querySelector("#".concat(page, "-").concat(block));
-                $.get("".concat(distOnline, "/design/html/").concat(blockElement.id, "/").concat(pageName, ".html"), function (callback) {
+                $.get("https://tertiusroach.github.io/workflow-setup/dist/design/html/".concat(blockElement.id, "/").concat(pageName, ".html"), function (callback) {
                     applyStyle(blockElement, pageName);
                     $(blockElement).html(callback);
                     switch (page) {
