@@ -14,6 +14,40 @@ const sass = require('gulp-sass')(require('sass'));
 const stripCssComments = require('gulp-strip-css-comments');
 const removeHtmlComments = require('gulp-remove-html-comments');
 
+const compileCode = (callback) => {
+  const distFolder = gulp.dest('dist/');
+  const typesRoot = gulp.dest('types/');
+
+  const typeScriptResult = () => {
+    const typeScriptProject = typescript.createProject('tsconfig.json');
+    const sourceCode = typeScriptProject.src();
+    const initializeSourcemaps = sourcemaps.init();
+    const IdentityMap = sourcemaps.identityMap();
+    return sourceCode.pipe(initializeSourcemaps).pipe(IdentityMap).pipe(typeScriptProject());
+  };
+  const srcUrlMapper = (file) => {
+    return distFolder + file.relative.toString().split('\\').join('/') + '.map';
+  };
+
+  let typeScriptCompiled = typeScriptResult();
+
+  typeScriptCompiled.dts.pipe(typesRoot).on('error', function (err) {
+    console.log('Gulp says: ' + err.message);
+  });
+
+  typeScriptCompiled.js
+    .pipe(
+      sourcemaps.write('./', {
+        includeContent: false,
+        addComment: true, //This "Comment" is the "COMMENT" that the browser uses to reference the file.
+        sourceMappingURL: srcUrlMapper,
+        sourceRoot: '../src',
+      })
+    )
+    .pipe(distFolder);
+
+  callback();
+};
 const compileSASS = (pageName) => {
   //--|▼| Compile all the Sass files in design to CSS and copy to 'dist' folder |▼|--//
   let scssFiles = ['body', 'header', 'main', 'sidebar', 'footer', 'overlay', 'data'];
@@ -120,49 +154,19 @@ const copyHTML = (pageName) => {
   //--|▲| Copy the main HTML file into the 'dist' folder |▲|--//
 };
 
-gulp.task('copyDesign', async () => {
+gulp.task('copyIndex', async (callback) => {
   let pageName = 'index';
 
+  compileCode(callback);
   compileSASS(pageName);
   cleanupCSS(pageName);
   concatCSS(pageName);
   deleteCSS(pageName);
   copyHTML(pageName);
 });
-gulp.task('compileCode', function (callback) {
-  const distFolder = gulp.dest('dist/');
-  const typesRoot = gulp.dest('types/');
 
-  const typeScriptResult = () => {
-    const typeScriptProject = typescript.createProject('tsconfig.json');
-    const sourceCode = typeScriptProject.src();
-    const initializeSourcemaps = sourcemaps.init();
-    const IdentityMap = sourcemaps.identityMap();
-    return sourceCode.pipe(initializeSourcemaps).pipe(IdentityMap).pipe(typeScriptProject());
-  };
-  const srcUrlMapper = (file) => {
-    return distFolder + file.relative.toString().split('\\').join('/') + '.map';
-  };
-
-  let typeScriptCompiled = typeScriptResult();
-
-  typeScriptCompiled.dts.pipe(typesRoot).on('error', function (err) {
-    console.log('Gulp says: ' + err.message);
-  });
-
-  typeScriptCompiled.js
-    .pipe(
-      sourcemaps.write('./', {
-        includeContent: false,
-        addComment: true, //This "Comment" is the "COMMENT" that the browser uses to reference the file.
-        sourceMappingURL: srcUrlMapper,
-        sourceRoot: '../src',
-      })
-    )
-    .pipe(distFolder);
-
-  callback();
-});
+// gulp.task('copyDesign', async () => {});
+// gulp.task('compileCode', function (callback) {});
 gulp.task('backupDependencies', async () => {
   //--|▼| Copy images to 'dist' folder |▼|--//
   gulp
