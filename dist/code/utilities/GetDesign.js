@@ -8,11 +8,9 @@ define(["require", "exports", "./GetEvents"], function (require, exports, GetEve
             function forPage(pageName) {
                 var page = window.location.href.split('/').pop().split('.')[0];
                 var block = pageName.split('-')[1];
-                var distLocal = '../../../dist';
-                var distOnline = 'https://tertiusroach.github.io/workflow-setup/dist/design/html';
-                console.log(window.location.href);
+                var dist = fetchURI(window.location.href);
                 var blockElement = document.querySelector("#".concat(page, "-").concat(block));
-                $.get("https://tertiusroach.github.io/workflow-setup/dist/design/html/".concat(blockElement.id, "/").concat(pageName, ".html"), function (callback) {
+                $.get("".concat(dist, "/design/html/").concat(blockElement.id, "/").concat(pageName, ".html"), function (callback) {
                     applyStyle(blockElement, pageName);
                     $(blockElement).html(callback);
                     switch (page) {
@@ -40,6 +38,17 @@ define(["require", "exports", "./GetEvents"], function (require, exports, GetEve
         function applyStyle(block, pageName) {
             block.className = '';
             block.className = "".concat(pageName);
+        }
+        function fetchURI(url) {
+            switch (url.slice(0, 5)) {
+                case 'https':
+                    console.log("Test: This page is Online");
+                    var href = url.split('/');
+                    return "".concat(href[0], "//").concat(href[2], "/").concat(href[3], "/dist");
+                case 'http:':
+                    console.log("Test: This page is Local");
+                    return '../../../dist';
+            }
         }
     })(GetDesign = exports.GetDesign || (exports.GetDesign = {}));
 });
