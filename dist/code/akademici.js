@@ -14,4 +14,4 @@ define(["require", "exports"], function (require, exports) {
     })(Akademici = exports.Akademici || (exports.Akademici = {}));
 });
 
-//# sourceMappingURL=[object Object]code/events/akademici.js.map
+//# sourceMappingURL=[object Object]code/akademici.js.map

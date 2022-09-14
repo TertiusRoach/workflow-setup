@@ -14,4 +14,4 @@ define(["require", "exports"], function (require, exports) {
     })(Uitsendings = exports.Uitsendings || (exports.Uitsendings = {}));
 });
 
-//# sourceMappingURL=[object Object]code/events/uitsendings.js.map
+//# sourceMappingURL=[object Object]code/uitsendings.js.map

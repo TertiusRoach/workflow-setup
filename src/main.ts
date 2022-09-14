@@ -1,8 +1,8 @@
-import { Administrasie } from './code/events/administrasie';
-import { Operasioneel } from './code/events/operasioneel';
-import { Uitsendings } from './code/events/uitsendings';
-import { Akademici } from './code/events/akademici';
-import { Index } from './code/events/index';
+import { Administrasie } from './code/administrasie';
+import { Operasioneel } from './code/operasioneel';
+import { Uitsendings } from './code/uitsendings';
+import { Akademici } from './code/akademici';
+import { Index } from './code/index';
 namespace GetPage {
   const page: String = window.location.href.split('/').pop().split('.')[0];
   switch (page) {

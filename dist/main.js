@@ -1,4 +1,4 @@
-define(["require", "exports", "./code/events/administrasie", "./code/events/operasioneel", "./code/events/uitsendings", "./code/events/akademici", "./code/events/index"], function (require, exports, administrasie_1, operasioneel_1, uitsendings_1, akademici_1, index_1) {
+define(["require", "exports", "./code/administrasie", "./code/operasioneel", "./code/uitsendings", "./code/akademici", "./code/index"], function (require, exports, administrasie_1, operasioneel_1, uitsendings_1, akademici_1, index_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var GetPage;

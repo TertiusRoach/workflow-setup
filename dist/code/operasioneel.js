@@ -14,4 +14,4 @@ define(["require", "exports"], function (require, exports) {
     })(Operasioneel = exports.Operasioneel || (exports.Operasioneel = {}));
 });
 
-//# sourceMappingURL=[object Object]code/events/operasioneel.js.map
+//# sourceMappingURL=[object Object]code/operasioneel.js.map

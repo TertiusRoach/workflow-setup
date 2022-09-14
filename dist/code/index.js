@@ -19,4 +19,4 @@ define(["require", "exports", "code/utilities/GetDesign"], function (require, ex
     })(Index = exports.Index || (exports.Index = {}));
 });
 
-//# sourceMappingURL=[object Object]code/events/index.js.map
+//# sourceMappingURL=[object Object]code/index.js.map

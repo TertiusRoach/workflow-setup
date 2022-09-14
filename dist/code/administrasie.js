@@ -14,4 +14,4 @@ define(["require", "exports"], function (require, exports) {
     })(Administrasie = exports.Administrasie || (exports.Administrasie = {}));
 });
 
-//# sourceMappingURL=[object Object]code/events/administrasie.js.map
+//# sourceMappingURL=[object Object]code/administrasie.js.map
