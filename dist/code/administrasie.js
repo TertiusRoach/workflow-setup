@@ -1,17 +1,1 @@
-define(["require", "exports"], function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.Administrasie = void 0;
-    var Administrasie;
-    (function (Administrasie) {
-        var LoadDesign = (function () {
-            function LoadDesign(page) {
-                console.log('--administrasie.js Loaded');
-            }
-            return LoadDesign;
-        }());
-        Administrasie.LoadDesign = LoadDesign;
-    })(Administrasie = exports.Administrasie || (exports.Administrasie = {}));
-});
-
-//# sourceMappingURL=[object Object]code/administrasie.js.map
+define(["require","exports"],function(e,i){"use strict";Object.defineProperty(i,"__esModule",{value:!0}),i.Administrasie=void 0,(i.Administrasie||(i.Administrasie={})).LoadDesign=function(e){console.log("--administrasie.js Loaded")}});

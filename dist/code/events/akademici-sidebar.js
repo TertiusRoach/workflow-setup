@@ -1,17 +1,1 @@
-define(["require", "exports"], function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.AkademiciSidebar = void 0;
-    var AkademiciSidebar;
-    (function (AkademiciSidebar) {
-        function eventsFor(pageName) {
-            switch (pageName) {
-                case 'default-sidebar':
-                    break;
-            }
-        }
-        AkademiciSidebar.eventsFor = eventsFor;
-    })(AkademiciSidebar = exports.AkademiciSidebar || (exports.AkademiciSidebar = {}));
-});
-
-//# sourceMappingURL=[object Object]code/events/akademici-sidebar.js.map
+define(["require","exports"],function(e,i){"use strict";Object.defineProperty(i,"__esModule",{value:!0}),i.AkademiciSidebar=void 0,(i.AkademiciSidebar||(i.AkademiciSidebar={})).eventsFor=function(e){e}});

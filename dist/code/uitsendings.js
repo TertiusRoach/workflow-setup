@@ -1,17 +1,1 @@
-define(["require", "exports"], function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.Uitsendings = void 0;
-    var Uitsendings;
-    (function (Uitsendings) {
-        var LoadDesign = (function () {
-            function LoadDesign(page) {
-                console.log('--uitsendings.js Loaded');
-            }
-            return LoadDesign;
-        }());
-        Uitsendings.LoadDesign = LoadDesign;
-    })(Uitsendings = exports.Uitsendings || (exports.Uitsendings = {}));
-});
-
-//# sourceMappingURL=[object Object]code/uitsendings.js.map
+define(["require","exports"],function(e,i){"use strict";Object.defineProperty(i,"__esModule",{value:!0}),i.Uitsendings=void 0,(i.Uitsendings||(i.Uitsendings={})).LoadDesign=function(e){console.log("--uitsendings.js Loaded")}});

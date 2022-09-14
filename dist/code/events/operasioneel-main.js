@@ -1,17 +1,1 @@
-define(["require", "exports"], function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.OperasioneelMain = void 0;
-    var OperasioneelMain;
-    (function (OperasioneelMain) {
-        function eventsFor(pageName) {
-            switch (pageName) {
-                case 'default-main':
-                    break;
-            }
-        }
-        OperasioneelMain.eventsFor = eventsFor;
-    })(OperasioneelMain = exports.OperasioneelMain || (exports.OperasioneelMain = {}));
-});
-
-//# sourceMappingURL=[object Object]code/events/operasioneel-main.js.map
+define(["require","exports"],function(e,i){"use strict";Object.defineProperty(i,"__esModule",{value:!0}),i.OperasioneelMain=void 0,(i.OperasioneelMain||(i.OperasioneelMain={})).eventsFor=function(e){e}});

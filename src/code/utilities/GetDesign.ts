@@ -35,26 +35,14 @@ export namespace GetDesign {
     block.className = `${pageName}`;
   }
   function fetchURI(url: String) {
-    // let onlineSample = 'https://tertiusroach.github.io/workflow-setup/dist/index.html';
-    // let offlineSample = 'http://127.0.0.1:5500/dist/index.html';
-
-    // console.log();
-
-    // let onlineTest = onlineSample;
-    // let offlineTest = offlineSample.slice(0, 5);
-
-    // console.log(`Online = ${onlineTest}`);
-    // console.log(`Offline = ${offlineTest}`);
-
+    //--|►| Online URI = Uniform Resource Identifier |◄|--//
     switch (url.slice(0, 5)) {
       case 'https':
-        console.log(`Test: This page is Online`);
-        //--|►| Online |◄|--//
         let href = url.split('/');
+        //--► console.log('This page is Online'); ◄--//
         return `${href[0]}//${href[2]}/${href[3]}/dist`;
       case 'http:':
-        console.log(`Test: This page is Local`);
-        //--|►| Local |◄|--//
+        //--► console.log('This page is Local'); ◄--//
         return '../../../dist';
     }
   }

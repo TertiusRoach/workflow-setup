@@ -1,17 +1,1 @@
-define(["require", "exports"], function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.AdministrasieFooter = void 0;
-    var AdministrasieFooter;
-    (function (AdministrasieFooter) {
-        function eventsFor(pageName) {
-            switch (pageName) {
-                case 'default-footer':
-                    break;
-            }
-        }
-        AdministrasieFooter.eventsFor = eventsFor;
-    })(AdministrasieFooter = exports.AdministrasieFooter || (exports.AdministrasieFooter = {}));
-});
-
-//# sourceMappingURL=[object Object]code/events/administrasie-footer.js.map
+define(["require","exports"],function(e,i){"use strict";Object.defineProperty(i,"__esModule",{value:!0}),i.AdministrasieFooter=void 0,(i.AdministrasieFooter||(i.AdministrasieFooter={})).eventsFor=function(e){e}});

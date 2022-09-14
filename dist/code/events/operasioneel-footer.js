@@ -1,17 +1,1 @@
-define(["require", "exports"], function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.OperasioneelFooter = void 0;
-    var OperasioneelFooter;
-    (function (OperasioneelFooter) {
-        function eventsFor(pageName) {
-            switch (pageName) {
-                case 'default-footer':
-                    break;
-            }
-        }
-        OperasioneelFooter.eventsFor = eventsFor;
-    })(OperasioneelFooter = exports.OperasioneelFooter || (exports.OperasioneelFooter = {}));
-});
-
-//# sourceMappingURL=[object Object]code/events/operasioneel-footer.js.map
+define(["require","exports"],function(e,o){"use strict";Object.defineProperty(o,"__esModule",{value:!0}),o.OperasioneelFooter=void 0,(o.OperasioneelFooter||(o.OperasioneelFooter={})).eventsFor=function(e){e}});

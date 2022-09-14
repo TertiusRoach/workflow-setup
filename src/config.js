@@ -5,6 +5,5 @@ require(['config'], () => {
   let main = 'main.js';
 
   require([fontAwesomePro, jQuery, main]);
-  console.log('--RequireJS Loaded');
   //--► console.log('--RequireJS Loaded'); ◄--//
 });

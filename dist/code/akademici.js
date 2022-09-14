@@ -1,17 +1,1 @@
-define(["require", "exports"], function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.Akademici = void 0;
-    var Akademici;
-    (function (Akademici) {
-        var LoadDesign = (function () {
-            function LoadDesign(page) {
-                console.log('--akademici.js Loaded');
-            }
-            return LoadDesign;
-        }());
-        Akademici.LoadDesign = LoadDesign;
-    })(Akademici = exports.Akademici || (exports.Akademici = {}));
-});
-
-//# sourceMappingURL=[object Object]code/akademici.js.map
+define(["require","exports"],function(e,i){"use strict";Object.defineProperty(i,"__esModule",{value:!0}),i.Akademici=void 0,(i.Akademici||(i.Akademici={})).LoadDesign=function(e){console.log("--akademici.js Loaded")}});

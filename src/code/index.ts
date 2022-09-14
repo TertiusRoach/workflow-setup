@@ -8,8 +8,7 @@ export namespace Index {
       new GetDesign.forPage(`default-footer`);
       new GetDesign.forPage(`default-overlay`);
 
-      console.log('--index.js Loaded');
+      //--► console.log('--index.js Loaded'); ◄--//
     }
   }
-  //--► console.log('--index.js Loaded'); ◄--//
 }

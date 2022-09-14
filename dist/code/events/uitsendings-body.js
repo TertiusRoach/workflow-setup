@@ -1,17 +1,1 @@
-define(["require", "exports"], function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.UitsendingsBody = void 0;
-    var UitsendingsBody;
-    (function (UitsendingsBody) {
-        function eventsFor(pageName) {
-            switch (pageName) {
-                case 'default-body':
-                    break;
-            }
-        }
-        UitsendingsBody.eventsFor = eventsFor;
-    })(UitsendingsBody = exports.UitsendingsBody || (exports.UitsendingsBody = {}));
-});
-
-//# sourceMappingURL=[object Object]code/events/uitsendings-body.js.map
+define(["require","exports"],function(e,i){"use strict";Object.defineProperty(i,"__esModule",{value:!0}),i.UitsendingsBody=void 0,(i.UitsendingsBody||(i.UitsendingsBody={})).eventsFor=function(e){e}});

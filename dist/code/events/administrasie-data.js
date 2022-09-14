@@ -1,17 +1,1 @@
-define(["require", "exports"], function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.AdministrasieData = void 0;
-    var AdministrasieData;
-    (function (AdministrasieData) {
-        function eventsFor(pageName) {
-            switch (pageName) {
-                case 'default-data':
-                    break;
-            }
-        }
-        AdministrasieData.eventsFor = eventsFor;
-    })(AdministrasieData = exports.AdministrasieData || (exports.AdministrasieData = {}));
-});
-
-//# sourceMappingURL=[object Object]code/events/administrasie-data.js.map
+define(["require","exports"],function(e,i){"use strict";Object.defineProperty(i,"__esModule",{value:!0}),i.AdministrasieData=void 0,(i.AdministrasieData||(i.AdministrasieData={})).eventsFor=function(e){e}});
