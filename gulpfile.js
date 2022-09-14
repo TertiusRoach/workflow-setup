@@ -102,7 +102,7 @@ const copyHTML = (pageName) => {
     .pipe(removeHtmlComments())
     .pipe(htmlmin({ collapseWhitespace: true }))
     //--| Copy the *.html reference files into the 'dist' folder |--//
-    .pipe(gulp.dest(`dist/design/html/`));
+    .pipe(gulp.dest(`dist/`));
 
   //--|▲| Copy design HTML files to 'dist' |▲|--//
   //--|▼| Copy the main HTML file into the 'dist' folder |▼|--//

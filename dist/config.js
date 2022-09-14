@@ -1,1 +1,1 @@
-require(["config"],()=>{require(["../../vendors/font-awesome/js/all.min.js","https://code.jquery.com/jquery-3.6.0.min.js","../../main.js"])});
+require(["config"],()=>{require(["vendors/font-awesome/js/all.min.js","https://code.jquery.com/jquery-3.6.0.min.js","main.js"]),console.log("--RequireJS Loaded")});
