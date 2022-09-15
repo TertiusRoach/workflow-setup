@@ -3516,28 +3516,21 @@ main[class*=main] #buttons-overlay .foreground{margin:-44px 0 -210px 0}}@media o
 .default-footer .navigation ul li a .text{color:#0e1e3b;transform:translateY(20px)}
 .default-footer .navigation ul li.active a .icon{color:#935e28;transform:translateY(-32px);filter:drop-shadow(0 0 .75rem #0e1e3b)}
 .default-footer .navigation ul li.active a .text{opacity:1;transition:1s;font-weight:800;overflow:hidden;font-size:.75em;position:absolute;letter-spacing:.05em;color:#be9e7e;transform:translateY(10px);filter:drop-shadow(0 0 .75rem black)}
-#index-overlay{z-index:1;grid-row:2/3;grid-column:3/5}#index-overlay nav{grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(5,1fr)}
-#index-overlay nav section div{height:100%;display:flex;align-items:center;justify-content:center;clip-path:initial(100%,0,0,0)}
-#index-overlay nav section div button{background:0;outline:0;border:0}#index-overlay nav section div button a{text-decoration:none}
-#index-overlay nav section div button a h1{font-size:2em}#index-overlay nav section:hover div{opacity:0}
+#index-overlay{z-index:1;grid-row:2/3;grid-column:3/5}#index-overlay nav{display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(5,1fr)}
+#index-overlay nav section div{height:100%;display:flex;align-items:center;justify-content:center}
+#index-overlay nav section div a button{background:0;outline:0;border:0;text-decoration:none}
+#index-overlay nav section div a button h1,#index-overlay nav section div a button svg{font-size:2em}
 #index-overlay nav div[id*=button]{grid-column:6/7;height:100%;width:100%;background:#0e1e3b}
 #index-overlay nav div[id*=button] button a{display:flex;justify-content:center}#index-overlay nav div[id*=button] button a img{width:75%;height:75%;color:#935e28}
 #index-overlay nav div[id*=button] button a svg{color:#cfd2d8}#index-overlay nav div[id*=button] button a:hover svg,#index-overlay nav div[id*=button] button a:hover img{color:#935e28}
-#index-overlay nav div[id*=gr]{grid-column:1/2;background:#274e13}#index-overlay nav div[id*=gr] button a h1,#index-overlay nav div[id*=gr] button a svg{color:#b6d7a8}
-#index-overlay nav div[id*=gr] button a:hover h1,#index-overlay nav div[id*=gr] button a:hover svg{filter:drop-shadow(0 0 .75rem #0f0)}
-#index-overlay nav div[id*=pi]{grid-column:2/3;background:#4c1130}#index-overlay nav div[id*=pi] button a h1,#index-overlay nav div[id*=pi] button a svg{color:#d5a6bd}
-#index-overlay nav div[id*=pi] button a:hover h1,#index-overlay nav div[id*=pi] button a:hover svg{filter:drop-shadow(0 0 .75rem #f0f)}
-#index-overlay nav div[id*=ye]{grid-column:3/4;background:#7f6000}#index-overlay nav div[id*=ye] button a h1,#index-overlay nav div[id*=ye] button a svg{color:#ffe599}
-#index-overlay nav div[id*=ye] button a:hover h1,#index-overlay nav div[id*=ye] button a:hover svg{filter:drop-shadow(0 0 .75rem #ff0)}
-#index-overlay nav div[id*=or]{grid-column:4/5;background:#783f04}#index-overlay nav div[id*=or] button a h1,#index-overlay nav div[id*=or] button a svg{color:#f9cb9c}
-#index-overlay nav div[id*=or] button a:hover h1,#index-overlay nav div[id*=or] button a:hover svg{filter:drop-shadow(0 0 .75rem #f90)}
-#index-overlay nav div[id*=bl]{grid-column:5/6;background:#333395}#index-overlay nav div[id*=bl] button a h1,#index-overlay nav div[id*=bl] button a svg{color:#9fc5e8}
-#index-overlay nav div[id*=bl] button a:hover h1,#index-overlay nav div[id*=bl] button a:hover svg{filter:drop-shadow(0 0 .75rem #3c90ff)}
+#index-overlay nav div[id*=gr]{grid-column:1/2;background:#274e13}#index-overlay nav div[id*=gr] a button h1,#index-overlay nav div[id*=gr] a button svg{color:#b6d7a8}
+#index-overlay nav div[id*=gr] a button:hover h1,#index-overlay nav div[id*=gr] a button:hover svg{filter:drop-shadow(0 0 .75rem #0f0)}
 #index-overlay nav div[class*=false]{background-color:#0e1e3b}#index-overlay nav div[class*=false] button a h1,#index-overlay nav div[class*=false] button a svg{color:#cfd2d8}
 #index-overlay nav div[class*=false] button a:hover h1,#index-overlay nav div[class*=false] button a:hover svg{color:#935e28;filter:drop-shadow(0 0 0 black)}
 #index-overlay nav [id*=button],#index-overlay nav [id*=gr],#index-overlay nav [id*=pi],#index-overlay nav [id*=ye],#index-overlay nav [id*=or],#index-overlay nav [id*=bl]{z-index:1}
 #index-overlay .background{grid-column:1/9;grid-row:1/13;z-index:0;background:linear-gradient(to bottom right,rgba(14,30,59,0.2),rgba(14,30,59,0.8))}
-.default-overlay #january{display:grid;grid-row:1/6;grid-column:1/7}.header-overlay{grid-template-rows:repeat(12,1fr);grid-template-columns:repeat(3,1fr) 80px !important}
+.default-overlay #january{display:grid;grid-row:1/6;grid-column:1/7}.default-overlay #january section div{overflow:hidden;clip-path:circle(50%,0,0,0)}
+.header-overlay{grid-template-rows:repeat(12,1fr);grid-template-columns:repeat(3,1fr) 80px !important}
 .header-overlay section{z-index:1;display:flex;align-items:center;flex-direction:column;justify-content:flex-start;height:48px}
 .header-overlay section div{width:260px;display:flex;background:#0e1e3b;justify-content:left !important}
 .header-overlay section div button{margin-left:20px}.header-overlay section div button a{display:flex;align-items:center}
