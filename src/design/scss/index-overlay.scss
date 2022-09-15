@@ -5,151 +5,166 @@
   grid-row: 2/3;
   grid-column: 3/5;
 
-  div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    button {
-      background: none;
-      outline: none;
-      border: none;
-      a {
-        text-decoration: none;
-        h1 {
-          font-size: 2em;
+  nav {
+    // display: flex;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+
+    section div {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      clip-path: initial(100%, 0, 0, 0);
+      button {
+        background: none;
+        outline: none;
+        border: none;
+        a {
+          text-decoration: none;
+          h1 {
+            font-size: 2em;
+          }
         }
       }
     }
+
+    section:hover {
+      div {
+        opacity: 0;
+      }
+    }
+
+    div[id*='button'] {
+      grid-column: 6/7;
+      height: 100%;
+      width: 100%;
+      button a {
+        display: flex;
+        justify-content: center;
+        img {
+          width: 75%;
+          height: 75%;
+          color: $secondary-dark;
+        }
+        svg {
+          color: $primary-light;
+        }
+      }
+      button a:hover {
+        svg,
+        img {
+          color: $secondary-dark;
+        }
+      }
+      background: $primary-dark;
+    }
+    div[id*='gr'] {
+      grid-column: 1/2;
+      button a {
+        h1,
+        svg {
+          color: $green-light;
+        }
+      }
+      button a:hover {
+        h1,
+        svg {
+          filter: drop-shadow(0 0 0.75rem $green-neon);
+        }
+      }
+      background: $green-dark;
+    }
+    div[id*='pi'] {
+      grid-column: 2/3;
+      button a {
+        h1,
+        svg {
+          color: $pink-light;
+        }
+      }
+      button a:hover {
+        h1,
+        svg {
+          filter: drop-shadow(0 0 0.75rem $pink-neon);
+        }
+      }
+      background: $pink-dark;
+    }
+    div[id*='ye'] {
+      grid-column: 3/4;
+      button a {
+        h1,
+        svg {
+          color: $yellow-light;
+        }
+      }
+      button a:hover {
+        h1,
+        svg {
+          filter: drop-shadow(0 0 0.75rem $yellow-neon);
+        }
+      }
+      background: $yellow-dark;
+    }
+    div[id*='or'] {
+      grid-column: 4/5;
+      button a {
+        h1,
+        svg {
+          color: $orange-light;
+        }
+      }
+      button a:hover {
+        h1,
+        svg {
+          filter: drop-shadow(0 0 0.75rem $orange-neon);
+        }
+      }
+      background: $orange-dark;
+    }
+    div[id*='bl'] {
+      grid-column: 5/6;
+      button a {
+        h1,
+        svg {
+          color: $blue-light;
+        }
+      }
+      button a:hover {
+        h1,
+        svg {
+          filter: drop-shadow(0 0 0.75rem $blue-neon);
+        }
+      }
+      background: $blue-dark;
+    }
+    div[class*='false'] {
+      button a {
+        h1,
+        svg {
+          color: $primary-light;
+        }
+      }
+      button a:hover {
+        h1,
+        svg {
+          color: $secondary-dark;
+          filter: drop-shadow(0 0 0 black);
+        }
+      }
+      background-color: $primary-dark;
+    }
+    [id*='button'],
+    [id*='gr'],
+    [id*='pi'],
+    [id*='ye'],
+    [id*='or'],
+    [id*='bl'] {
+      z-index: 1;
+    }
   }
-  div[id*='button'] {
-    grid-column: 6/7;
-    height: 100%;
-    width: 100%;
-    button a {
-      display: flex;
-      justify-content: center;
-      img {
-        width: 75%;
-        height: 75%;
-        color: $secondary-dark;
-      }
-      svg {
-        color: $primary-light;
-      }
-    }
-    button a:hover {
-      svg,
-      img {
-        color: $secondary-dark;
-      }
-    }
-    background: $primary-dark;
-  }
-  div[id*='gr'] {
-    grid-column: 1/2;
-    button a {
-      h1,
-      svg {
-        color: $green-light;
-      }
-    }
-    button a:hover {
-      h1,
-      svg {
-        filter: drop-shadow(0 0 0.75rem $green-neon);
-      }
-    }
-    background: $green-dark;
-  }
-  div[id*='pi'] {
-    grid-column: 2/3;
-    button a {
-      h1,
-      svg {
-        color: $pink-light;
-      }
-    }
-    button a:hover {
-      h1,
-      svg {
-        filter: drop-shadow(0 0 0.75rem $pink-neon);
-      }
-    }
-    background: $pink-dark;
-  }
-  div[id*='ye'] {
-    grid-column: 3/4;
-    button a {
-      h1,
-      svg {
-        color: $yellow-light;
-      }
-    }
-    button a:hover {
-      h1,
-      svg {
-        filter: drop-shadow(0 0 0.75rem $yellow-neon);
-      }
-    }
-    background: $yellow-dark;
-  }
-  div[id*='or'] {
-    grid-column: 4/5;
-    button a {
-      h1,
-      svg {
-        color: $orange-light;
-      }
-    }
-    button a:hover {
-      h1,
-      svg {
-        filter: drop-shadow(0 0 0.75rem $orange-neon);
-      }
-    }
-    background: $orange-dark;
-  }
-  div[id*='bl'] {
-    grid-column: 5/6;
-    button a {
-      h1,
-      svg {
-        color: $blue-light;
-      }
-    }
-    button a:hover {
-      h1,
-      svg {
-        filter: drop-shadow(0 0 0.75rem $blue-neon);
-      }
-    }
-    background: $blue-dark;
-  }
-  div[class*='false'] {
-    button a {
-      h1,
-      svg {
-        color: $primary-light;
-      }
-    }
-    button a:hover {
-      h1,
-      svg {
-        color: $secondary-dark;
-        filter: drop-shadow(0 0 0 black);
-      }
-    }
-    background-color: $primary-dark;
-  }
-  [id*='button'],
-  [id*='gr'],
-  [id*='pi'],
-  [id*='ye'],
-  [id*='or'],
-  [id*='bl'] {
-    z-index: 1;
-  }
+
   .background {
     grid-column: 1/9;
     grid-row: 1/13;
@@ -160,7 +175,25 @@
 }
 /*--▼ .default-overlay ▼--*/
 .default-overlay {
-  display: none;
+  // display: none;
+  #january {
+    display: grid;
+    grid-row: 1/6;
+    grid-column: 1/7;
+
+    // section {
+
+    //   // <!-- _______________________ -->
+    //   // <div id="gr-jan-sheet" class="true">
+    //   //   <button>
+    //   //     <a href="#" target="_blank">
+    //   //       <h1>Gr</h1>
+    //   //     </a>
+    //   //   </button>
+    //   // </div>
+    //   // <!-- _______________________ -->
+    // }
+  }
 }
 /*--▼ .header-overlay ▼--*/
 .header-overlay {
