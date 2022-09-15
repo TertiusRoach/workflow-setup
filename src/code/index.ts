@@ -6,7 +6,7 @@ export namespace Index {
       new GetDesign.forPage(`default-main`);
       new GetDesign.forPage(`default-sidebar`);
       new GetDesign.forPage(`default-footer`);
-      new GetDesign.forPage(`default-overlay`);
+      // new GetDesign.forPage(`default-overlay`);
 
       //--► console.log('--index.js Loaded'); ◄--//
     }

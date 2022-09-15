@@ -3,7 +3,7 @@ import { Operasioneel } from './code/operasioneel';
 import { Uitsendings } from './code/uitsendings';
 import { Akademici } from './code/akademici';
 import { Index } from './code/index';
-namespace GetPage {
+namespace Main {
   const page: String = window.location.href.split('/').pop().split('.')[0];
   switch (page) {
     case 'index':

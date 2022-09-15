@@ -30,6 +30,7 @@ export namespace GetDesign {
       });
     }
   }
+
   function applyStyle(block: HTMLElement, pageName: String) {
     block.className = '';
     block.className = `${pageName}`;
