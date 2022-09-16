@@ -6,7 +6,7 @@
   grid-column: 3/5;
   /*--|▼| Scan Animation & Design Default |▼|--*/
   nav {
-    section div,
+    a div,
     ul li {
       height: 100%;
       display: flex;
@@ -15,7 +15,7 @@
       clip-path: inset(0 0 0 0);
       transition: clip-path 0.25s;
       /* background: $secondary-dark; */
-      a button {
+      button {
         text-decoration: none;
         background: none;
         outline: none;
@@ -27,74 +27,121 @@
         }
       }
     }
-    section:hover div {
+    a:hover div {
       clip-path: inset(100% 0 0 0);
     }
   }
   /*--|▲| Scan Animation & Design Default |▲|--*/
   /*--|▼| Button Styling |▼|--*/
   nav {
-    section[id*='gr'] {
+    a[id*='gr'] {
       div {
         background: $green-dark;
-        a button h1,
-        a button svg {
+        button h1,
+        button svg {
           color: $green-light;
         }
-        a button:hover h1,
-        a button:hover svg {
+        button:hover h1,
+        button:hover svg {
           filter: drop-shadow(0 0 0.75rem $green-neon);
         }
       }
     }
-    section[id*='pi'] {
+
+    a[id*='pi'] {
       div {
         background: $pink-dark;
-        a button h1,
-        a button svg {
+        button h1,
+        button svg {
           color: $pink-light;
         }
-        a button:hover h1,
-        a button:hover svg {
+        button:hover h1,
+        button:hover svg {
           filter: drop-shadow(0 0 0.75rem $pink-neon);
         }
       }
     }
-    section[id*='ye'] {
+    a[id*='ye'] {
       div {
         background: $yellow-dark;
-        a button h1,
-        a button svg {
+        button h1,
+        button svg {
           color: $yellow-light;
         }
-        a button:hover h1,
-        a button:hover svg {
+        button:hover h1,
+        button:hover svg {
           filter: drop-shadow(0 0 0.75rem $yellow-neon);
         }
       }
     }
-    section[id*='or'] {
+    a[id*='or'] {
       div {
         background: $orange-dark;
-        a button h1,
-        a button svg {
+        button h1,
+        button svg {
           color: $orange-light;
         }
-        a button:hover h1,
-        a button:hover svg {
+        button:hover h1,
+        button:hover svg {
           filter: drop-shadow(0 0 0.75rem $orange-neon);
         }
       }
     }
-    section[id*='bl'] {
+    a[id*='bl'] {
       div {
         background: $blue-dark;
-        a button h1,
-        a button svg {
+        button h1,
+        button svg {
           color: $blue-light;
         }
-        a button:hover h1,
-        a button:hover svg {
+        button:hover h1,
+        button:hover svg {
+          filter: drop-shadow(0 0 0.75rem $blue-neon);
+        }
+      }
+    }
+
+    ul[class*='gr'] {
+      li {
+        background: $green-light;
+        button svg {
+          color: $green-dark;
+          filter: drop-shadow(0 0 0.75rem $green-neon);
+        }
+      }
+    }
+    ul[class*='pi'] {
+      li {
+        background: $pink-light;
+        button svg {
+          color: $pink-dark;
+          filter: drop-shadow(0 0 0.75rem $pink-neon);
+        }
+      }
+    }
+    ul[class*='ye'] {
+      li {
+        background: $yellow-light;
+        button svg {
+          color: $yellow-dark;
+          filter: drop-shadow(0 0 0.75rem $yellow-neon);
+        }
+      }
+    }
+    ul[class*='or'] {
+      li {
+        background: $orange-light;
+        button svg {
+          color: $orange-dark;
+          filter: drop-shadow(0 0 0.75rem $orange-neon);
+        }
+      }
+    }
+    ul[class*='bl'] {
+      li {
+        background: $blue-light;
+        button svg {
+          color: $blue-dark;
           filter: drop-shadow(0 0 0.75rem $blue-neon);
         }
       }
@@ -106,38 +153,47 @@
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(5, 1fr);
-    section[id*='gr'],
+
+    ul {
+      z-index: -1;
+    }
+
+    a[id*='gr'],
     ul[class*='gr'] {
       grid-column: 1/2;
     }
-    section[id*='pi'] {
+    a[id*='pi'],
+    ul[class*='pi'] {
       grid-column: 2/3;
     }
-    section[id*='ye'] {
+    a[id*='ye'],
+    ul[class*='ye'] {
       grid-column: 3/4;
     }
-    section[id*='or'] {
+    a[id*='or'],
+    ul[class*='or'] {
       grid-column: 4/5;
     }
-    section[id*='bl'] {
+    a[id*='bl'],
+    ul[class*='bl'] {
       grid-column: 5/6;
     }
 
-    section[id*='sheet'],
+    a[id*='sheet'],
     ul[class*='sheet'] {
       grid-row: 1/2;
     }
-    section[id*='edit'] {
+    a[id*='edit'],
+    ul[class*='edit'] {
       grid-row: 2/3;
     }
-    section[id*='book'] {
+    a[id*='book'],
+    ul[class*='book'] {
       grid-row: 3/4;
     }
-    section[id*='cloud'] {
+    a[id*='cloud'],
+    ul[class*='cloud'] {
       grid-row: 4/5;
-    }
-    ul {
-      z-index: -1;
     }
   }
   /*--|▲| Global Placement & Layout Setup |▲|--*/
