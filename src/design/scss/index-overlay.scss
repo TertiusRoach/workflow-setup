@@ -78,7 +78,6 @@
     grid-row: 1/13;
   }
 }
-
 /*--▼ .sidebar-overlay ▼--*/
 .sidebar-overlay {
   /*--|▼| Global Placement & Layout Setup |▼|--*/
@@ -361,7 +360,14 @@
         filter: drop-shadow(0 0 0.75rem $primary-medium);
       }
     }
-
+    ul li {
+      background: $primary-light;
+      button svg {
+        color: $primary-dark;
+        filter: drop-shadow(0 0 0.75rem $primary-medium);
+      }
+    }
+    /*
     ul[class*='gr'] li {
       background: $green-light;
       button svg {
@@ -397,6 +403,7 @@
         filter: drop-shadow(0 0 0.75rem $blue-neon);
       }
     }
+    */
   }
   /*--|▲| Button Styling |▲|--*/
 
