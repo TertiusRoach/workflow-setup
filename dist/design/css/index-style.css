@@ -3586,6 +3586,7 @@ main[class*=main] #buttons-overlay .foreground{margin:-44px 0 -210px 0}}@media o
 .sidebar-overlay #october{grid-row:6/11}.sidebar-overlay #october #bl-sheet-oct div,.sidebar-overlay #october .bl-sheet li{border-bottom-right-radius:8px}
 .sidebar-overlay #november{grid-row:7/12}.sidebar-overlay #november #bl-sheet-nov div,.sidebar-overlay #november .bl-sheet li{border-bottom-right-radius:8px}
 .sidebar-overlay #december{grid-row:8/13}.sidebar-overlay #december #bl-sheet-dec div,.sidebar-overlay #december .bl-sheet li{border-bottom-right-radius:8px}
+.sidebar-overlay .background{z-index:-2;grid-row:1/13;grid-column:1/8;background:linear-gradient(to bottom right,rgba(14,30,59,0.2),rgba(14,30,59,0.8))}
 @media only screen and (max-height:2160px){section[class*=overlay]{grid-template-columns:repeat(6,171.3333333333px) 1fr;grid-template-rows:repeat(12,171.3333333333px)}
 }@media only screen and (max-height:2159px){section[class*=overlay]{grid-template-columns:repeat(6,171.25px) 1fr;grid-template-rows:repeat(12,171.25px)}
 }@media only screen and (max-height:2158px){section[class*=overlay]{grid-template-columns:repeat(6,171.1666666667px) 1fr;grid-template-rows:repeat(12,171.1666666667px)}

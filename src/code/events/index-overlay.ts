@@ -274,6 +274,8 @@ export namespace IndexOverlay {
     document.querySelector('#december main h1').textContent = `${document.querySelector(`#december a[id*='${icon}'] div button h1`).textContent}`;
   }
   export function resetBanners() {
+    document.getElementById('index-overlay').style.display = 'none';
+
     document.querySelector('#january main h1').textContent = 'January';
     document.querySelector('#february main h1').textContent = 'February';
     document.querySelector('#march main h1').textContent = 'March';

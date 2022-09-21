@@ -511,6 +511,13 @@
     }
   }
   //--▲ Second Semester ▲--//
+
+  .background {
+    z-index: -2;
+    grid-row: 1/13;
+    grid-column: 1/8;
+    background: linear-gradient(to bottom right, rgba(14, 30, 59, 0.2), rgba(14, 30, 59, 0.8));
+  }
 }
 
 /*--▼ Responsive Design ▼--*/
