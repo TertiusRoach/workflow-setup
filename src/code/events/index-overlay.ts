@@ -8,7 +8,9 @@ export namespace IndexOverlay {
     let activeButtons: Object = document.querySelectorAll('#index-sidebar > div');
 
     const indexOverlay: HTMLElement = document.getElementById('index-overlay');
+    let overlayBackground: HTMLElement = indexOverlay.querySelector('.background');
     let monthContainers: Object = indexOverlay.querySelectorAll('nav');
+    /*
     let januaryContainer: HTMLElement = indexOverlay.querySelector('#january');
     let februaryContainer: HTMLElement = indexOverlay.querySelector('#february');
     let marchContainer: HTMLElement = indexOverlay.querySelector('#march');
@@ -21,6 +23,7 @@ export namespace IndexOverlay {
     let octoberContainer: HTMLElement = indexOverlay.querySelector('#october');
     let novemberContainer: HTMLElement = indexOverlay.querySelector('#november');
     let decemberContainer: HTMLElement = indexOverlay.querySelector('#december');
+    */
 
     let januaryBanner: HTMLElement = indexOverlay.querySelector('#january main');
     let februaryBanner: HTMLElement = indexOverlay.querySelector('#february main');
@@ -48,6 +51,10 @@ export namespace IndexOverlay {
 
         $(sidebarButtons).on('mouseenter', () => {
           indexOverlay.style.display = 'grid';
+        });
+
+        $(overlayBackground).on('mouseenter', () => {
+          indexOverlay.style.display = 'none';
         });
 
         //--|▼| Events toggle through columns: Column #1 |▼|--//
@@ -260,6 +267,13 @@ export namespace IndexOverlay {
     }
   }
   export function changeBanner(icon: String) {
+    let months = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
+    for (let i = 0; i < months.length; i++) {
+      var banner: HTMLHeadElement = document.querySelector(`#${months[i]} main h1`);
+      var buttonInfo: String = document.querySelector(`#${months[i]} a[id*='${icon}'] div button h1`).textContent;
+      banner.textContent = `${buttonInfo}`;
+    }
+    /*
     document.querySelector('#january main h1').textContent = `${document.querySelector(`#january a[id*='${icon}'] div button h1`).textContent}`;
     document.querySelector('#february main h1').textContent = `${document.querySelector(`#february a[id*='${icon}'] div button h1`).textContent}`;
     document.querySelector('#march main h1').textContent = `${document.querySelector(`#march a[id*='${icon}'] div button h1`).textContent}`;
@@ -272,10 +286,17 @@ export namespace IndexOverlay {
     document.querySelector('#october main h1').textContent = `${document.querySelector(`#october a[id*='${icon}'] div button h1`).textContent}`;
     document.querySelector('#november main h1').textContent = `${document.querySelector(`#november a[id*='${icon}'] div button h1`).textContent}`;
     document.querySelector('#december main h1').textContent = `${document.querySelector(`#december a[id*='${icon}'] div button h1`).textContent}`;
+    */
   }
   export function resetBanners() {
-    document.getElementById('index-overlay').style.display = 'none';
+    let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    let maande = ['Januarie', 'Februarie', 'Maart', 'April', 'Mei', 'Junie', 'Julie', 'Augustus', 'September', 'Oktober', 'November', 'Desember'];
 
+    for (let i = 0; i < months.length; i++) {
+      document.querySelector(`#${months[i].toLowerCase()} main h1`).textContent = maande[i];
+    }
+
+    /*
     document.querySelector('#january main h1').textContent = 'January';
     document.querySelector('#february main h1').textContent = 'February';
     document.querySelector('#march main h1').textContent = 'March';
@@ -288,5 +309,6 @@ export namespace IndexOverlay {
     document.querySelector('#october main h1').textContent = 'October';
     document.querySelector('#november main h1').textContent = 'November';
     document.querySelector('#december main h1').textContent = 'December';
+    */
   }
 }
