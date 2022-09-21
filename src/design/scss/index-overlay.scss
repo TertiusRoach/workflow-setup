@@ -163,6 +163,7 @@
   }
   /*--|▲| Global Placement & Layout Setup |▲|--*/
   /*--|▼| Scan Animation & Design Default |▼|--*/
+
   nav {
     main {
       display: flex;
@@ -180,8 +181,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      clip-path: inset(0 0 0 0);
-      transition: clip-path 0.25s;
+      // clip-path: inset(0 0 0 0);
+      // transition: clip-path 0.25s;
       button {
         text-decoration: none;
         background: none;
@@ -193,11 +194,10 @@
           font-size: 2rem;
         }
       }
+      // a:hover div {
+      //   clip-path: inset(100% 0 0 0);
+      // }
     }
-    a:hover div {
-      clip-path: inset(100% 0 0 0);
-    }
-
     a[id*='gr']:hover ~ main {
       background: $green-light;
       h1 {
@@ -234,6 +234,28 @@
       }
     }
   }
+  //--▼ First Semester ▼--//
+  nav[class*='first-semester'] {
+    a div {
+      clip-path: inset(0 0 0 0);
+      transition: clip-path 0.25s;
+    }
+    a:hover div {
+      clip-path: inset(100% 0 0 0);
+    }
+  }
+  //--▲ First Semester ▲--//
+  //--▼ Second Semester ▼--//
+  nav[class*='second-semester'] {
+    a div {
+      clip-path: inset(0 0 0 0);
+      transition: clip-path 0.25s;
+    }
+    a:hover div {
+      clip-path: inset(0 0 100% 0);
+    }
+  }
+  //--▲ Second Semester ▲--//
   /*--|▲| Scan Animation & Design Default |▲|--*/
   /*--|▼| Button Styling |▼|--*/
   nav[class*='true'] {
