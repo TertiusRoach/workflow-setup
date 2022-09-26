@@ -1,3 +1,4 @@
+import { GetDesign } from 'code/utilities/GetDesign';
 export namespace IndexSidebar {
   export function eventsFor(pageName: String | 'default-sidebar') {
     const indexBody = document.getElementById('index-body');
@@ -10,8 +11,15 @@ export namespace IndexSidebar {
     const indexData = document.getElementById('index-data');
     switch (pageName) {
       case 'default-sidebar':
-        // Mark the current month as selected
         IndexSidebar.monthHighlight(indexSidebar);
+
+        console.log(indexOverlay.className);
+        $(indexSidebar).on('mouseenter', () => {
+          if (indexOverlay.className !== 'sidebar-overlay') {
+            new GetDesign.forPage(`sidebar-overlay`);
+          }
+        });
+
         console.log(`--${pageName} Loaded`);
         break;
     }
