@@ -4,14 +4,27 @@
 .default-body #load-foreground .container{grid-row:3/4;grid-column:3/4;filter:drop-shadow(0 0 4em #cfd2d8)}
 .default-body #load-foreground .container img{width:275px;height:275px;transition:12s;transform:opacity(0);transform:scale(0.95)}
 .default-body #load-midground{z-index:4;grid-row:1/4;grid-column:1/5;display:grid;grid-template-rows:40px 1fr 4em;grid-template-columns:80px 1fr 80px;transition:10s;transform:opacity(0)}
-#index-header{z-index:2;width:100%;height:40px;position:fixed;grid-template-rows:40px;filter:drop-shadow(0 0 .5em #935e28);grid-template-columns:145px repeat(3,1fr) 80px}
-#index-header .background{z-index:0;grid-row:1/2;grid-column:1/6;background-color:#0e1e3b}
-.default-header div[id*=sharepoint]{z-index:1;grid-row:1/2;display:flex;align-items:center;justify-content:center}
-.default-header div[id*=sharepoint] button{background:0;outline:0;border:0}.default-header div[id*=sharepoint] button a{text-decoration:none;display:flex;color:white}
-.default-header div[id*=sharepoint] button a h4{margin:4px 0 0 8px}@media only screen and (max-width:563px){.default-header div[id*=sharepoint] button a h4{display:none}
-}.default-header div[id*=sharepoint] button a:hover svg{color:#935e28}.default-header div[id*=sharepoint] button a:hover h4{color:#be9e7e}
-.default-header #akademici-sharepoint{grid-column:2/3}.default-header #administrasie-sharepoint{grid-column:3/4}
-.default-header #operasioneel-sharepoint{grid-column:4/5}#index-main{z-index:0;grid-row:1/4;grid-column:1/6;grid-template-columns:145px 1fr 80px;grid-template-rows:40px 1fr 4em}
+#index-header{width:100vw;height:100vh;display:grid;grid-template-rows:40px 1fr 64px;grid-template-columns:145px repeat(2,1fr) 145px}
+#index-header nav{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:40px repeat(12,1fr)}
+#index-header nav div{display:flex;grid-column:2/3;justify-content:center}#index-header nav div button{border:0;outline:0;background:0}
+#index-header nav div button a{display:flex;text-decoration:none;color:#fcd5aa}#index-header nav div button a img{height:34px;display:flex;position:fixed}
+#index-header nav div button a h1{margin-left:40px}#index-header nav div button a img:nth-child(1){opacity:100;transition:opacity .25s}
+#index-header nav div button a img:nth-child(2){opacity:0;transition:opacity .25s}
+#index-header nav div button a h1{clip-path:inset(0 100% 0 0);transition:clip-path .25s}
+#index-header nav div button a:hover img:nth-child(1){opacity:0}#index-header nav div button a:hover img:nth-child(2){opacity:100;filter:drop-shadow(0 0 .75rem #fcd5aa)}
+#index-header nav div button a:hover h1{clip-path:inset(0 0 0 0);filter:drop-shadow(0 0 .75rem #be9e7e)}
+#index-header nav ul{display:flex;grid-column:2/3;list-style:none;align-items:center;justify-content:left;background:#0e1e3b}
+#index-header nav ul li a{cursor:pointer;text-decoration:none}#index-header nav ul li a svg{display:inherit;position:fixed;font-size:2rem;margin:0 16px}
+#index-header nav ul li a svg:nth-child(1){opacity:100;color:#cfd2d8;transition:opacity .25s}
+#index-header nav ul li a svg:nth-child(2){opacity:0;color:#935e28;transition:opacity .25s}
+#index-header nav ul li a h1{margin:-4px 0 0 64px;color:#cfd2d8;transition:color .25s}
+#index-header nav ul li a:hover svg:nth-child(1){opacity:0}#index-header nav ul li a:hover svg:nth-child(2){opacity:100;filter:drop-shadow(0 0 .75rem #be9e7e)}
+#index-header nav ul li a:hover h1{color:#fcd5aa;filter:drop-shadow(0 0 .75rem #be9e7e)}
+.default-header nav[id*=uitsendings]{grid-row:1/3;grid-column:2/3}.default-header nav[id*=uitsendings] #skofte{grid-row:2/3}
+.default-header nav[id*=uitsendings] #kalender{grid-row:3/4}.default-header nav[id*=uitsendings] #aflaai{grid-row:4/5;border-radius:0 0 8px 8px}
+.default-header nav[id*=departemente]{grid-row:1/3;grid-column:3/4}.default-header nav[id*=departemente] #akademici{grid-row:2/3}
+.default-header nav[id*=departemente] #administrasie{grid-row:3/4}.default-header nav[id*=departemente] #operasioneel{grid-row:4/5;border-radius:0 0 8px 8px}
+#index-main{z-index:0;grid-row:1/4;grid-column:1/6;grid-template-columns:145px 1fr 80px;grid-template-rows:40px 1fr 4em}
 #index-main section[id*=overlay]{display:inherit;grid-column:2/4;grid-row:2/3;grid-template-columns:repeat(5,234px) 1fr;grid-template-rows:44px 257px}
 #index-main section[id*=overlay] header{z-index:1;display:flex;grid-row:1/2;cursor:default;grid-column:1/7;justify-content:center;background-color:#0e1e3b;filter:drop-shadow(0 0 .5em #0e1e3b)}
 #index-main section[id*=overlay] header h1{color:#cfd2d8}#index-main section[id*=overlay] div[id*=button]{grid-row:2/3;display:flex;margin-top:21px;align-items:center;justify-content:center}
@@ -3511,8 +3524,8 @@ main[class*=main] #buttons-overlay .foreground{margin:-44px 0 -210px 0}}@media o
 #index-footer{grid-column:1/6;grid-row:3/4;z-index:2}.default-footer .navigation{padding:0 80px;background:#0e1e3b}
 .default-footer .navigation ul{display:flex;justify-content:space-around}.default-footer .navigation ul li{z-index:10;width:70px;height:70px;list-style:none;position:relative}
 .default-footer .navigation ul li a{width:100%;display:flex;position:relative;text-align:center;align-items:center;flex-direction:column;justify-content:center}
-.default-footer .navigation ul li a .icon{display:block;margin-top:4px;transition:.5s;font-size:1.5em;line-height:75px;position:relative;text-align:center;color:#cfd2d8}
-.default-footer .navigation ul li a .icon:hover{color:#935e28;filter:drop-shadow(0 0 2em #fcd5aa)}
+.default-footer .navigation ul li a .icon{display:block;margin-top:4px;transition:.5s;font-size:1.5em;position:relative;text-align:center;color:#cfd2d8}
+.default-footer .navigation ul li a .icon:hover{color:#be9e7e;filter:drop-shadow(0 0 2em #fcd5aa)}
 .default-footer .navigation ul li a .text{color:#0e1e3b;transform:translateY(20px)}
 .default-footer .navigation ul li.active a .icon{color:#935e28;transform:translateY(-32px);filter:drop-shadow(0 0 .75rem #0e1e3b)}
 .default-footer .navigation ul li.active a .text{opacity:1;transition:1s;font-weight:800;overflow:hidden;font-size:.75em;position:absolute;letter-spacing:.05em;color:#be9e7e;transform:translateY(10px);filter:drop-shadow(0 0 .75rem black)}

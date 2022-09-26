@@ -80,7 +80,7 @@
 }
 /*--▼ .sidebar-overlay ▼--*/
 .sidebar-overlay {
-  /*--|▼| Global Placement & Layout Setup |▼|--*/
+  /*--|▼| Global Placement, Layout Setup, Scan Animation & Design Default |▼|--*/
   nav {
     display: grid;
     grid-column: 1/6;
@@ -241,11 +241,7 @@
     }
     //--▲ Second Semester ▲--//
   }
-  /*--|▲| Global Placement & Layout Setup |▲|--*/
-  /*--|▼| Scan Animation & Design Default |▼|--*/
-  // nav {
-  // }
-  /*--|▲| Scan Animation & Design Default |▲|--*/
+  /*--|▲| Global Placement, Layout Setup, Scan Animation & Design Default |▲|--*/
   /*--|▼| Button Styling |▼|--*/
   nav[class*='true'] {
     a[id*='gr'] {

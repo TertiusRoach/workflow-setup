@@ -8,8 +8,6 @@ export namespace Index {
       new GetDesign.forPage(`default-sidebar`);
       new GetDesign.forPage(`default-footer`);
       new GetDesign.forPage(`default-overlay`);
-      // new GetDesign.forPage(`sidebar-overlay`);
-
       //--► console.log('--index.js Loaded'); ◄--//
     }
   }
