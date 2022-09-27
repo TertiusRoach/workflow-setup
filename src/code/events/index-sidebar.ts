@@ -3,12 +3,22 @@ export namespace IndexSidebar {
   export function eventsFor(pageName: String | 'default-sidebar') {
     const indexBody = document.getElementById('index-body');
     const indexHeader = document.getElementById('index-header');
+    let headerButtons: Object = indexHeader.querySelectorAll('nav[id*="button"] div');
     const indexMain = document.getElementById('index-main');
     const indexSidebar = document.getElementById('index-sidebar');
     let sidebarButtons = document.querySelectorAll('#index-sidebar > div > button > a > h1');
     const indexOverlay = document.getElementById('index-overlay');
     const indexFooter = document.getElementById('index-footer');
     const indexData = document.getElementById('index-data');
+
+    let deactivateButtons = (buttons: Object, container: HTMLElement) => {
+      //--|▼| Deactivate header buttons |▼|--//
+      for (let i = 0; i < Object.keys(buttons).length; i++) {
+        buttons[i].className = '';
+      }
+      container.style.display = 'none';
+    };
+
     switch (pageName) {
       case 'default-sidebar':
         IndexSidebar.monthHighlight(indexSidebar);
@@ -18,6 +28,7 @@ export namespace IndexSidebar {
           if (indexOverlay.className !== 'sidebar-overlay') {
             new GetDesign.forPage(`sidebar-overlay`);
           }
+          deactivateButtons(headerButtons, indexOverlay);
         });
 
         console.log(`--${pageName} Loaded`);

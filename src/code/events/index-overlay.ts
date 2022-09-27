@@ -1,8 +1,14 @@
 export namespace IndexOverlay {
-  export function eventsFor(pageName: String | 'default-overlay' | 'sidebar-overlay') {
+  export function eventsFor(pageName: String | 'default-overlay' | 'header-overlay' | 'sidebar-overlay') {
     const indexBody: HTMLElement = document.getElementById('index-body');
+
     const indexHeader: HTMLElement = document.getElementById('index-header');
+    let headerButtons: Object = indexHeader.querySelectorAll('nav[id*="button"] div');
+    let headerUitsendings: HTMLElement = indexHeader.querySelector('#uitsendings-button div button');
+    let headerDepartemente: HTMLElement = indexHeader.querySelector('#departemente-button div button');
+
     const indexMain: HTMLElement = document.getElementById('index-main');
+
     const indexSidebar: HTMLElement = document.getElementById('index-sidebar');
     let sidebarButtons: Object = document.querySelectorAll('#index-sidebar > div > button > a > h1');
     let activeButtons: Object = document.querySelectorAll('#index-sidebar > div');
@@ -10,20 +16,9 @@ export namespace IndexOverlay {
     const indexOverlay: HTMLElement = document.getElementById('index-overlay');
     let overlayBackground: HTMLElement = indexOverlay.querySelector('.background');
     let monthContainers: Object = indexOverlay.querySelectorAll('nav');
-    /*
-    let januaryContainer: HTMLElement = indexOverlay.querySelector('#january');
-    let februaryContainer: HTMLElement = indexOverlay.querySelector('#february');
-    let marchContainer: HTMLElement = indexOverlay.querySelector('#march');
-    let aprilContainer: HTMLElement = indexOverlay.querySelector('#april');
-    let mayContainer: HTMLElement = indexOverlay.querySelector('#may');
-    let juneContainer: HTMLElement = indexOverlay.querySelector('#june');
-    let julyContainer: HTMLElement = indexOverlay.querySelector('#july');
-    let augustContainer: HTMLElement = indexOverlay.querySelector('#august');
-    let septemberContainer: HTMLElement = indexOverlay.querySelector('#september');
-    let octoberContainer: HTMLElement = indexOverlay.querySelector('#october');
-    let novemberContainer: HTMLElement = indexOverlay.querySelector('#november');
-    let decemberContainer: HTMLElement = indexOverlay.querySelector('#december');
-    */
+
+    let uitsendingsDropdown: HTMLElement = indexOverlay.querySelector('#uitsendings-dropdown');
+    let departementeDropdown: HTMLElement = indexOverlay.querySelector('#departemente-dropdown');
 
     let januaryBanner: HTMLElement = indexOverlay.querySelector('#january main');
     let februaryBanner: HTMLElement = indexOverlay.querySelector('#february main');
@@ -37,14 +32,37 @@ export namespace IndexOverlay {
     let octoberBanner: HTMLElement = indexOverlay.querySelector('#october main');
     let novemberBanner: HTMLElement = indexOverlay.querySelector('#november main');
     let decemberBanner: HTMLElement = indexOverlay.querySelector('#december main');
-
     let overlayBanners: Object = document.querySelectorAll('nav main h1');
 
     const indexFooter: HTMLElement = document.getElementById('index-footer');
+
     const indexData: HTMLElement = document.getElementById('index-data');
+
+    let toggleDropdowns = (visible: HTMLElement, hidden: HTMLElement) => {
+      hidden.style.display = 'none';
+      visible.style.display = 'grid';
+    };
+    let deactivateButtons = (buttons: Object, container: HTMLElement) => {
+      //--|▼| Deactivate header buttons |▼|--//
+      for (let i = 0; i < Object.keys(buttons).length; i++) {
+        buttons[i].className = '';
+      }
+      container.style.display = 'none';
+    };
 
     switch (pageName) {
       case 'default-overlay':
+        break;
+      case 'header-overlay':
+        $(headerUitsendings).on('mouseenter', () => {
+          toggleDropdowns(uitsendingsDropdown, departementeDropdown);
+        });
+        $(headerDepartemente).on('mouseenter', () => {
+          toggleDropdowns(departementeDropdown, uitsendingsDropdown);
+        });
+        $(overlayBackground).on('mouseenter', () => {
+          deactivateButtons(headerButtons, indexOverlay);
+        });
         break;
       case 'sidebar-overlay':
         IndexOverlay.monthHighlight(indexOverlay);
@@ -52,12 +70,14 @@ export namespace IndexOverlay {
         $(sidebarButtons).on('mouseenter', () => {
           indexOverlay.style.display = 'grid';
         });
-
         $(overlayBackground).on('mouseenter', () => {
           indexOverlay.style.display = 'none';
         });
+        $(monthContainers).on('mouseleave', () => {
+          resetBanners();
+        });
 
-        //--|▼| Events toggle through columns: Column #1 |▼|--//
+        //--|▼| Column #1 |▼|--//
         $('a[id*="gr-sheet"]').on('mouseenter', () => {
           changeBanner('gr-sheet');
         });
@@ -164,9 +184,6 @@ export namespace IndexOverlay {
           displayOverlay(pageName, 'december');
         });
         //--|▼| When mouse leaves containe, reset banner |▼|--//
-        $(monthContainers).on('mouseleave', () => {
-          resetBanners();
-        });
         $(januaryBanner).on('mouseenter', () => {
           document.querySelector('#january main h1').textContent = 'January';
         });
@@ -217,6 +234,12 @@ export namespace IndexOverlay {
       $(`.${pageName} #${month[i]}`).css('display', 'none');
     }
     $(`.${pageName} #${display}`).css('display', 'grid');
+  }
+  export function hideOverlay(deactivate: Object, container: HTMLElement) {
+    for (let i = 0; i < Object.keys(deactivate).length; i++) {
+      deactivate[i].className = '';
+    }
+    container.style.display = 'none';
   }
   export function monthHighlight(indexOverlay: HTMLElement) {
     const toggleClass = (container: HTMLElement) => {
@@ -295,20 +318,5 @@ export namespace IndexOverlay {
     for (let i = 0; i < months.length; i++) {
       document.querySelector(`#${months[i].toLowerCase()} main h1`).textContent = maande[i];
     }
-
-    /*
-    document.querySelector('#january main h1').textContent = 'January';
-    document.querySelector('#february main h1').textContent = 'February';
-    document.querySelector('#march main h1').textContent = 'March';
-    document.querySelector('#april main h1').textContent = 'April';
-    document.querySelector('#may main h1').textContent = 'May';
-    document.querySelector('#june main h1').textContent = 'June';
-    document.querySelector('#july main h1').textContent = 'July';
-    document.querySelector('#august main h1').textContent = 'August';
-    document.querySelector('#september main h1').textContent = 'September';
-    document.querySelector('#october main h1').textContent = 'October';
-    document.querySelector('#november main h1').textContent = 'November';
-    document.querySelector('#december main h1').textContent = 'December';
-    */
   }
 }
