@@ -9,6 +9,7 @@
 }
 /*--▼ .default-header ▼--*/
 .default-header {
+  background: $primary-dark;
   //--|▼| Button Styling |▼|--//
   nav {
     grid-row: 1/2;
@@ -26,11 +27,12 @@
           color: $secondary-light;
           img {
             height: 34px;
+            margin: 3px 0;
             display: flex;
             position: fixed;
           }
           h1 {
-            margin-left: 40px;
+            margin: 3px 0 3px 40px;
           }
         }
         //--|▼| Header Button Animation |▼|--//

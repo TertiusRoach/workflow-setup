@@ -1,3 +1,4 @@
+import { GetDesign } from 'code/utilities/GetDesign';
 export namespace IndexOverlay {
   export function eventsFor(pageName: String | 'default-overlay' | 'header-overlay' | 'sidebar-overlay') {
     const indexBody: HTMLElement = document.getElementById('index-body');
@@ -16,7 +17,6 @@ export namespace IndexOverlay {
     const indexOverlay: HTMLElement = document.getElementById('index-overlay');
     let overlayBackground: HTMLElement = indexOverlay.querySelector('.background');
     let monthContainers: Object = indexOverlay.querySelectorAll('nav');
-
     let uitsendingsDropdown: HTMLElement = indexOverlay.querySelector('#uitsendings-dropdown');
     let departementeDropdown: HTMLElement = indexOverlay.querySelector('#departemente-dropdown');
 
@@ -38,9 +38,15 @@ export namespace IndexOverlay {
 
     const indexData: HTMLElement = document.getElementById('index-data');
 
-    let toggleDropdowns = (visible: HTMLElement, hidden: HTMLElement) => {
+    let toggleButtons = (visible: HTMLElement, hidden: HTMLElement) => {
+      indexOverlay.style.display = 'grid';
+      hidden.parentElement.className = '';
+      visible.parentElement.className = 'active';
+    };
+    let toggleDropdowns = (visible: HTMLElement, hidden: HTMLElement, container: HTMLElement) => {
       hidden.style.display = 'none';
       visible.style.display = 'grid';
+      container.style.display = 'grid';
     };
     let deactivateButtons = (buttons: Object, container: HTMLElement) => {
       //--|▼| Deactivate header buttons |▼|--//
@@ -54,11 +60,12 @@ export namespace IndexOverlay {
       case 'default-overlay':
         break;
       case 'header-overlay':
+        headerToggle(indexOverlay);
         $(headerUitsendings).on('mouseenter', () => {
-          toggleDropdowns(uitsendingsDropdown, departementeDropdown);
+          toggleDropdowns(uitsendingsDropdown, departementeDropdown, indexOverlay);
         });
         $(headerDepartemente).on('mouseenter', () => {
-          toggleDropdowns(departementeDropdown, uitsendingsDropdown);
+          toggleDropdowns(departementeDropdown, uitsendingsDropdown, indexOverlay);
         });
         $(overlayBackground).on('mouseenter', () => {
           deactivateButtons(headerButtons, indexOverlay);
@@ -66,84 +73,85 @@ export namespace IndexOverlay {
         break;
       case 'sidebar-overlay':
         IndexOverlay.monthHighlight(indexOverlay);
-
+        // $(indexSidebar).on('mouseenter', () => {
+        //   overlayBackground.style.opacity = '100';
+        //   deactivateButtons(headerButtons, indexOverlay);
+        // });
         $(sidebarButtons).on('mouseenter', () => {
           indexOverlay.style.display = 'grid';
         });
         $(overlayBackground).on('mouseenter', () => {
+          resetNavigation(indexOverlay);
           indexOverlay.style.display = 'none';
+          overlayBackground.style.opacity = '0';
         });
-        $(monthContainers).on('mouseleave', () => {
-          resetBanners();
-        });
-
         //--|▼| Column #1 |▼|--//
         $('a[id*="gr-sheet"]').on('mouseenter', () => {
-          changeBanner('gr-sheet');
+          bannerText('gr-sheet');
         });
         $('a[id*="pi-sheet"]').on('mouseenter', () => {
-          changeBanner('pi-sheet');
+          bannerText('pi-sheet');
           // changeBanner('sheet');
         });
         $('a[id*="ye-sheet"]').on('mouseenter', () => {
-          changeBanner('ye-sheet');
+          bannerText('ye-sheet');
           // changeBanner('sheet');
         });
         $('a[id*="or-sheet"]').on('mouseenter', () => {
-          changeBanner('or-sheet');
+          bannerText('or-sheet');
           // changeBanner('sheet');
         });
         $('a[id*="bl-sheet"]').on('mouseenter', () => {
-          changeBanner('bl-sheet');
+          bannerText('bl-sheet');
           // changeBanner('sheet');
         });
         //--|▼| Column #2 |▼|--//
         $('a[id*="gr-edit"]').on('mouseenter', () => {
-          changeBanner('gr-edit');
+          bannerText('gr-edit');
         });
         $('a[id*="pi-edit"]').on('mouseenter', () => {
-          changeBanner('pi-edit');
+          bannerText('pi-edit');
         });
         $('a[id*="ye-edit"]').on('mouseenter', () => {
-          changeBanner('ye-edit');
+          bannerText('ye-edit');
         });
         $('a[id*="or-edit"]').on('mouseenter', () => {
-          changeBanner('or-edit');
+          bannerText('or-edit');
         });
         $('a[id*="bl-edit"]').on('mouseenter', () => {
-          changeBanner('bl-edit');
+          bannerText('bl-edit');
         });
         //--|▼| Column #3 |▼|--//
         $('a[id*="gr-book"]').on('mouseenter', () => {
-          changeBanner('gr-book');
+          bannerText('gr-book');
         });
         $('a[id*="pi-book"]').on('mouseenter', () => {
-          changeBanner('pi-book');
+          bannerText('pi-book');
         });
         $('a[id*="ye-book"]').on('mouseenter', () => {
-          changeBanner('ye-book');
+          bannerText('ye-book');
         });
         $('a[id*="or-book"]').on('mouseenter', () => {
-          changeBanner('or-book');
+          bannerText('or-book');
         });
         $('a[id*="bl-book"]').on('mouseenter', () => {
-          changeBanner('bl-boo');
+          bannerText('bl-boo');
         });
         //--|▼| Column #4 |▼|--//
         $('a[id*="gr-cloud"]').on('mouseenter', () => {
-          changeBanner('gr-cloud');
+          bannerText('gr-cloud');
         });
         $('a[id*="pi-cloud"]').on('mouseenter', () => {
-          changeBanner('pi-cloud');
+          bannerText('pi-cloud');
         });
         $('a[id*="ye-cloud"]').on('mouseenter', () => {
-          changeBanner('ye-cloud');
+          bannerText('ye-cloud');
         });
         $('a[id*="or-cloud"]').on('mouseenter', () => {
-          changeBanner('or-cloud');
+          bannerText('or-cloud');
         });
         $('a[id*="bl-cloud"]').on('mouseenter', () => {
-          changeBanner('bl-cloud');
+          bannerText('bl-cloud');
         });
 
         //--|▼| Show Month Overlays: 0 = 'January' |▼|--//
@@ -225,6 +233,23 @@ export namespace IndexOverlay {
     //--► console.log(`--${pageName} Loaded`); ◄--//
   }
 
+  export function headerToggle(indexOverlay: HTMLElement) {
+    let activeButton = document.querySelector('#index-header nav .active').parentElement.id.split('-')[0];
+    var uitsendingsDropdown: HTMLElement = indexOverlay.querySelector('#uitsendings-dropdown');
+    var departementeDropdown: HTMLElement = indexOverlay.querySelector('#departemente-dropdown');
+    switch (activeButton) {
+      case 'uitsendings':
+        uitsendingsDropdown.style.display = 'grid';
+        departementeDropdown.style.display = 'none';
+        break;
+      case 'departemente':
+        departementeDropdown.style.display = 'grid';
+        uitsendingsDropdown.style.display = 'none';
+        break;
+      default:
+        indexOverlay.style.display = 'none';
+    }
+  }
   export function displayOverlay(
     pageName: String,
     display: 'january' | 'february' | 'march' | 'april' | 'may' | 'june' | 'july' | 'august' | 'september' | 'october' | 'november' | 'december'
@@ -289,34 +314,24 @@ export namespace IndexOverlay {
         break;
     }
   }
-  export function changeBanner(icon: String) {
+  export function bannerText(icon: String) {
     let months = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
+    let maande = ['Januarie', 'Februarie', 'Maart', 'April', 'Mei', 'Junie', 'Julie', 'Augustus', 'September', 'Oktober', 'November', 'Desember'];
+
     for (let i = 0; i < months.length; i++) {
       var banner: HTMLHeadElement = document.querySelector(`#${months[i]} main h1`);
       var buttonInfo: String = document.querySelector(`#${months[i]} a[id*='${icon}'] div button h1`).textContent;
       banner.textContent = `${buttonInfo}`;
     }
-    /*
-    document.querySelector('#january main h1').textContent = `${document.querySelector(`#january a[id*='${icon}'] div button h1`).textContent}`;
-    document.querySelector('#february main h1').textContent = `${document.querySelector(`#february a[id*='${icon}'] div button h1`).textContent}`;
-    document.querySelector('#march main h1').textContent = `${document.querySelector(`#march a[id*='${icon}'] div button h1`).textContent}`;
-    document.querySelector('#april main h1').textContent = `${document.querySelector(`#april a[id*='${icon}'] div button h1`).textContent}`;
-    document.querySelector('#may main h1').textContent = `${document.querySelector(`#may a[id*='${icon}'] div button h1`).textContent}`;
-    document.querySelector('#june main h1').textContent = `${document.querySelector(`#june a[id*='${icon}'] div button h1`).textContent}`;
-    document.querySelector('#july main h1').textContent = `${document.querySelector(`#july a[id*='${icon}'] div button h1`).textContent}`;
-    document.querySelector('#august main h1').textContent = `${document.querySelector(`#august a[id*='${icon}'] div button h1`).textContent}`;
-    document.querySelector('#september main h1').textContent = `${document.querySelector(`#september a[id*='${icon}'] div button h1`).textContent}`;
-    document.querySelector('#october main h1').textContent = `${document.querySelector(`#october a[id*='${icon}'] div button h1`).textContent}`;
-    document.querySelector('#november main h1').textContent = `${document.querySelector(`#november a[id*='${icon}'] div button h1`).textContent}`;
-    document.querySelector('#december main h1').textContent = `${document.querySelector(`#december a[id*='${icon}'] div button h1`).textContent}`;
-    */
   }
-  export function resetBanners() {
+  export function resetNavigation(indexOverlay: HTMLElement) {
     let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     let maande = ['Januarie', 'Februarie', 'Maart', 'April', 'Mei', 'Junie', 'Julie', 'Augustus', 'September', 'Oktober', 'November', 'Desember'];
 
     for (let i = 0; i < months.length; i++) {
-      document.querySelector(`#${months[i].toLowerCase()} main h1`).textContent = maande[i];
+      var element: HTMLElement = indexOverlay.querySelector(`#${months[i].toLowerCase()}`);
+      indexOverlay.querySelector(`#${months[i].toLowerCase()} main h1`).textContent = maande[i];
+      element.style.display = 'none';
     }
   }
 }

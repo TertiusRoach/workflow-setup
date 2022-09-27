@@ -5,10 +5,10 @@
 .default-body #load-foreground .container img{width:275px;height:275px;transition:12s;transform:opacity(0);transform:scale(0.95)}
 .default-body #load-midground{z-index:4;grid-row:1/4;grid-column:1/5;display:grid;grid-template-rows:40px 1fr 4em;grid-template-columns:80px 1fr 80px;transition:10s;transform:opacity(0)}
 #index-header{z-index:1;width:100vw;display:grid;grid-template-rows:40px;grid-template-columns:145px 1fr 250px 2fr 250px 1fr 145px}
-.default-header nav{grid-row:1/2}.default-header nav div{display:flex;grid-column:2/3;justify-content:center}
+.default-header{background:#0e1e3b}.default-header nav{grid-row:1/2}.default-header nav div{display:flex;grid-column:2/3;justify-content:center}
 .default-header nav div button{border:0;outline:0;background:0}.default-header nav div button a{display:flex;text-decoration:none;color:#fcd5aa}
-.default-header nav div button a img{height:34px;display:flex;position:fixed}.default-header nav div button a h1{margin-left:40px}
-.default-header nav div button a img:nth-child(1){opacity:100;transition:opacity .25s}
+.default-header nav div button a img{height:34px;margin:3px 0;display:flex;position:fixed}
+.default-header nav div button a h1{margin:3px 0 3px 40px}.default-header nav div button a img:nth-child(1){opacity:100;transition:opacity .25s}
 .default-header nav div button a img:nth-child(2){opacity:0;transition:opacity .25s}
 .default-header nav div button a h1{clip-path:inset(0 100% 0 0);transition:clip-path .25s}
 .default-header nav div[class*=active] button a img:nth-child(1){opacity:0}.default-header nav div[class*=active] button a img:nth-child(2){opacity:100;filter:drop-shadow(0 0 .75rem #fcd5aa)}
@@ -51,7 +51,7 @@
 .header-overlay nav[id*=uitsendings] #kalender{grid-row:2/3}.header-overlay nav[id*=uitsendings] #aflaai{grid-row:3/4;border-radius:0 0 8px 8px}
 .header-overlay nav[id*=departemente]{grid-row:1/4;grid-column:4/5}.header-overlay nav[id*=departemente] #akademici{grid-row:1/2}
 .header-overlay nav[id*=departemente] #administrasie{grid-row:2/3}.header-overlay nav[id*=departemente] #operasioneel{grid-row:3/4;border-radius:0 0 8px 8px}
-.header-overlay .background{z-index:-2;grid-row:1/13;grid-column:1/8;background:linear-gradient(to bottom,rgba(46,14,59,0.8),rgba(46,14,59,0.2))}
+.header-overlay .background{z-index:-2;grid-row:1/13;grid-column:1/8;background:linear-gradient(to bottom,rgba(14,30,59,0.8),rgba(14,30,59,0.2))}
 .sidebar-overlay nav{display:grid;grid-column:1/6;grid-template-rows:repeat(5,1fr);grid-template-columns:repeat(5,1fr)}
 .sidebar-overlay nav a div,.sidebar-overlay nav ul li{height:100%;display:flex;align-items:center;justify-content:center}
 .sidebar-overlay nav a div button,.sidebar-overlay nav ul li button{text-decoration:none;background:0;outline:0;border:0}
@@ -111,7 +111,7 @@
 .sidebar-overlay #october{grid-row:6/11}.sidebar-overlay #october #bl-sheet-oct div,.sidebar-overlay #october .bl-sheet li{border-bottom-right-radius:8px}
 .sidebar-overlay #november{grid-row:7/12}.sidebar-overlay #november #bl-sheet-nov div,.sidebar-overlay #november .bl-sheet li{border-bottom-right-radius:8px}
 .sidebar-overlay #december{grid-row:8/13}.sidebar-overlay #december #bl-sheet-dec div,.sidebar-overlay #december .bl-sheet li{border-bottom-right-radius:8px}
-.sidebar-overlay .background{z-index:-2;grid-row:1/13;grid-column:1/8;background:linear-gradient(to bottom right,rgba(46,14,59,0.2),rgba(46,14,59,0.8))}
+.sidebar-overlay .background{z-index:-2;grid-row:1/13;grid-column:1/8;background:linear-gradient(to bottom right,rgba(14,30,59,0.2),rgba(14,30,59,0.8))}
 @media only screen and (max-height:2160px){section[class*=sidebar]{grid-template-columns:repeat(6,171.3333333333px) 1fr;grid-template-rows:repeat(12,171.3333333333px)}
 }@media only screen and (max-height:2159px){section[class*=sidebar]{grid-template-columns:repeat(6,171.25px) 1fr;grid-template-rows:repeat(12,171.25px)}
 }@media only screen and (max-height:2158px){section[class*=sidebar]{grid-template-columns:repeat(6,171.1666666667px) 1fr;grid-template-rows:repeat(12,171.1666666667px)}
