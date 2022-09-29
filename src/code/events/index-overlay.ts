@@ -61,6 +61,13 @@ export namespace IndexOverlay {
         break;
       case 'header-overlay':
         headerToggle(indexOverlay);
+        $(indexSidebar).on('mouseenter', () => {
+          if (indexOverlay.className !== 'header-overlay') {
+            indexOverlay.style.display = 'none';
+            new GetDesign.forPage('sidebar-overlay');
+            deactivateButtons(headerButtons, indexOverlay);
+          }
+        });
         $(headerUitsendings).on('mouseenter', () => {
           toggleDropdowns(uitsendingsDropdown, departementeDropdown, indexOverlay);
         });
@@ -68,23 +75,20 @@ export namespace IndexOverlay {
           toggleDropdowns(departementeDropdown, uitsendingsDropdown, indexOverlay);
         });
         $(overlayBackground).on('mouseenter', () => {
+          indexOverlay.style.display = 'none';
           deactivateButtons(headerButtons, indexOverlay);
         });
         break;
       case 'sidebar-overlay':
         IndexOverlay.monthHighlight(indexOverlay);
-        // $(indexSidebar).on('mouseenter', () => {
-        //   overlayBackground.style.opacity = '100';
-        //   deactivateButtons(headerButtons, indexOverlay);
-        // });
         $(sidebarButtons).on('mouseenter', () => {
           indexOverlay.style.display = 'grid';
         });
-        $(overlayBackground).on('mouseenter', () => {
-          resetNavigation(indexOverlay);
+        $(monthContainers).on('mouseleave', () => {
           indexOverlay.style.display = 'none';
-          overlayBackground.style.opacity = '0';
+          resetNavigation(indexOverlay);
         });
+
         //--|▼| Column #1 |▼|--//
         $('a[id*="gr-sheet"]').on('mouseenter', () => {
           bannerText('gr-sheet');
