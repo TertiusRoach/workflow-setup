@@ -14,10 +14,12 @@ export namespace IndexFooter {
     const indexData: HTMLElement = document.getElementById('index-data');
 
     let toggleButtons = (buttons: Object, container: HTMLElement) => {
-      //--|▼| Deactivate header buttons |▼|--//
+      //--|▼| Deactivate Header Buttons |▼|--//
       for (let i = 0; i < Object.keys(buttons).length; i++) {
         buttons[i].className = '';
       }
+
+      //--|▼| Highlight Header Button |▼|--//
       container.querySelector('div').className = 'active';
     };
 
