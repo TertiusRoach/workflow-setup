@@ -15,8 +15,9 @@ export namespace IndexOverlay {
     let activeButtons: Object = document.querySelectorAll('#index-sidebar > div');
 
     const indexOverlay: HTMLElement = document.getElementById('index-overlay');
-    let overlayBackground: HTMLElement = indexOverlay.querySelector('.background');
     let monthContainers: Object = indexOverlay.querySelectorAll('nav');
+    let overlayBackground: HTMLElement = document.querySelector('#index-overlay .background');
+
     let uitsendingsDropdown: HTMLElement = indexOverlay.querySelector('#uitsendings-dropdown');
     let departementeDropdown: HTMLElement = indexOverlay.querySelector('#departemente-dropdown');
 

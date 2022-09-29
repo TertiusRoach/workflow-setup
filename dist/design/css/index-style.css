@@ -18,23 +18,28 @@
 .default-sidebar{background:#0e1e3b}.default-sidebar div[id*=button]{z-index:1;grid-column:1/2;grid-template-columns:20px 1fr}
 .default-sidebar div[id*=button] button{grid-column:1/3;background:0;outline:0;border:0;height:100%;display:flex;align-items:center;justify-content:flex-start}
 .default-sidebar div[id*=button] button a{text-decoration:none;color:#935e28}.default-sidebar div[id*=button] button a h1{margin-left:20px}
-.default-sidebar div[id*=button] button a:hover{color:#be9e7e}.default-sidebar div[id*=button] .active a{color:white}
+.default-sidebar div[id*=button] button a:hover{color:#be9e7e}.default-sidebar div[id*=button] .active a{color:#cfd2d8}
 .default-sidebar #january-button{grid-row:2/3}.default-sidebar #february-button{grid-row:3/4}
 .default-sidebar #march-button{grid-row:4/5}.default-sidebar #april-button{grid-row:5/6}
 .default-sidebar #may-button{grid-row:6/7}.default-sidebar #june-button{grid-row:7/8}
 .default-sidebar #july-button{grid-row:8/9}.default-sidebar #august-button{grid-row:9/10}
 .default-sidebar #september-button{grid-row:10/11}.default-sidebar #october-button{grid-row:11/12}
 .default-sidebar #november-button{grid-row:12/13}.default-sidebar #december-button{grid-row:13/14}
-#index-footer{grid-column:1/6;grid-row:3/4;z-index:2}.default-footer .navigation{padding:0 80px;background:#0e1e3b}
-.default-footer .navigation ul{display:flex;justify-content:space-around}.default-footer .navigation ul li{z-index:10;width:70px;height:70px;list-style:none;position:relative}
-.default-footer .navigation ul li a{width:100%;display:flex;position:relative;text-align:center;align-items:center;flex-direction:column;justify-content:center}
-.default-footer .navigation ul li a .icon{display:block;margin-top:4px;transition:.5s;font-size:1.5em;position:relative;text-align:center;color:#cfd2d8}
-.default-footer .navigation ul li a .icon:hover{color:#be9e7e;filter:drop-shadow(0 0 2em #fcd5aa)}
-.default-footer .navigation ul li a .text{color:#0e1e3b;transform:translateY(20px)}
-.default-footer .navigation ul li.active a .icon{color:#935e28;transform:translateY(-32px);filter:drop-shadow(0 0 .75rem #0e1e3b)}
-.default-footer .navigation ul li.active a .text{opacity:1;transition:1s;font-weight:800;overflow:hidden;font-size:.75em;position:absolute;letter-spacing:.05em;color:#be9e7e;transform:translateY(10px);filter:drop-shadow(0 0 .75rem black)}
-#index-overlay{z-index:1;grid-row:2/3;grid-column:2/4}.default-overlay{display:none}
-.header-overlay{display:grid;grid-row:2/3;grid-column:2/5;grid-template-rows:repeat(12,1fr);grid-template-columns:1fr 250px 2fr 250px 1fr 145px}
+#index-footer{z-index:2;display:grid;grid-row:3/4;grid-column:2/6;grid-template-rows:64px;grid-template-columns:1fr 45px 1fr 45px 1fr 45px 1fr 145px}
+#index-footer nav{grid-row:1/2}#index-footer nav div button{border:0;outline:0;background:0}
+#index-footer nav div button a{display:flex;align-items:center;text-decoration:none;transition:transform .5s;transform:translateY(16px)}
+#index-footer nav div button a svg{position:fixed;font-size:3rem;color:#cfd2d8}#index-footer nav div button a svg:nth-child(1){opacity:100;color:#cfd2d8;transition:opacity .25s}
+#index-footer nav div button a svg:nth-child(2){opacity:0;color:#935e28;transition:opacity .25s}
+#index-footer nav div h3{display:flex;align-items:center;justify-content:center;cursor:pointer;color:#cfd2d8;transition:transform .5s;transform:translateY(32px) scaleY(0)}
+#index-footer nav:hover div button a{transform:translateY(-24px)}#index-footer nav:hover div button a svg:nth-child(1){opacity:0}
+#index-footer nav:hover div button a svg:nth-child(2){opacity:100;filter:drop-shadow(0 0 .75rem #fcd5aa)}
+#index-footer nav:hover div h3{color:#be9e7e;transform:translateY(0) scaleY(1);filter:drop-shadow(0 0 .75rem #fcd5aa)}
+#index-footer nav div[class*=active] button a{cursor:default;transform:translateY(-24px)}
+#index-footer nav div[class*=active] button a svg:nth-child(1){opacity:0}#index-footer nav div[class*=active] button a svg:nth-child(2){opacity:100;color:#935e28;filter:drop-shadow(0 0 .75rem #fcd5aa)}
+#index-footer nav div[class*=active] h3{cursor:default;color:#be9e7e;transform:translateY(0) scaleY(1);filter:drop-shadow(0 0 .75rem #fcd5aa)}
+.default-footer{background:#0e1e3b}.default-footer #opdatering{grid-column:2/3}.default-footer #kalender{grid-column:4/5}
+.default-footer #statistieke{grid-column:6/7}#index-overlay{z-index:1;grid-row:2/3;grid-column:2/4}
+.default-overlay{display:none}.header-overlay{display:grid;grid-row:2/3;grid-column:2/5;grid-template-rows:repeat(12,1fr);grid-template-columns:1fr 250px 2fr 250px 1fr 145px}
 .header-overlay nav{display:grid;grid-template-columns:1fr;grid-template-rows:repeat(3,1fr)}
 .header-overlay nav div{grid-column:1/2;background:#6e7889;transition:background .25s}
 .header-overlay nav div button{width:100%;height:100%;border:0;outline:0;background:0}
