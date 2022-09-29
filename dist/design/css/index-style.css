@@ -37,7 +37,7 @@
 #index-footer nav div[class*=active] button li{cursor:default;transform:translateY(-32px)}
 #index-footer nav div[class*=active] button li svg:nth-child(1){opacity:0}#index-footer nav div[class*=active] button li svg:nth-child(2){opacity:100;color:#935e28;filter:drop-shadow(0 0 .75rem #fcd5aa)}
 #index-footer nav div[class*=active] h3{cursor:default;color:#be9e7e;transform:translateY(0) scaleY(1);filter:drop-shadow(0 0 .75rem #fcd5aa)}
-.default-footer{background:#0e1e3b}.default-footer #opdatering{grid-column:2/3}.default-footer #kalender{grid-column:4/5}
+.default-footer{background:#0e1e3b}.default-footer #opdatering{grid-column:2/3}.default-footer #rooster{grid-column:4/5}
 .default-footer #statistieke{grid-column:6/7}#index-overlay{z-index:1;grid-row:2/3;grid-column:2/4}
 .default-overlay{display:none}.header-overlay{display:grid;grid-row:2/3;grid-column:2/5;grid-template-rows:repeat(12,1fr);grid-template-columns:1fr 250px 2fr 250px 1fr 145px}
 .header-overlay nav{display:grid;grid-template-columns:1fr;grid-template-rows:repeat(3,1fr)}
