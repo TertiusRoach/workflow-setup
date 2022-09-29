@@ -26,16 +26,16 @@
 .default-sidebar #september-button{grid-row:10/11}.default-sidebar #october-button{grid-row:11/12}
 .default-sidebar #november-button{grid-row:12/13}.default-sidebar #december-button{grid-row:13/14}
 #index-footer{z-index:2;display:grid;grid-row:3/4;grid-column:2/6;grid-template-rows:64px;grid-template-columns:1fr 45px 1fr 45px 1fr 45px 1fr 145px}
-#index-footer nav{grid-row:1/2}#index-footer nav div button{border:0;outline:0;background:0}
-#index-footer nav div button a{display:flex;align-items:center;text-decoration:none;transition:transform .5s;transform:translateY(16px)}
-#index-footer nav div button a svg{position:fixed;font-size:3rem;color:#cfd2d8}#index-footer nav div button a svg:nth-child(1){opacity:100;color:#cfd2d8;transition:opacity .25s}
-#index-footer nav div button a svg:nth-child(2){opacity:0;color:#935e28;transition:opacity .25s}
-#index-footer nav div h3{display:flex;align-items:center;justify-content:center;cursor:pointer;color:#cfd2d8;transition:transform .5s;transform:translateY(32px) scaleY(0)}
-#index-footer nav:hover div button a{transform:translateY(-24px)}#index-footer nav:hover div button a svg:nth-child(1){opacity:0}
-#index-footer nav:hover div button a svg:nth-child(2){opacity:100;filter:drop-shadow(0 0 .75rem #fcd5aa)}
-#index-footer nav:hover div h3{color:#be9e7e;transform:translateY(0) scaleY(1);filter:drop-shadow(0 0 .75rem #fcd5aa)}
-#index-footer nav div[class*=active] button a{cursor:default;transform:translateY(-24px)}
-#index-footer nav div[class*=active] button a svg:nth-child(1){opacity:0}#index-footer nav div[class*=active] button a svg:nth-child(2){opacity:100;color:#935e28;filter:drop-shadow(0 0 .75rem #fcd5aa)}
+#index-footer nav{grid-row:1/2}#index-footer nav div{cursor:pointer}#index-footer nav div button{border:0;outline:0;background:0}
+#index-footer nav div button li{display:flex;align-items:center;text-decoration:none;transition:transform .5s;transform:translateY(16px)}
+#index-footer nav div button li svg{position:fixed;font-size:3rem;color:#cfd2d8}#index-footer nav div button li svg:nth-child(1){opacity:100;color:#cfd2d8;transition:opacity .25s}
+#index-footer nav div button li svg:nth-child(2){opacity:0;color:#935e28;transition:opacity .25s}
+#index-footer nav div h3{display:flex;align-items:center;color:#cfd2d8;justify-content:center;transition:transform .5s;transform:translateY(32px) scaleY(0)}
+#index-footer nav:hover div button li{cursor:pointer;transform:translateY(-32px)}
+#index-footer nav:hover div button li svg:nth-child(1){opacity:0}#index-footer nav:hover div button li svg:nth-child(2){opacity:100;filter:drop-shadow(0 0 .75rem #fcd5aa)}
+#index-footer nav:hover div h3{cursor:pointer;color:#be9e7e;transform:translateY(0) scaleY(1);filter:drop-shadow(0 0 .75rem #fcd5aa)}
+#index-footer nav div[class*=active] button li{cursor:default;transform:translateY(-32px)}
+#index-footer nav div[class*=active] button li svg:nth-child(1){opacity:0}#index-footer nav div[class*=active] button li svg:nth-child(2){opacity:100;color:#935e28;filter:drop-shadow(0 0 .75rem #fcd5aa)}
 #index-footer nav div[class*=active] h3{cursor:default;color:#be9e7e;transform:translateY(0) scaleY(1);filter:drop-shadow(0 0 .75rem #fcd5aa)}
 .default-footer{background:#0e1e3b}.default-footer #opdatering{grid-column:2/3}.default-footer #kalender{grid-column:4/5}
 .default-footer #statistieke{grid-column:6/7}#index-overlay{z-index:1;grid-row:2/3;grid-column:2/4}
