@@ -22,7 +22,7 @@
 .login-main #load-midground img[src*="images/svg/**/*.svg"]{content:url("../../images/svg/akademia/akademia-blue.svg")}
 .default-header nav div button a img[src*="images/svg/**/*-white.svg"]{content:url("../../images/svg/akademia/akademia-white.svg")}
 .default-header nav div button a img[src*="images/svg/**/*-secondary.svg"]{content:url("../../images/svg/akademia/akademia-bronze.svg")}
-#index-main{z-index:2;grid-row:2/3;grid-column:3/6;z-index:0;grid-row:1/4;grid-column:1/6;grid-template-rows:40px 1fr 4em;grid-template-columns:145px 1fr 80px;background:linear-gradient(to top right,#0e1e3b,#cfd2d8)}
+#index-main{z-index:0;grid-row:1/4;grid-column:1/6;grid-template-rows:40px 1fr 4em;grid-template-columns:145px 1fr 80px;background:linear-gradient(to top right,#0e1e3b,#cfd2d8)}
 #index-main section[id*=overlay]{display:inherit;grid-column:2/4;grid-row:2/3;grid-template-rows:44px 257px;grid-template-columns:repeat(5,234px) 1fr}
 #index-main section[id*=overlay] header{z-index:1;display:flex;grid-row:1/2;cursor:default;grid-column:1/7;justify-content:center;background-color:#0e1e3b;filter:drop-shadow(0 0 .5em #0e1e3b)}
 #index-main section[id*=overlay] header h1{color:#cfd2d8}#index-main section[id*=overlay] div[id*=button]{grid-row:2/3;display:flex;margin-top:21px;align-items:center;justify-content:center}
@@ -45,7 +45,7 @@
 .default-main #buttons-overlay #statistics-button{grid-column:1/6;margin-top:0}.default-main #buttons-overlay #statistics-button button{background-color:#0e1e3b}
 .default-main #buttons-overlay #statistics-button button a{color:#cfd2d8}.default-main #buttons-overlay #statistics-button button a:hover{filter:drop-shadow(0 0 2em #fcd5aa)}
 .default-main div[class*=blur]{filter:blur(4px)}.login-main #load-midground{z-index:4;grid-row:2/3;grid-column:2/3;display:flex;align-items:center;justify-content:center;grid-template-rows:40px 1fr 4em;grid-template-columns:80px 1fr 80px;transition:10s;transform:opacity(0)}
-.login-main #load-midground img{height:50%}.login-main i{height:125px;position:absolute;border-bottom-left-radius:5px;border-bottom-right-radius:5px;animation:animate 5s linear infinite;background:linear-gradient(transparent,white)}
+.login-main #load-midground img{height:50%;filter:drop-shadow(0 0 8px #cfd2d8)}.login-main i{height:125px;position:absolute;border-bottom-left-radius:5px;border-bottom-right-radius:5px;animation:animate 5s linear infinite;background:linear-gradient(transparent,white)}
 .login-main i:nth-child(3n+1){background:linear-gradient(transparent,#0e1e3b)}.login-main i:nth-child(3n+2){background:linear-gradient(transparent,#6e7889)}
 .login-main i:nth-child(3n+3){background:linear-gradient(transparent,#cfd2d8)}@keyframes animate{0%{transform:translateY(-200px)}
 100%{transform:translateY(calc(100vh + 200px))}}.opdatering-main #buttons-overlay .foreground{z-index:1;grid-row:2/3;grid-column:6/7;background-color:#0e1e3b}
