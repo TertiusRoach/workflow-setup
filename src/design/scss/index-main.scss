@@ -104,74 +104,65 @@
       }
     }
 
-    div {
-      button {
-        border: none;
-        outline: none;
-        background: none;
-        li {
-          height: 44px;
-          width: 234px;
-          display: flex;
-          align-items: center;
-          text-decoration: none;
-          svg {
-            z-index: 1;
-            cursor: pointer;
-            font-size: 2rem;
-            position: fixed;
-          }
-          h3 {
-            color: $primary-light;
-            transition: color 0.25s;
-            padding: 9.5px 0 9.5px 0;
-            transition: clip-path 0.25s;
-          }
+    div button {
+      border: none;
+      outline: none;
+      background: none;
+      li {
+        height: 44px;
+        width: 234px;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        svg {
+          z-index: 1;
+          cursor: pointer;
+          font-size: 2rem;
+          position: fixed;
+        }
+        h3 {
+          color: $primary-light;
+          transition: color 0.25s;
+          padding: 9.5px 0 9.5px 0;
+          transition: clip-path 0.25s;
+        }
 
-          svg:nth-child(1) {
-            opacity: 100;
-            color: $primary-light;
-            transition: opacity 0.25s;
-          }
-          svg:nth-child(2) {
-            opacity: 0;
-            color: $secondary-dark;
-            transition: opacity 0.25s;
-          }
+        svg:nth-child(1) {
+          opacity: 100;
+          color: $primary-light;
+          transition: opacity 0.25s;
         }
-        li:hover {
-          svg:nth-child(1) {
-            opacity: 0;
-          }
-          svg:nth-child(2) {
-            opacity: 100;
-            filter: drop-shadow(0 0 0.75rem $secondary-medium);
-          }
-          h3 {
-            color: $secondary-light;
-            clip-path: inset(0 0 0 0);
-            filter: drop-shadow(0 0 0.75rem $secondary-medium);
-          }
-        }
-        .visible {
-          display: flex;
-        }
-        .hidden {
-          display: none;
+        svg:nth-child(2) {
+          opacity: 0;
+          color: $secondary-dark;
+          transition: opacity 0.25s;
         }
       }
+      li:hover {
+        svg:nth-child(1) {
+          opacity: 0;
+        }
+        svg:nth-child(2) {
+          opacity: 100;
+          filter: drop-shadow(0 0 0.75rem $secondary-medium);
+        }
+        h3 {
+          color: $secondary-light;
+          clip-path: inset(0 0 0 0);
+          filter: drop-shadow(0 0 0.75rem $secondary-medium);
+        }
+      }
+      .visible {
+        display: flex;
+      }
+      .hidden {
+        display: none;
+      }
     }
-    // div:hover {
-    //   button a {
-    //     svg,
-    //     h2 {
-    //       cursor: pointer;
-    //     }
-    //   }
-    // }
   }
 
   #opdatering-buttons {
+    z-index: 1;
     display: grid;
     grid-row: 2/3;
     grid-column: 1/6;
@@ -9384,135 +9375,3 @@ main[id*='index'] {
     }
   }
 }
-
-/*
-  #buttons-overlay {
-    display: none;
-    .foreground {
-      z-index: 1;
-      grid-row: 2/3;
-      grid-column: 6/7;
-      background-color: $primary-dark;
-      // filter: drop-shadow(0 0 0.5em $secondary-dark);
-    }
-    #green-button {
-      grid-column: 1/2;
-      button {
-        a {
-          color: $green-dark;
-        }
-        a:hover {
-          filter: drop-shadow(0 0 0.75rem $green-neon);
-        }
-        background-color: $green-light;
-      }
-    }
-    #pink-button {
-      grid-column: 2/3;
-      button {
-        a {
-          color: $pink-dark;
-        }
-        a:hover {
-          filter: drop-shadow(0 0 0.75rem $pink-neon);
-        }
-        background-color: $pink-light;
-      }
-    }
-    #yellow-button {
-      grid-column: 3/4;
-      button {
-        a {
-          color: $yellow-dark;
-        }
-        a:hover {
-          filter: drop-shadow(0 0 0.75rem $yellow-neon);
-        }
-        background-color: $yellow-light;
-      }
-    }
-    #orange-button {
-      grid-column: 4/5;
-      button {
-        a {
-          color: $orange-dark;
-        }
-        a:hover {
-          filter: drop-shadow(0 0 0.75rem $orange-neon);
-        }
-        background-color: $orange-light;
-      }
-    }
-    #blue-button {
-      grid-column: 5/6;
-      button {
-        a {
-          color: $blue-dark;
-        }
-        a:hover {
-          filter: drop-shadow(0 0 0.75rem $blue-neon);
-        }
-        background-color: $blue-light;
-      }
-    }
-    #statistics-button {
-      grid-column: 1/6;
-      margin-top: 0px;
-      button {
-        a {
-          color: $primary-light;
-        }
-        a:hover {
-          filter: drop-shadow(0 0 2em $secondary-light);
-        }
-        background-color: $primary-dark;
-      }
-    }
-  }
-  */
-/*
-  section[id*='overlay'] {
-    grid-row: 2/3;
-    grid-column: 2/4;
-
-    
-    display: inherit;
-
-
-    grid-template-rows: 44px 257px;
-    grid-template-columns: repeat(5, 234px) 1fr;
-
-    header {
-      z-index: 1;
-      display: flex;
-      grid-row: 1/2;
-      cursor: default;
-      grid-column: 1/7;
-      justify-content: center;
-      background-color: $primary-dark;
-      filter: drop-shadow(0 0 0.5em $primary-dark);
-      h1 {
-        color: $primary-light;
-      }
-    }
-    div[id*='button'] {
-      grid-row: 2/3;
-      display: flex;
-      margin-top: 21px;
-      align-items: center;
-      justify-content: center;
-      button {
-        background: none;
-        outline: none;
-        border: none;
-        height: 100%;
-        width: 100%;
-        opacity: 0;
-        z-index: 0;
-      }
-      button:hover {
-        opacity: 1;
-      }
-    }
-    
-  }*/

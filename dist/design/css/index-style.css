@@ -45,7 +45,7 @@
 .opdatering-main #opdatering-date div button li:hover svg:nth-child(2){opacity:100;filter:drop-shadow(0 0 .75rem #be9e7e)}
 .opdatering-main #opdatering-date div button li:hover h3{color:#fcd5aa;clip-path:inset(0 0 0 0);filter:drop-shadow(0 0 .75rem #be9e7e)}
 .opdatering-main #opdatering-date div button .visible{display:flex}.opdatering-main #opdatering-date div button .hidden{display:none}
-.opdatering-main #opdatering-buttons{display:grid;grid-row:2/3;grid-column:1/6;grid-template-rows:23px 1fr;grid-template-columns:repeat(10,117px)}
+.opdatering-main #opdatering-buttons{z-index:1;display:grid;grid-row:2/3;grid-column:1/6;grid-template-rows:23px 1fr;grid-template-columns:repeat(10,117px)}
 .opdatering-main #opdatering-buttons div[class*=green] li{background:linear-gradient(to top,#0f0,#274e13)}
 .opdatering-main #opdatering-buttons div[class*=green] li button a svg{color:#b6d7a8;transition:color 1s;transition:drop-shadow() 2s;filter:drop-shadow(0 0 8px #274e13)}
 .opdatering-main #opdatering-buttons div[class*=green] li button a svg:hover{color:#274e13;filter:drop-shadow(0 0 4px #0f0)}
