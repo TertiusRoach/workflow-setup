@@ -22,27 +22,52 @@
 .login-main #load-midground img[src*="images/svg/**/*.svg"]{content:url("../../images/svg/akademia/akademia-blue.svg")}
 .default-header nav div button a img[src*="images/svg/**/*-white.svg"]{content:url("../../images/svg/akademia/akademia-white.svg")}
 .default-header nav div button a img[src*="images/svg/**/*-secondary.svg"]{content:url("../../images/svg/akademia/akademia-bronze.svg")}
-#index-main{display:grid;grid-row:2/3;grid-column:2/6;grid-template-rows:1fr;grid-template-columns:1fr 145px;background:linear-gradient(to bottom left,#0e1e3b,#6e7889)}
+#index-main{display:grid;grid-row:2/3;grid-column:2/6;background:#0e1e3b;grid-template-rows:44px 258px 1fr;grid-template-columns:repeat(5,234px) 1fr 145px}
 #index-main div[class*=blur]{filter:blur(4px)}.login-main #load-midground{display:flex;grid-row:1/2;grid-column:1/2;align-items:center;justify-content:center}
 .login-main #load-midground img{height:33.33%;filter:drop-shadow(0 0 8px #cfd2d8)}
 .login-main i{height:125px;position:absolute;border-bottom-left-radius:5px;border-bottom-right-radius:5px;animation:animate 5s linear infinite;background:linear-gradient(transparent,white)}
 .login-main i:nth-child(3n+1){background:linear-gradient(transparent,#0e1e3b)}.login-main i:nth-child(3n+2){background:linear-gradient(transparent,#6e7889)}
 .login-main i:nth-child(3n+3){background:linear-gradient(transparent,#cfd2d8)}@keyframes animate{0%{transform:translateY(-200px)}
-100%{transform:translateY(calc(100vh + 200px))}}.opdatering-main header{display:grid;grid-row:1/2;cursor:default;grid-column:1/3;color:#cfd2d8;grid-template-rows:44px;grid-template-columns:234px 1fr 145px;filter:drop-shadow(0 0 8px #0e1e3b)}
-.opdatering-main header div{grid-column:1/2}.opdatering-main header div button{width:100%;height:100%;border:0;outline:0;background:0}
-.opdatering-main header div button li{display:flex;align-items:center;justify-content:left;text-decoration:none;filter:drop-shadow(0 0 .25rem #0e1e3b)}
-.opdatering-main header div button li svg{cursor:pointer;font-size:2rem;position:fixed;margin-left:16px;padding-right:16px}
-.opdatering-main header div button li h2{color:#cfd2d8;margin:0 16px 0 64px;transition:color .25s;transition:clip-path .25s;clip-path:inset(0 100% 0 0)}
-.opdatering-main header div button li svg:nth-child(1){opacity:100;color:#cfd2d8;transition:opacity .25s}
-.opdatering-main header div button li svg:nth-child(2){opacity:0;color:#935e28;transition:opacity .25s}
-.opdatering-main header div button li:hover svg:nth-child(1){opacity:0}.opdatering-main header div button li:hover svg:nth-child(2){opacity:100;filter:drop-shadow(0 0 .75rem #be9e7e)}
-.opdatering-main header div button li:hover h2{color:#fcd5aa;clip-path:inset(0 0 0 0);filter:drop-shadow(0 0 .75rem #be9e7e)}
-.opdatering-main header div:hover button a svg,.opdatering-main header div:hover button a h2{cursor:pointer}
-.opdatering-main header h1{display:flex;cursor:default;grid-column:2/3;align-items:center;justify-content:center}
-.opdatering-main #opdatering-sheets{display:grid;grid-row:1/2;grid-column:1/3;grid-template-rows:44px 231px 1fr;grid-template-columns:repeat(5,234px) 1fr}
-.opdatering-main #opdatering-sheets header{grid-row:2/3;grid-column:1/6;overflow:hidden}
-.opdatering-main #opdatering-sheets header iframe{height:359px;width:1188px;margin:-31px 0 0 -3px}
-.opdatering-main #opdatering-sheets footer{grid-row:3/4;grid-column:1/7}.opdatering-main #opdatering-sheets footer iframe{width:1188px;position:fixed;margin:-31px 0 0 -3px;clip-path:inset(31px 19px 28px 3px)}
+100%{transform:translateY(calc(100vh + 200px))}}.opdatering-main #opdatering-date{display:grid;grid-row:1/2;cursor:default;grid-column:1/6;color:#cfd2d8;grid-template-rows:44px;grid-template-columns:234px 1fr 234px;filter:drop-shadow(0 0 8px #0e1e3b);background:linear-gradient(to left,#0e1e3b,#6e7889)}
+.opdatering-main #opdatering-date div{grid-column:1/2}.opdatering-main #opdatering-date div button{width:100%;height:100%;border:0;outline:0;background:0}
+.opdatering-main #opdatering-date div button li{display:flex;align-items:center;justify-content:left;text-decoration:none;filter:drop-shadow(0 0 .25rem #0e1e3b)}
+.opdatering-main #opdatering-date div button li svg{cursor:pointer;font-size:2rem;position:fixed;margin-left:16px;padding-right:16px}
+.opdatering-main #opdatering-date div button li h3{color:#cfd2d8;margin:0 16px 0 64px;transition:color .25s;transition:clip-path .25s;clip-path:inset(0 100% 0 0)}
+.opdatering-main #opdatering-date div button li svg:nth-child(1){opacity:100;color:#cfd2d8;transition:opacity .25s}
+.opdatering-main #opdatering-date div button li svg:nth-child(2){opacity:0;color:#935e28;transition:opacity .25s}
+.opdatering-main #opdatering-date div button li:hover svg:nth-child(1){opacity:0}
+.opdatering-main #opdatering-date div button li:hover svg:nth-child(2){opacity:100;filter:drop-shadow(0 0 .75rem #be9e7e)}
+.opdatering-main #opdatering-date div button li:hover h3{color:#fcd5aa;clip-path:inset(0 0 0 0);filter:drop-shadow(0 0 .75rem #be9e7e)}
+.opdatering-main #opdatering-date div:hover button a svg,.opdatering-main #opdatering-date div:hover button a h2{cursor:pointer}
+.opdatering-main #opdatering-date h1{display:flex;cursor:default;grid-column:2/3;align-items:center;justify-content:center}
+.opdatering-main #opdatering-buttons{display:grid;grid-row:2/3;grid-column:1/6;grid-template-rows:23px 1fr;grid-template-columns:repeat(10,117px)}
+.opdatering-main #opdatering-buttons div[class*=green] li{background:linear-gradient(to top,#0f0,#274e13)}
+.opdatering-main #opdatering-buttons div[class*=green] li button a svg{color:#b6d7a8;transition:color 1s;transition:drop-shadow() 2s;filter:drop-shadow(0 0 8px #274e13)}
+.opdatering-main #opdatering-buttons div[class*=green] li button a svg:hover{color:#274e13;filter:drop-shadow(0 0 4px #0f0)}
+.opdatering-main #opdatering-buttons .green-sheet{grid-column:1/2}.opdatering-main #opdatering-buttons .green-edit{grid-column:2/3}
+.opdatering-main #opdatering-buttons div[class*=pink] li{background:linear-gradient(to top,#f0f,#4c1130)}
+.opdatering-main #opdatering-buttons div[class*=pink] li button a svg{color:#d5a6bd;transition:color 1s;transition:drop-shadow() 2s;filter:drop-shadow(0 0 8px #4c1130)}
+.opdatering-main #opdatering-buttons div[class*=pink] li button a svg:hover{color:#4c1130;filter:drop-shadow(0 0 4px #f0f)}
+.opdatering-main #opdatering-buttons .pink-sheet{grid-column:3/4}.opdatering-main #opdatering-buttons .pink-edit{grid-column:4/5}
+.opdatering-main #opdatering-buttons div[class*=yellow] li{background:linear-gradient(to top,#ff0,#7f6000)}
+.opdatering-main #opdatering-buttons div[class*=yellow] li button a svg{color:#ffe599;transition:color 1s;transition:drop-shadow() 2s;filter:drop-shadow(0 0 8px #7f6000)}
+.opdatering-main #opdatering-buttons div[class*=yellow] li button a svg:hover{color:#7f6000;filter:drop-shadow(0 0 4px #ff0)}
+.opdatering-main #opdatering-buttons .yellow-sheet{grid-column:5/6}.opdatering-main #opdatering-buttons .yellow-edit{grid-column:6/7}
+.opdatering-main #opdatering-buttons div[class*=orange] li{background:linear-gradient(to top,#f90,#783f04)}
+.opdatering-main #opdatering-buttons div[class*=orange] li button a svg{color:#f9cb9c;transition:color 1s;transition:drop-shadow() 2s;filter:drop-shadow(0 0 8px #783f04)}
+.opdatering-main #opdatering-buttons div[class*=orange] li button a svg:hover{color:#783f04;filter:drop-shadow(0 0 4px #f90)}
+.opdatering-main #opdatering-buttons .orange-sheet{grid-column:7/8}.opdatering-main #opdatering-buttons .orange-edit{grid-column:8/9}
+.opdatering-main #opdatering-buttons div[class*=blue] li{background:linear-gradient(to top,#3c90ff,#073763)}
+.opdatering-main #opdatering-buttons div[class*=blue] li button a svg{color:#9fc5e8;transition:color 1s;transition:drop-shadow() 2s;filter:drop-shadow(0 0 8px #073763)}
+.opdatering-main #opdatering-buttons div[class*=blue] li button a svg:hover{color:#073763;filter:drop-shadow(0 0 4px #3c90ff)}
+.opdatering-main #opdatering-buttons .blue-sheet{grid-column:9/10}.opdatering-main #opdatering-buttons .blue-edit{grid-column:10/11}
+.opdatering-main #opdatering-buttons div{grid-row:2/3}.opdatering-main #opdatering-buttons div li{height:100%;display:flex;list-style-type:none;justify-content:center;transition:clip-path .25s;clip-path:inset(100% 0 0 0)}
+.opdatering-main #opdatering-buttons div li button{border:0;outline:0;background:0;text-decoration:none}
+.opdatering-main #opdatering-buttons div li button a svg{cursor:pointer;font-size:4rem}
+.opdatering-main #opdatering-buttons div:hover li{clip-path:inset(0 0 0 0)}.opdatering-main #opdatering-sheets{display:grid;grid-row:2/4;grid-column:1/6;grid-template-rows:258px 1fr;grid-template-columns:repeat(5,234px) 1fr}
+.opdatering-main #opdatering-sheets header{grid-row:1/2;grid-column:1/6;overflow:hidden}
+.opdatering-main #opdatering-sheets header iframe{height:358px;width:1188px;margin:-32px 0 0 -3px}
+.opdatering-main #opdatering-sheets footer{grid-row:2/3;grid-column:1/7}.opdatering-main #opdatering-sheets footer iframe{width:1188px;position:fixed;margin:-32px 0 0 -3px;clip-path:inset(32px 19px 28px 3px)}
 @media only screen and (max-height:2160px){main[id*=index] section[id*=sheets] footer iframe{height:1836px}
 }@media only screen and (max-height:2159px){main[id*=index] section[id*=sheets] footer iframe{height:1835px}
 }@media only screen and (max-height:2158px){main[id*=index] section[id*=sheets] footer iframe{height:1834px}
@@ -1909,7 +1934,7 @@
 .sidebar-overlay nav a[id*=pi]:hover ~ main{background:#d5a6bd}.sidebar-overlay nav a[id*=pi]:hover ~ main h1{color:#4c1130;filter:drop-shadow(0 0 .75rem #f0f)}
 .sidebar-overlay nav a[id*=ye]:hover ~ main{background:#ffe599}.sidebar-overlay nav a[id*=ye]:hover ~ main h1{color:#7f6000;filter:drop-shadow(0 0 .75rem #ff0)}
 .sidebar-overlay nav a[id*=or]:hover ~ main{background:#f9cb9c}.sidebar-overlay nav a[id*=or]:hover ~ main h1{color:#783f04;filter:drop-shadow(0 0 .75rem #f90)}
-.sidebar-overlay nav a[id*=bl]:hover ~ main{background:#9fc5e8}.sidebar-overlay nav a[id*=bl]:hover ~ main h1{color:#333395;filter:drop-shadow(0 0 .75rem #3c90ff)}
+.sidebar-overlay nav a[id*=bl]:hover ~ main{background:#9fc5e8}.sidebar-overlay nav a[id*=bl]:hover ~ main h1{color:#073763;filter:drop-shadow(0 0 .75rem #3c90ff)}
 .sidebar-overlay nav[class*=first-semester] main{grid-row:5/6;grid-column:1/6;border-bottom-right-radius:8px}
 .sidebar-overlay nav[class*=first-semester] a div{clip-path:inset(0 0 0 0);transition:clip-path .25s}
 .sidebar-overlay nav[class*=first-semester] a:hover div{clip-path:inset(100% 0 0 0)}
@@ -1932,13 +1957,13 @@
 .sidebar-overlay nav[class*=true] a[id*=ye] div button:hover h1,.sidebar-overlay nav[class*=true] a[id*=ye] div button:hover svg{filter:drop-shadow(0 0 .75rem #ff0)}
 .sidebar-overlay nav[class*=true] a[id*=or] div{background:#783f04}.sidebar-overlay nav[class*=true] a[id*=or] div button h1,.sidebar-overlay nav[class*=true] a[id*=or] div button svg{color:#f9cb9c}
 .sidebar-overlay nav[class*=true] a[id*=or] div button:hover h1,.sidebar-overlay nav[class*=true] a[id*=or] div button:hover svg{filter:drop-shadow(0 0 .75rem #f90)}
-.sidebar-overlay nav[class*=true] a[id*=bl] div{background:#333395}.sidebar-overlay nav[class*=true] a[id*=bl] div button h1,.sidebar-overlay nav[class*=true] a[id*=bl] div button svg{color:#9fc5e8}
+.sidebar-overlay nav[class*=true] a[id*=bl] div{background:#073763}.sidebar-overlay nav[class*=true] a[id*=bl] div button h1,.sidebar-overlay nav[class*=true] a[id*=bl] div button svg{color:#9fc5e8}
 .sidebar-overlay nav[class*=true] a[id*=bl] div button:hover h1,.sidebar-overlay nav[class*=true] a[id*=bl] div button:hover svg{filter:drop-shadow(0 0 .75rem #3c90ff)}
 .sidebar-overlay nav[class*=true] ul[class*=gr] li{background:#b6d7a8}.sidebar-overlay nav[class*=true] ul[class*=gr] li button svg{color:#274e13;filter:drop-shadow(0 0 .75rem #0f0)}
 .sidebar-overlay nav[class*=true] ul[class*=pi] li{background:#d5a6bd}.sidebar-overlay nav[class*=true] ul[class*=pi] li button svg{color:#4c1130;filter:drop-shadow(0 0 .75rem #f0f)}
 .sidebar-overlay nav[class*=true] ul[class*=ye] li{background:#ffe599}.sidebar-overlay nav[class*=true] ul[class*=ye] li button svg{color:#7f6000;filter:drop-shadow(0 0 .75rem #ff0)}
 .sidebar-overlay nav[class*=true] ul[class*=or] li{background:#f9cb9c}.sidebar-overlay nav[class*=true] ul[class*=or] li button svg{color:#783f04;filter:drop-shadow(0 0 .75rem #f90)}
-.sidebar-overlay nav[class*=true] ul[class*=bl] li{background:#9fc5e8}.sidebar-overlay nav[class*=true] ul[class*=bl] li button svg{color:#333395;filter:drop-shadow(0 0 .75rem #3c90ff)}
+.sidebar-overlay nav[class*=true] ul[class*=bl] li{background:#9fc5e8}.sidebar-overlay nav[class*=true] ul[class*=bl] li button svg{color:#073763;filter:drop-shadow(0 0 .75rem #3c90ff)}
 .sidebar-overlay nav[class*=false] a div{background:#0e1e3b}.sidebar-overlay nav[class*=false] a div button h1,.sidebar-overlay nav[class*=false] a div button svg{color:#cfd2d8}
 .sidebar-overlay nav[class*=false] a div button:hover h1,.sidebar-overlay nav[class*=false] a div button:hover svg{filter:drop-shadow(0 0 .75rem #6e7889)}
 .sidebar-overlay nav[class*=false] ul li{background:#cfd2d8}.sidebar-overlay nav[class*=false] ul li button svg{color:#0e1e3b;filter:drop-shadow(0 0 .75rem #6e7889)}
