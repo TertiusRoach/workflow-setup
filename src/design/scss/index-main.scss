@@ -69,34 +69,63 @@
     filter: drop-shadow(0 0 8px $primary-dark);
     background: linear-gradient(to left, $primary-dark, $primary-medium);
 
-    div {
+    .screensaver {
       grid-column: 1/2;
+      button li {
+        justify-content: left;
+        svg {
+          margin-left: 16px;
+          padding-right: 16px;
+        }
+        h3 {
+          padding: 9.5px 16px 9.5px 64px;
+          clip-path: inset(0 100% 0 0);
+        }
+      }
+    }
+    h1 {
+      display: flex;
+      cursor: default;
+      grid-column: 2/3;
+      align-items: center;
+      justify-content: center;
+    }
+    .additional {
+      grid-column: 3/4;
+      button li {
+        justify-content: right;
+        svg {
+          margin: 0 16px 0 16px;
+        }
+        h3 {
+          padding: 9.5px 64px 9.5px 16px;
+          clip-path: inset(0 0 0 100%);
+        }
+      }
+    }
+
+    div {
       button {
-        width: 100%;
-        height: 100%;
         border: none;
         outline: none;
         background: none;
         li {
+          height: 44px;
+          width: 234px;
           display: flex;
           align-items: center;
-          justify-content: left;
           text-decoration: none;
-          filter: drop-shadow(0 0 0.25rem $primary-dark);
           svg {
+            z-index: 1;
             cursor: pointer;
             font-size: 2rem;
             position: fixed;
-            margin-left: 16px;
-            padding-right: 16px;
           }
           h3 {
             color: $primary-light;
-            margin: 0 16px 0 64px;
             transition: color 0.25s;
-
+            padding: 9.5px 0 9.5px 0;
             transition: clip-path 0.25s;
-            clip-path: inset(0 100% 0 0);
           }
 
           svg:nth-child(1) {
@@ -124,24 +153,22 @@
             filter: drop-shadow(0 0 0.75rem $secondary-medium);
           }
         }
-      }
-    }
-    div:hover {
-      button a {
-        svg,
-        h2 {
-          cursor: pointer;
+        .visible {
+          display: flex;
+        }
+        .hidden {
+          display: none;
         }
       }
     }
-
-    h1 {
-      display: flex;
-      cursor: default;
-      grid-column: 2/3;
-      align-items: center;
-      justify-content: center;
-    }
+    // div:hover {
+    //   button a {
+    //     svg,
+    //     h2 {
+    //       cursor: pointer;
+    //     }
+    //   }
+    // }
   }
 
   #opdatering-buttons {
@@ -323,18 +350,19 @@
       overflow: hidden;
       iframe {
         height: 358px;
-        width: 1188px;
+        width: 1187px;
         margin: -32px 0 0 -3px;
+        clip-path: inset(32px 20px 28px 3px);
       }
     }
     footer {
       grid-row: 2/3;
       grid-column: 1/7;
       iframe {
-        width: 1188px;
+        width: 1187px;
         position: fixed;
         margin: -32px 0 0 -3px;
-        clip-path: inset(32px 19px 28px 3px);
+        clip-path: inset(32px 20px 28px 3px);
       }
     }
     //--|▲| iFrame Cropping |▲|--//
