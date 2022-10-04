@@ -19,6 +19,7 @@
   nav {
     display: grid;
     grid-template-columns: 1fr;
+    filter: drop-shadow(0 0 8px $primary-medium);
     //--|▼| Dropdown Button Animation |▼|--//
     div {
       grid-column: 1/2;
@@ -138,7 +139,7 @@
     grid-column: 1/11;
     grid-template-rows: repeat(5, 1fr);
     grid-template-columns: repeat(10, 1fr);
-    filter: drop-shadow(0 0 4px $primary-light);
+    filter: drop-shadow(0 0 8px $primary-medium);
 
     a div,
     ul li {
