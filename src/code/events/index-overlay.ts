@@ -50,6 +50,7 @@ export namespace IndexOverlay {
       case 'default-overlay':
         break;
       case 'header-overlay':
+        /*
         headerToggle(indexOverlay);
         $(indexSidebar).on('mouseenter', () => {
           if (indexOverlay.className !== 'sidebar-overlay') {
@@ -71,6 +72,7 @@ export namespace IndexOverlay {
           indexOverlay.style.display = 'none';
           deactivateButtons(headerButtons, indexOverlay);
         });
+        */
         break;
       case 'sidebar-overlay':
         let language: String = 'afr';
@@ -489,14 +491,12 @@ export namespace IndexOverlay {
     }
   }
 
+  /*
   export function hideOverlay(deactivate: Object, container: HTMLElement) {
     for (let i = 0; i < Object.keys(deactivate).length; i++) {
       deactivate[i].className = '';
     }
     container.style.display = 'none';
   }
-
-  // export function resetNavigation(indexOverlay: HTMLElement) {
-
-  // }
+  */
 }

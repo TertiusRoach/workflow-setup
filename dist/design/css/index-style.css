@@ -1910,8 +1910,7 @@
 .default-header nav div button a img[src*="images/svg/**/*-secondary.svg"]{content:url("../../images/svg/akademia/akademia-bronze.svg")}
 #index-overlay{z-index:1;grid-row:2/3;grid-column:2/4}.default-overlay{display:none}
 .header-overlay{display:grid;grid-row:2/3;grid-column:2/5;grid-template-rows:repeat(12,1fr);grid-template-columns:1fr 250px 2fr 250px 1fr 145px}
-.header-overlay nav{display:grid;grid-template-columns:1fr;grid-template-rows:repeat(3,1fr)}
-.header-overlay nav div{grid-column:1/2;background:#6e7889;transition:background .25s}
+.header-overlay nav{display:grid;grid-template-columns:1fr}.header-overlay nav div{grid-column:1/2;background:#6e7889;transition:background .25s}
 .header-overlay nav div button{width:100%;height:100%;border:0;outline:0;background:0}
 .header-overlay nav div button a{display:flex;cursor:default;align-items:center;justify-content:left;text-decoration:none;filter:drop-shadow(0 0 .25rem #0e1e3b)}
 .header-overlay nav div button a svg{font-size:2rem;position:fixed;margin-left:16px;padding-right:16px}
@@ -1921,10 +1920,13 @@
 .header-overlay nav div button a:hover svg:nth-child(1){opacity:0}.header-overlay nav div button a:hover svg:nth-child(2){opacity:100;filter:drop-shadow(0 0 .75rem #be9e7e)}
 .header-overlay nav div button a:hover h2{color:#fcd5aa;filter:drop-shadow(0 0 .75rem #be9e7e)}
 .header-overlay nav div:hover{background:#0e1e3b}.header-overlay nav div:hover button a svg,.header-overlay nav div:hover button a h2{cursor:pointer}
-.header-overlay nav[id*=uitsendings]{grid-row:1/4;grid-column:2/3}.header-overlay nav[id*=uitsendings] #skofte{grid-row:1/2}
-.header-overlay nav[id*=uitsendings] #kalender{grid-row:2/3}.header-overlay nav[id*=uitsendings] #aflaai{grid-row:3/4;border-radius:0 0 8px 8px}
-.header-overlay nav[id*=departemente]{grid-row:1/4;grid-column:4/5}.header-overlay nav[id*=departemente] #akademici{grid-row:1/2}
-.header-overlay nav[id*=departemente] #administrasie{grid-row:2/3}.header-overlay nav[id*=departemente] #operasioneel{grid-row:3/4;border-radius:0 0 8px 8px}
+.header-overlay nav[id*=uitsendings]{grid-row:1/6;grid-column:2/3;grid-template-rows:repeat(5,1fr)}
+.header-overlay nav[id*=uitsendings] #skofte{grid-row:1/2}.header-overlay nav[id*=uitsendings] #soek{grid-row:2/3}
+.header-overlay nav[id*=uitsendings] #kalender{grid-row:3/4}.header-overlay nav[id*=uitsendings] #aflaai{grid-row:4/5}
+.header-overlay nav[id*=uitsendings] #inligtingsblad{grid-row:5/6;border-radius:0 0 8px 8px}
+.header-overlay nav[id*=departemente]{grid-row:1/4;grid-column:4/5;grid-template-rows:repeat(3,1fr)}
+.header-overlay nav[id*=departemente] #akademici{grid-row:1/2}.header-overlay nav[id*=departemente] #administrasie{grid-row:2/3}
+.header-overlay nav[id*=departemente] #operasioneel{grid-row:3/4;border-radius:0 0 8px 8px}
 .header-overlay .background{z-index:-2;grid-row:1/13;grid-column:1/8;background:linear-gradient(to bottom,rgba(14,30,59,0.8),rgba(14,30,59,0.2))}
 .sidebar-overlay nav{display:grid;grid-column:1/11;grid-template-rows:repeat(5,1fr);grid-template-columns:repeat(10,1fr);filter:drop-shadow(0 0 4px #cfd2d8)}
 .sidebar-overlay nav a div,.sidebar-overlay nav ul li{height:100%;display:flex;align-items:center;justify-content:center}
