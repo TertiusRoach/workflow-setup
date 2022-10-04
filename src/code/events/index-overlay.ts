@@ -104,7 +104,7 @@ export namespace IndexOverlay {
         };
         sidebarOverlayHide(pageName, indexOverlay, language);
         //--|▼| Resets banner text to selected month when cursor enters container |▼|--//
-        const sidebarOverlayReset = (pageName: String, language: String | 'afr' | 'eng') => {
+        const sidebarOverlayReset = (pageName: String, indexOverlay: HTMLElement, language: String | 'afr' | 'eng') => {
           //--► Use 'var' to label functions you want to turn into tools ◄--//
           var months: Array<String>;
           switch (language) {
@@ -122,6 +122,7 @@ export namespace IndexOverlay {
           });
           $(`.${pageName} #january .trigger`).on('mouseenter', () => {
             document.querySelector('#january main h1').textContent = `${months[0]}`;
+            indexOverlay.style.display = 'none';
           });
 
           //--▼ February ▼--//
@@ -130,6 +131,7 @@ export namespace IndexOverlay {
           });
           $(`.${pageName} #february .trigger`).on('mouseenter', () => {
             document.querySelector('#february main h1').textContent = `${months[1]}`;
+            indexOverlay.style.display = 'none';
           });
 
           //--▼ March ▼--//
@@ -138,6 +140,7 @@ export namespace IndexOverlay {
           });
           $(`.${pageName} #march .trigger`).on('mouseenter', () => {
             document.querySelector('#march main h1').textContent = `${months[2]}`;
+            indexOverlay.style.display = 'none';
           });
 
           //--▼ April ▼--//
@@ -146,6 +149,7 @@ export namespace IndexOverlay {
           });
           $(`.${pageName} #april .trigger`).on('mouseenter', () => {
             document.querySelector('#april main h1').textContent = `${months[3]}`;
+            indexOverlay.style.display = 'none';
           });
 
           //--▼ June ▼--//
@@ -154,6 +158,7 @@ export namespace IndexOverlay {
           });
           $(`.${pageName} #may .trigger`).on('mouseenter', () => {
             document.querySelector('#may main h1').textContent = `${months[4]}`;
+            indexOverlay.style.display = 'none';
           });
 
           //--▼ July ▼--//
@@ -162,6 +167,7 @@ export namespace IndexOverlay {
           });
           $(`.${pageName} #june .trigger`).on('mouseenter', () => {
             document.querySelector('#june main h1').textContent = `${months[5]}`;
+            indexOverlay.style.display = 'none';
           });
 
           //--▼ August ▼--//
@@ -170,6 +176,7 @@ export namespace IndexOverlay {
           });
           $(`.${pageName} #july .trigger`).on('mouseenter', () => {
             document.querySelector('#july main h1').textContent = `${months[6]}`;
+            indexOverlay.style.display = 'none';
           });
 
           //--▼ September ▼--//
@@ -178,6 +185,7 @@ export namespace IndexOverlay {
           });
           $(`.${pageName} #august .trigger`).on('mouseenter', () => {
             document.querySelector('#august main h1').textContent = `${months[7]}`;
+            indexOverlay.style.display = 'none';
           });
 
           //--▼ September ▼--//
@@ -186,6 +194,7 @@ export namespace IndexOverlay {
           });
           $(`.${pageName} #september .trigger`).on('mouseenter', () => {
             document.querySelector('#september main h1').textContent = `${months[8]}`;
+            indexOverlay.style.display = 'none';
           });
 
           //--▼ October ▼--//
@@ -194,6 +203,7 @@ export namespace IndexOverlay {
           });
           $(`.${pageName} #october .trigger`).on('mouseenter', () => {
             document.querySelector('#october main h1').textContent = `${months[9]}`;
+            indexOverlay.style.display = 'none';
           });
 
           //--▼ November ▼--//
@@ -202,6 +212,7 @@ export namespace IndexOverlay {
           });
           $(`.${pageName} #november .trigger`).on('mouseenter', () => {
             document.querySelector('#november main h1').textContent = `${months[10]}`;
+            indexOverlay.style.display = 'none';
           });
 
           //--▼ December ▼--//
@@ -210,9 +221,10 @@ export namespace IndexOverlay {
           });
           $(`.${pageName} #december .trigger`).on('mouseenter', () => {
             document.querySelector('#december main h1').textContent = `${months[11]}`;
+            indexOverlay.style.display = 'none';
           });
         };
-        sidebarOverlayReset(pageName, language);
+        sidebarOverlayReset(pageName, indexOverlay, language);
 
         //--|▼| Highlights the present month navigation |▼|--//
         const sidebarOverlayHightlight = (indexOverlay: HTMLElement) => {
@@ -473,6 +485,7 @@ export namespace IndexOverlay {
     //--► console.log(`--${pageName} Loaded`); ◄--//
   }
 
+  /*
   export function headerToggle(indexOverlay: HTMLElement) {
     let activeButton = document.querySelector('#index-header nav .active').parentElement.id.split('-')[0];
     var uitsendingsDropdown: HTMLElement = indexOverlay.querySelector('#uitsendings-dropdown');
@@ -490,6 +503,7 @@ export namespace IndexOverlay {
         indexOverlay.style.display = 'none';
     }
   }
+  */
 
   /*
   export function hideOverlay(deactivate: Object, container: HTMLElement) {
