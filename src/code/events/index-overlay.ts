@@ -50,29 +50,42 @@ export namespace IndexOverlay {
       case 'default-overlay':
         break;
       case 'header-overlay':
-        /*
-        headerToggle(indexOverlay);
-        $(indexSidebar).on('mouseenter', () => {
-          if (indexOverlay.className !== 'sidebar-overlay') {
-            indexOverlay.style.display = 'none';
-            new GetDesign.forPage('sidebar-overlay');
-            deactivateButtons(headerButtons, indexOverlay);
-          }
-        });
+        //--|▼| Toggles dropdowns inside overlay |▼|--//
+        const headerOverlayDropdowns = (pageName: String, indexHeader: HTMLElement, indexOverlay: HTMLElement) => {
+          //--▼ 03. Execute first for the dropdown to synch with the global scope ▼--//
+          function toggleDropdown(indexHeader: HTMLElement, indexOverlay: HTMLElement) {
+            let activeString: String = indexHeader.querySelector('nav .active').parentElement.id.split('-')[0];
+            let activeDropdown: HTMLElement = indexOverlay.querySelector(`#${activeString}-dropdown`);
+            let allDropdowns: Object = indexOverlay.querySelectorAll('nav[id*="dropdown"]');
 
-        $(headerUitsendings).on('mouseenter', () => {
-          headerToggle(indexOverlay);
-          toggleDropdowns(uitsendingsDropdown, departementeDropdown, indexOverlay);
-        });
-        $(headerDepartemente).on('mouseenter', () => {
-          headerToggle(indexOverlay);
-          toggleDropdowns(departementeDropdown, uitsendingsDropdown, indexOverlay);
-        });
-        $(overlayDropdowns).on('mouseleave', () => {
-          indexOverlay.style.display = 'none';
-          deactivateButtons(headerButtons, indexOverlay);
-        });
-        */
+            for (let i = 0; i < Object.keys(allDropdowns).length; i++) {
+              allDropdowns[i].style.display = 'none';
+            }
+            activeDropdown.style.display = 'grid';
+          }
+          toggleDropdown(indexHeader, indexOverlay);
+
+          //--▼ 04. Events now toggle according to the selected buttons within the header ▼--//
+          $('#uitsendings-button').on('mouseenter', () => {
+            toggleDropdown(indexHeader, indexOverlay);
+          });
+          $('#departemente-button').on('mouseenter', () => {
+            toggleDropdown(indexHeader, indexOverlay);
+          });
+
+          $(`.${pageName} .background`).on('mouseenter', () => {
+            indexOverlay.innerHTML = '';
+            indexOverlay.style.display = 'none';
+            indexOverlay.className = 'default-overlay';
+
+            //--▼ Removes highlighted buttons from inside the header ▼--//
+            let headerButtons: Object = indexHeader.querySelectorAll('nav[id*="button"] div');
+            for (let i = 0; i < Object.keys(headerButtons).length; i++) {
+              headerButtons[i].className = '';
+            }
+          });
+        };
+        headerOverlayDropdowns(pageName, indexHeader, indexOverlay);
         break;
       case 'sidebar-overlay':
         let language: String = 'afr';
@@ -96,6 +109,10 @@ export namespace IndexOverlay {
               let element: HTMLElement = container.querySelector(`#${monthNavigation[i]}`);
               element.style.display = 'none';
             }
+
+            indexOverlay.innerHTML = '';
+            indexOverlay.style.display = 'none';
+            indexOverlay.className = 'default-overlay';
           }
           $(`.${pageName} .background`).on('mouseenter', () => {
             resetOverlay(indexOverlay, language);

@@ -62,22 +62,21 @@ export namespace IndexSidebar {
         };
         defaultSidebarHighlight(pageName, indexSidebar);
 
-        //--|▼| Removes highlighted buttons from inside the header |▼|--//
-        const defaultHeaderReset = (indexHeader: HTMLElement) => {
-          function downplayHeader(headerButtons: Object) {
-            for (let i = 0; i < Object.keys(headerButtons).length; i++) {
-              headerButtons[i].className = '';
-            }
-          }
-
+        //--|▼| Gets the overlay for the sidebar buttons |▼|--//
+        const sidebarOverlayRetrieve = (indexHeader: HTMLElement, indexSidebar: HTMLElement, indexOverlay: HTMLElement) => {
           $(indexSidebar).on('mouseenter', () => {
-            downplayHeader(indexHeader.querySelectorAll('nav[id*="button"] div'));
             if (indexOverlay.className !== 'sidebar-overlay') {
               new GetDesign.forPage(`sidebar-overlay`);
             }
+
+            //--▼ Removes highlighted buttons from inside the header ▼--//
+            let headerButtons: Object = indexHeader.querySelectorAll('nav[id*="button"] div');
+            for (let i = 0; i < Object.keys(headerButtons).length; i++) {
+              headerButtons[i].className = '';
+            }
           });
         };
-        defaultHeaderReset(indexHeader);
+        sidebarOverlayRetrieve(indexHeader, indexSidebar, indexOverlay);
         break;
     }
     //--► console.log(`--${pageName} Loaded`); ◄--//
