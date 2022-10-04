@@ -1952,6 +1952,7 @@
 .sidebar-overlay nav a[id*=gy]:hover ~ main{background:#efefef}.sidebar-overlay nav a[id*=gy]:hover ~ main h1{color:#434343;filter:drop-shadow(0 0 .75rem #bec2cb)}
 .sidebar-overlay nav a[id*=tu]:hover ~ main{background:#a2c4c9}.sidebar-overlay nav a[id*=tu]:hover ~ main h1{color:#0c343d;filter:drop-shadow(0 0 .75rem #0ff)}
 .sidebar-overlay nav[class*=first-semester] main{grid-row:5/6;grid-column:1/6;border-bottom-right-radius:8px}
+.sidebar-overlay nav[class*=first-semester] .trigger{opacity:0;grid-row:5/6;grid-column:6/11}
 .sidebar-overlay nav[class*=first-semester] a div{clip-path:inset(0 0 0 0);transition:clip-path .25s}
 .sidebar-overlay nav[class*=first-semester] a:hover div{clip-path:inset(100% 0 0 0)}
 .sidebar-overlay nav[class*=first-semester] a[id*=sheet],.sidebar-overlay nav[class*=first-semester] ul[class*=sheet]{grid-row:1/2}
@@ -1959,6 +1960,7 @@
 .sidebar-overlay nav[class*=first-semester] a[id*=book],.sidebar-overlay nav[class*=first-semester] ul[class*=book]{grid-row:3/4}
 .sidebar-overlay nav[class*=first-semester] a[id*=cloud],.sidebar-overlay nav[class*=first-semester] ul[class*=cloud]{grid-row:4/5}
 .sidebar-overlay nav[class*=second-semester] main{grid-row:1/2;grid-column:1/6;border-top-right-radius:8px}
+.sidebar-overlay nav[class*=second-semester] .trigger{opacity:0;grid-row:1/2;grid-column:6/11}
 .sidebar-overlay nav[class*=second-semester] a div{clip-path:inset(0 0 0 0);transition:clip-path .25s}
 .sidebar-overlay nav[class*=second-semester] a:hover div{clip-path:inset(0 0 100% 0)}
 .sidebar-overlay nav[class*=second-semester] a[id*=sheet],.sidebar-overlay nav[class*=second-semester] ul[class*=sheet]{grid-row:5/6}

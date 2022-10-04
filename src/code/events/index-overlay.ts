@@ -12,7 +12,6 @@ export namespace IndexOverlay {
     const indexMain: HTMLElement = document.getElementById('index-main');
 
     const indexSidebar: HTMLElement = document.getElementById('index-sidebar');
-    let sidebarButtons: Object = document.querySelectorAll('#index-sidebar > div > button > a > h1');
     let activeButtons: Object = document.querySelectorAll('#index-sidebar > div');
 
     const indexOverlay: HTMLElement = document.getElementById('index-overlay');
@@ -74,13 +73,144 @@ export namespace IndexOverlay {
         });
         break;
       case 'sidebar-overlay':
-        /*
+        let language: String = 'afr';
+        //--|▼| Resets navigation containers to its default info before hiding the overlay container |▼|--//
+        const sidebarOverlayHide = (pageName: String, indexOverlay: HTMLElement, language: String | 'afr' | 'eng') => {
+          function resetOverlay(container: HTMLElement, language: String | 'afr' | 'eng') {
+            //--► Use 'var' to label functions you want to turn into tools ◄--//
+            var months: Array<String>;
+            switch (language) {
+              case 'afr':
+                months = ['Januarie', 'Februarie', 'Maart', 'April', 'Mei', 'Junie', 'Julie', 'Augustus', 'September', 'Oktober', 'November', 'Desember'];
+                break;
+              case 'eng':
+                months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+                break;
+            }
 
-        $(monthContainers).on('mouseleave', () => {
-          indexOverlay.style.display = 'none';
-          resetNavigation(indexOverlay);
-        });
-*/
+            let monthNavigation: Array<String> = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
+            for (let i = 0; i < monthNavigation.length; i++) {
+              container.querySelector(`.${pageName} #${monthNavigation[i]} main h1`).textContent = `${months[i]}`;
+              let element: HTMLElement = container.querySelector(`#${monthNavigation[i]}`);
+              element.style.display = 'none';
+            }
+          }
+          $(`.${pageName} .background`).on('mouseenter', () => {
+            resetOverlay(indexOverlay, language);
+            indexOverlay.style.display = 'none';
+          });
+        };
+        sidebarOverlayHide(pageName, indexOverlay, language);
+        //--|▼| Resets banner text to selected month when cursor enters container |▼|--//
+        const sidebarOverlayReset = (pageName: String, language: String | 'afr' | 'eng') => {
+          //--► Use 'var' to label functions you want to turn into tools ◄--//
+          var months: Array<String>;
+          switch (language) {
+            case 'afr':
+              months = ['Januarie', 'Februarie', 'Maart', 'April', 'Mei', 'Junie', 'Julie', 'Augustus', 'September', 'Oktober', 'November', 'Desember'];
+              break;
+            case 'eng':
+              months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+              break;
+          }
+
+          //--▼ January ▼--//
+          $(`.${pageName} #january main`).on('mouseenter', () => {
+            document.querySelector('#january main h1').textContent = `${months[0]}`;
+          });
+          $(`.${pageName} #january .trigger`).on('mouseenter', () => {
+            document.querySelector('#january main h1').textContent = `${months[0]}`;
+          });
+
+          //--▼ February ▼--//
+          $(`.${pageName} #february main`).on('mouseenter', () => {
+            document.querySelector('#february main h1').textContent = `${months[1]}`;
+          });
+          $(`.${pageName} #february .trigger`).on('mouseenter', () => {
+            document.querySelector('#february main h1').textContent = `${months[1]}`;
+          });
+
+          //--▼ March ▼--//
+          $(`.${pageName} #march main`).on('mouseenter', () => {
+            document.querySelector('#march main h1').textContent = `${months[2]}`;
+          });
+          $(`.${pageName} #march .trigger`).on('mouseenter', () => {
+            document.querySelector('#march main h1').textContent = `${months[2]}`;
+          });
+
+          //--▼ April ▼--//
+          $(`.${pageName} #april main`).on('mouseenter', () => {
+            document.querySelector('#april main h1').textContent = `${months[3]}`;
+          });
+          $(`.${pageName} #april .trigger`).on('mouseenter', () => {
+            document.querySelector('#april main h1').textContent = `${months[3]}`;
+          });
+
+          //--▼ June ▼--//
+          $(`.${pageName} #may main`).on('mouseenter', () => {
+            document.querySelector('#may main h1').textContent = `${months[4]}`;
+          });
+          $(`.${pageName} #may .trigger`).on('mouseenter', () => {
+            document.querySelector('#may main h1').textContent = `${months[4]}`;
+          });
+
+          //--▼ July ▼--//
+          $(`.${pageName} #june main`).on('mouseenter', () => {
+            document.querySelector('#june main h1').textContent = `${months[5]}`;
+          });
+          $(`.${pageName} #june .trigger`).on('mouseenter', () => {
+            document.querySelector('#june main h1').textContent = `${months[5]}`;
+          });
+
+          //--▼ August ▼--//
+          $(`.${pageName} #july main`).on('mouseenter', () => {
+            document.querySelector('#july main h1').textContent = `${months[6]}`;
+          });
+          $(`.${pageName} #july .trigger`).on('mouseenter', () => {
+            document.querySelector('#july main h1').textContent = `${months[6]}`;
+          });
+
+          //--▼ September ▼--//
+          $(`.${pageName} #august main`).on('mouseenter', () => {
+            document.querySelector('#august main h1').textContent = `${months[7]}`;
+          });
+          $(`.${pageName} #august .trigger`).on('mouseenter', () => {
+            document.querySelector('#august main h1').textContent = `${months[7]}`;
+          });
+
+          //--▼ September ▼--//
+          $(`.${pageName} #september main`).on('mouseenter', () => {
+            document.querySelector('#september main h1').textContent = `${months[8]}`;
+          });
+          $(`.${pageName} #september .trigger`).on('mouseenter', () => {
+            document.querySelector('#september main h1').textContent = `${months[8]}`;
+          });
+
+          //--▼ October ▼--//
+          $(`.${pageName} #october main`).on('mouseenter', () => {
+            document.querySelector('#october main h1').textContent = `${months[9]}`;
+          });
+          $(`.${pageName} #october .trigger`).on('mouseenter', () => {
+            document.querySelector('#october main h1').textContent = `${months[9]}`;
+          });
+
+          //--▼ November ▼--//
+          $(`.${pageName} #november main`).on('mouseenter', () => {
+            document.querySelector('#november main h1').textContent = `${months[10]}`;
+          });
+          $(`.${pageName} #november .trigger`).on('mouseenter', () => {
+            document.querySelector('#november main h1').textContent = `${months[10]}`;
+          });
+
+          //--▼ December ▼--//
+          $(`.${pageName} #december main`).on('mouseenter', () => {
+            document.querySelector('#december main h1').textContent = `${months[11]}`;
+          });
+          $(`.${pageName} #december .trigger`).on('mouseenter', () => {
+            document.querySelector('#december main h1').textContent = `${months[11]}`;
+          });
+        };
+        sidebarOverlayReset(pageName, language);
 
         //--|▼| Highlights the present month navigation |▼|--//
         const sidebarOverlayHightlight = (indexOverlay: HTMLElement) => {
@@ -134,15 +264,13 @@ export namespace IndexOverlay {
         };
         sidebarOverlayHightlight(indexOverlay);
 
-        //--|▼| Changes the text of the banner to the active button the cursor selected |▼|--//
-        const sidebarOverlayBanner = () => {
+        //--|▼| Changes the text of the banner to the selected button |▼|--//
+        const sidebarOverlayInformation = (pageName: String) => {
           function changeText(icon: String) {
-            let months = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
-            let maande = ['januarie', 'februarie', 'maart', 'april', 'mei', 'junie', 'julie', 'augustus', 'september', 'oktober', 'november', 'desember'];
-
-            for (let i = 0; i < months.length; i++) {
-              var banner: HTMLHeadElement = document.querySelector(`#${months[i]} main h1`);
-              var buttonInfo: String = document.querySelector(`#${months[i]} a[id*='${icon}'] div button h1`).textContent;
+            let monthsReference = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
+            for (let i = 0; i < monthsReference.length; i++) {
+              var banner: HTMLHeadElement = document.querySelector(`.${pageName} #${monthsReference[i]} main h1`);
+              var buttonInfo: String = document.querySelector(`.${pageName} #${monthsReference[i]} a[id*='${icon}'] div button h1`).textContent;
               banner.textContent = `${buttonInfo}`;
             }
           }
@@ -279,10 +407,11 @@ export namespace IndexOverlay {
             changeText('tu-cloud');
           });
         };
-        sidebarOverlayBanner();
+        sidebarOverlayInformation(pageName);
 
         //--|▼| Displays the navigation for the month the cursor selected |▼|--//
-        const defaultSidebarButtons = (pageName: String, sidebarButtons: Object) => {
+        const defaultSidebarButtons = (pageName: String) => {
+          let sidebarButtons: Object = document.querySelectorAll('#index-sidebar > div > button > a > h1');
           function displayOverlay(
             pageName: String,
             display: 'january' | 'february' | 'march' | 'april' | 'may' | 'june' | 'july' | 'august' | 'september' | 'october' | 'november' | 'december'
@@ -335,49 +464,7 @@ export namespace IndexOverlay {
             displayOverlay(pageName, 'december');
           });
         };
-        defaultSidebarButtons(pageName, sidebarButtons);
-
-        //--|▼| Resets banner text to selected month when cursor enters container |▼|--//
-        const sidebarOverlayReset = (pageName: String) => {
-          $(`.${pageName} #january main`).on('mouseenter', () => {
-            document.querySelector('#january main h1').textContent = 'January';
-          });
-
-          $(`.${pageName} #february main`).on('mouseenter', () => {
-            document.querySelector('#february main h1').textContent = 'February';
-          });
-          $(`.${pageName} #march main`).on('mouseenter', () => {
-            document.querySelector('#march main h1').textContent = 'March';
-          });
-          $(`.${pageName} #april main`).on('mouseenter', () => {
-            document.querySelector('#april main h1').textContent = 'April';
-          });
-          $(`.${pageName} #may main`).on('mouseenter', () => {
-            document.querySelector('#may main h1').textContent = 'May';
-          });
-          $(`.${pageName} #june main`).on('mouseenter', () => {
-            document.querySelector('#june main h1').textContent = 'June';
-          });
-          $(`.${pageName} #july main`).on('mouseenter', () => {
-            document.querySelector('#july main h1').textContent = 'July';
-          });
-          $(`.${pageName} #august main`).on('mouseenter', () => {
-            document.querySelector('#august main h1').textContent = 'August';
-          });
-          $(`.${pageName} #september main`).on('mouseenter', () => {
-            document.querySelector('#september main h1').textContent = 'September';
-          });
-          $(`.${pageName} #october main`).on('mouseenter', () => {
-            document.querySelector('#october main h1').textContent = 'October';
-          });
-          $(`.${pageName} #november main`).on('mouseenter', () => {
-            document.querySelector('#november main h1').textContent = 'November';
-          });
-          $(`.${pageName} #december main`).on('mouseenter', () => {
-            document.querySelector('#december main h1').textContent = 'December';
-          });
-        };
-        sidebarOverlayReset(pageName);
+        defaultSidebarButtons(pageName);
 
         break;
     }
@@ -409,14 +496,7 @@ export namespace IndexOverlay {
     container.style.display = 'none';
   }
 
-  export function resetNavigation(indexOverlay: HTMLElement) {
-    let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-    let maande = ['Januarie', 'Februarie', 'Maart', 'April', 'Mei', 'Junie', 'Julie', 'Augustus', 'September', 'Oktober', 'November', 'Desember'];
+  // export function resetNavigation(indexOverlay: HTMLElement) {
 
-    for (let i = 0; i < months.length; i++) {
-      var element: HTMLElement = indexOverlay.querySelector(`#${months[i].toLowerCase()}`);
-      indexOverlay.querySelector(`#${months[i].toLowerCase()} main h1`).textContent = maande[i];
-      element.style.display = 'none';
-    }
-  }
+  // }
 }

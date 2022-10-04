@@ -21,14 +21,14 @@ export namespace IndexSidebar {
         IndexSidebar.monthHighlight(indexSidebar);
 
         //--|▼| Removes the highlighted buttons of the header |▼|--//
-        const defaultHeaderDownplay = (buttons: Object, container: HTMLElement) => {
+        const defaultHeaderDownplay = (buttons: Object) => {
           for (let i = 0; i < Object.keys(buttons).length; i++) {
             buttons[i].className = '';
           }
         };
 
         $(indexSidebar).on('mouseenter', () => {
-          defaultHeaderDownplay(headerButtons, indexOverlay);
+          defaultHeaderDownplay(headerButtons);
           if (indexOverlay.className !== 'sidebar-overlay') {
             new GetDesign.forPage(`sidebar-overlay`);
           }
