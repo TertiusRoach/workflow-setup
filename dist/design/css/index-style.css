@@ -1889,7 +1889,7 @@
 .default-sidebar #july-button{grid-row:8/9}.default-sidebar #august-button{grid-row:9/10}
 .default-sidebar #september-button{grid-row:10/11}.default-sidebar #october-button{grid-row:11/12}
 .default-sidebar #november-button{grid-row:12/13}.default-sidebar #december-button{grid-row:13/14}
-.default-sidebar .shadow{grid-row:2/14;grid-column:1/2;background:#0e1e3b;clip-path:inset(0 -16px 0 0);filter:drop-shadow(0 0 16px #6e7889)}
+.default-sidebar .shadow{grid-row:2/14;grid-column:1/2;background:#0e1e3b;clip-path:inset(0 -32px 0 0);filter:drop-shadow(0 0 16px #6e7889)}
 .login-main #load-midground img[src*="images/svg/**/*.svg"]{content:url("../../images/svg/akademia/akademia-blue.svg")}
 .default-header nav div button a img[src*="images/svg/**/*-white.svg"]{content:url("../../images/svg/akademia/akademia-white.svg")}
 .default-header nav div button a img[src*="images/svg/**/*-secondary.svg"]{content:url("../../images/svg/akademia/akademia-bronze.svg")}
