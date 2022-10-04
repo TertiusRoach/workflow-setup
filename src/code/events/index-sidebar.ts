@@ -16,19 +16,19 @@ export namespace IndexSidebar {
     const indexFooter: HTMLElement = document.getElementById('index-footer');
     const indexData: HTMLElement = document.getElementById('index-data');
 
-    let deactivateButtons = (buttons: Object, container: HTMLElement) => {
-      //--|▼| Deactivate header buttons |▼|--//
-      for (let i = 0; i < Object.keys(buttons).length; i++) {
-        buttons[i].className = '';
-      }
-      container.style.display = 'none';
-    };
-
     switch (pageName) {
       case 'default-sidebar':
         IndexSidebar.monthHighlight(indexSidebar);
+
+        //--|▼| Removes the highlighted buttons of the header |▼|--//
+        const defaultHeaderDownplay = (buttons: Object, container: HTMLElement) => {
+          for (let i = 0; i < Object.keys(buttons).length; i++) {
+            buttons[i].className = '';
+          }
+        };
+
         $(indexSidebar).on('mouseenter', () => {
-          deactivateButtons(headerButtons, indexOverlay);
+          defaultHeaderDownplay(headerButtons, indexOverlay);
           if (indexOverlay.className !== 'sidebar-overlay') {
             new GetDesign.forPage(`sidebar-overlay`);
           }

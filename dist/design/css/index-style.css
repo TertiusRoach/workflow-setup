@@ -71,8 +71,9 @@
 .opdatering-main #opdatering-buttons div li button a svg{cursor:pointer;font-size:4rem}
 .opdatering-main #opdatering-buttons div:hover li{clip-path:inset(0 0 0 0)}.opdatering-main #opdatering-sheets{display:grid;grid-row:2/4;grid-column:1/6;grid-template-rows:258px 1fr;grid-template-columns:repeat(5,234px) 1fr}
 .opdatering-main #opdatering-sheets header{grid-row:1/2;grid-column:1/6;overflow:hidden}
-.opdatering-main #opdatering-sheets header iframe{height:358px;width:1187px;margin:-32px 0 0 -3px;clip-path:inset(32px 20px 28px 3px)}
+.opdatering-main #opdatering-sheets header iframe{height:358px;width:1187px;margin:-32px 0 0 -3px;clip-path:inset(32px 0 73px 3px)}
 .opdatering-main #opdatering-sheets footer{grid-row:2/3;grid-column:1/7}.opdatering-main #opdatering-sheets footer iframe{width:1187px;position:fixed;margin:-32px 0 0 -3px;clip-path:inset(32px 20px 28px 3px)}
+.opdatering-main .background{grid-row:1/4;grid-column:1/6;background:linear-gradient(to left,#0e1e3b,#6e7889)}
 @media only screen and (max-height:2160px){main[id*=index] section[id*=sheets] footer iframe{height:1836px}
 }@media only screen and (max-height:2159px){main[id*=index] section[id*=sheets] footer iframe{height:1835px}
 }@media only screen and (max-height:2158px){main[id*=index] section[id*=sheets] footer iframe{height:1834px}
@@ -1925,7 +1926,7 @@
 .header-overlay nav[id*=departemente]{grid-row:1/4;grid-column:4/5}.header-overlay nav[id*=departemente] #akademici{grid-row:1/2}
 .header-overlay nav[id*=departemente] #administrasie{grid-row:2/3}.header-overlay nav[id*=departemente] #operasioneel{grid-row:3/4;border-radius:0 0 8px 8px}
 .header-overlay .background{z-index:-2;grid-row:1/13;grid-column:1/8;background:linear-gradient(to bottom,rgba(14,30,59,0.8),rgba(14,30,59,0.2))}
-.sidebar-overlay nav{display:grid;grid-column:1/11;grid-template-rows:repeat(5,1fr);grid-template-columns:repeat(10,1fr)}
+.sidebar-overlay nav{display:grid;grid-column:1/11;grid-template-rows:repeat(5,1fr);grid-template-columns:repeat(10,1fr);filter:drop-shadow(0 0 4px #cfd2d8)}
 .sidebar-overlay nav a div,.sidebar-overlay nav ul li{height:100%;display:flex;align-items:center;justify-content:center}
 .sidebar-overlay nav a div button,.sidebar-overlay nav ul li button{text-decoration:none;background:0;outline:0;border:0}
 .sidebar-overlay nav a div button h1,.sidebar-overlay nav a div button svg,.sidebar-overlay nav ul li button h1,.sidebar-overlay nav ul li button svg{cursor:pointer;font-size:2rem}
