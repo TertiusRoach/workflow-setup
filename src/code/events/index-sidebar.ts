@@ -4,16 +4,10 @@ export namespace IndexSidebar {
     const indexBody: HTMLElement = document.getElementById('index-body');
     const indexHeader: HTMLElement = document.getElementById('index-header');
     const indexMain: HTMLElement = document.getElementById('index-main');
-
     const indexSidebar: HTMLElement = document.getElementById('index-sidebar');
-    let sidebarButtons: Object = document.querySelectorAll('#index-sidebar > div > button > a > h1');
-
     const indexOverlay: HTMLElement = document.getElementById('index-overlay');
-    let overlayBackground: HTMLElement = indexOverlay.querySelector('.background');
-
     const indexFooter: HTMLElement = document.getElementById('index-footer');
     const indexData: HTMLElement = document.getElementById('index-data');
-
     switch (pageName) {
       case 'default-sidebar':
         //--|▼| Highlights the present month |▼|--//
