@@ -56,7 +56,7 @@ export namespace IndexSidebar {
         };
         defaultSidebarHighlight(pageName, indexSidebar);
 
-        //--|▼| Gets the overlay for the sidebar buttons |▼|--//
+        //--|▼| Retrieves the overlay for the sidebar buttons |▼|--//
         const sidebarOverlayRetrieve = (indexHeader: HTMLElement, indexSidebar: HTMLElement, indexOverlay: HTMLElement) => {
           $(indexSidebar).on('mouseenter', () => {
             if (indexOverlay.className !== 'sidebar-overlay') {
