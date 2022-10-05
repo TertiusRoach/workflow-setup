@@ -1,5 +1,5 @@
 export namespace IndexMain {
-  export function eventsFor(pageName: String | 'default-main' | 'login-main' | 'opdatering-main' | 'rooster-main' | 'statistieke-main') {
+  export function eventsFor(pageName: String | 'default-main' | 'opdatering-main' | 'rain-main' | 'rooster-main' | 'statistieke-main') {
     const indexBody: HTMLElement = document.getElementById('index-body');
     const indexHeader: HTMLElement = document.getElementById('index-header');
     const indexMain: HTMLElement = document.getElementById('index-main');
@@ -10,8 +10,6 @@ export namespace IndexMain {
 
     switch (pageName) {
       case 'default-main':
-        break;
-      case 'login-main':
         break;
       case 'opdatering-main':
         const toggleHeader = (indexMain: HTMLElement) => {
@@ -42,6 +40,8 @@ export namespace IndexMain {
           });
         };
         toggleHeader(indexMain);
+        break;
+      case 'rain-main':
         break;
       case 'rooster-main':
         break;

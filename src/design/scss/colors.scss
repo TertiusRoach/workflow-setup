@@ -3,17 +3,17 @@ $primary-dark: #0e1e3b; /*--► rgba(14, 30, 59, 1) ◄--*/
 $primary-medium: #6e7889; /*--► rgba(14, 30, 59, 0.6) ◄--*/
 $primary-light: #cfd2d8; /*--► rgba(14, 30, 59, 0.2) ◄--*/
 
-$primary-dark-rgba: rgba(14, 30, 59, 1); /*--► #0e1e3b ◄--*/
-$primary-medium-rgba: rgba(14, 30, 59, 0.8); /*--► #6e7889 ◄--*/
-$primary-light-rgba: rgba(14, 30, 59, 0.2); /*--► #cfd2d8 ◄--*/
+$primary-dark-rgba: rgba(14, 30, 59, 0.5); /*--►  ◄--*/
+$primary-medium-rgba: rgba(110, 120, 137, 0.5); /*--►  ◄--*/
+$primary-light-rgba: rgba(207, 210, 216, 0.5); /*--►  ◄--*/
 
 $secondary-dark: #935e28; /*--► rgba(147, 94, 40, 1) ◄--*/
 $secondary-medium: #be9e7e; /*--► rgba(147, 94, 40, 0.6) ◄--*/
 $secondary-light: #fcd5aa; /*--► rgba(147, 94, 40, 0.2) ◄--*/
 
-$secondary-dark-rgba: rgba(147, 94, 40, 1); /*--► #935e28 ◄--*/
-$secondary-medium-rgba: rgba(147, 94, 40, 0.8); /*--► #be9e7e ◄--*/
-$secondary-light-rgba: rgba(147, 94, 40, 0.2); /*--► #fcd5aa ◄--*/
+$secondary-dark-rgba: rgba(147, 94, 40, 0.5); /*--► #935e28 ◄--*/
+$secondary-medium-rgba: rgba(190, 158, 126, 0.5); /*--► #be9e7e ◄--*/
+$secondary-light-rgba: rgba(252, 213, 170, 0.5); /*--► #fcd5aa ◄--*/
 
 //--|▼| Button Colors |▼|--//
 $green-neon: #00ff00; /*--► rgba(0, 255, 0, 1) ◄--*/
@@ -75,7 +75,7 @@ $akademiaLogo: '../../images/svg/akademia/akademia-white.svg';
 $akademiaPrimary: '../../images/svg/akademia/akademia-blue.svg';
 $akademiaSecondary: '../../images/svg/akademia/akademia-bronze.svg';
 
-.login-main {
+.rain-main {
   #load-midground {
     img[src*='images/svg/**/*.svg'] {
       content: url($akademiaPrimary);
