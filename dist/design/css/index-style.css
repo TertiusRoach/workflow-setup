@@ -10,15 +10,16 @@
 .default-header nav div button a img[src*="images/svg/**/*-white.svg"]{content:url("../../images/svg/akademia/akademia-white.svg")}
 .default-header nav div button a img[src*="images/svg/**/*-secondary.svg"]{content:url("../../images/svg/akademia/akademia-bronze.svg")}
 #index-header{z-index:1;display:grid;grid-row:1/2;grid-column:2/6;grid-template-rows:40px;grid-template-columns:1fr 250px 2fr 250px 1fr 145px;filter:drop-shadow(0 8px 16px #6e7889)}
-.default-header{background:#0e1e3b}.default-header nav{grid-row:1/2}.default-header nav div{display:flex;grid-column:2/3;justify-content:center}
-.default-header nav div button{border:0;outline:0;background:0}.default-header nav div button a{display:flex;text-decoration:none;color:#fcd5aa}
+.default-header{background:#0e1e3b}.default-header nav[id*=uitsendings]{grid-column:2/3}
+.default-header nav[id*=departemente]{grid-column:4/5}.default-header nav{grid-row:1/2}
+.default-header nav div{display:flex;grid-column:2/3;justify-content:center}.default-header nav div button{border:0;outline:0;background:0}
+.default-header nav div button a{display:flex;text-decoration:none;color:#fcd5aa}
 .default-header nav div button a img{height:34px;margin:3px 0;display:flex;position:fixed}
-.default-header nav div button a h1{margin:3px 0 3px 40px}.default-header nav div button a img:nth-child(1){opacity:100;transition:opacity .25s}
+.default-header nav div button a h1{padding:3px 0 3px 40px}.default-header nav div button a img:nth-child(1){opacity:100;transition:opacity .25s}
 .default-header nav div button a img:nth-child(2){opacity:0;transition:opacity .25s}
-.default-header nav div button a h1{clip-path:inset(0 100% 0 0);transition:clip-path .25s}
+.default-header nav div button a h1{clip-path:inset(0 100% 0 0);transition:clip-path .5s}
 .default-header nav div[class*=active] button a img:nth-child(1){opacity:0}.default-header nav div[class*=active] button a img:nth-child(2){opacity:100;filter:drop-shadow(0 0 .75rem #fcd5aa)}
-.default-header nav div[class*=active] button a h1{clip-path:inset(0 0 0 0);filter:drop-shadow(0 0 .75rem #be9e7e)}
-.default-header nav[id*=uitsendings]{grid-column:2/3}.default-header nav[id*=departemente]{grid-column:4/5}
+.default-header nav div[class*=active] button a h1{clip-path:inset(0 -40px 0 0);filter:drop-shadow(0 0 .75rem #be9e7e)}
 .login-main #load-midground img[src*="images/svg/**/*.svg"]{content:url("../../images/svg/akademia/akademia-blue.svg")}
 .default-header nav div button a img[src*="images/svg/**/*-white.svg"]{content:url("../../images/svg/akademia/akademia-white.svg")}
 .default-header nav div button a img[src*="images/svg/**/*-secondary.svg"]{content:url("../../images/svg/akademia/akademia-bronze.svg")}
