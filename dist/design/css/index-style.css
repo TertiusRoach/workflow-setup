@@ -107,8 +107,8 @@
 .opdatering-main #opdatering-buttons nav div:hover li{clip-path:inset(0 0 0 0)}.opdatering-main #opdatering-sheets{display:grid;grid-row:2/4;grid-column:1/6;grid-template-rows:258px 1fr;grid-template-columns:repeat(5,234px) 1fr}
 .opdatering-main #opdatering-sheets header{grid-row:1/2;grid-column:1/6;overflow:hidden}
 .opdatering-main #opdatering-sheets header iframe{height:593px;width:1187px}.opdatering-main #opdatering-sheets header #original{margin:-32px 0 0 -3px;clip-path:inset(32px 18px 307px 3px)}
-.opdatering-main #opdatering-sheets header #additional{margin:-312px 0 0 -3px;clip-path:inset(312px 18px 28px 3px)}
-.opdatering-main #opdatering-sheets footer{grid-row:2/3;grid-column:1/7}.opdatering-main #opdatering-sheets footer iframe{width:1187px;position:fixed;margin:-33px 0 0 -3px;clip-path:inset(32px 20px 28px 3px)}
+.opdatering-main #opdatering-sheets header #additional{margin:-311px 0 0 -3px;clip-path:inset(312px 18px 28px 3px)}
+.opdatering-main #opdatering-sheets footer{grid-row:2/3;grid-column:1/7}.opdatering-main #opdatering-sheets footer iframe{width:1187px;position:fixed;margin:-32px 0 0 -3px;clip-path:inset(32px 18px 28px 3px)}
 .opdatering-main .background{z-index:-1;grid-row:1/4;grid-column:1/6;background:linear-gradient(to left,#0e1e3b,#6e7889)}
 @media only screen and (max-height:2160px){main[id*=index] section[id*=sheets] footer iframe{height:1836px}
 }@media only screen and (max-height:2159px){main[id*=index] section[id*=sheets] footer iframe{height:1835px}
