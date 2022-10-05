@@ -69,7 +69,7 @@
     filter: drop-shadow(0 0 8px $primary-dark);
     background: linear-gradient(to left, $primary-dark, $primary-medium);
 
-    .screensaver {
+    .hide-numbers {
       grid-column: 1/2;
       button li {
         justify-content: left;
@@ -83,6 +83,7 @@
         }
       }
     }
+
     h1 {
       display: flex;
       cursor: default;
@@ -90,7 +91,9 @@
       align-items: center;
       justify-content: center;
     }
-    .additional {
+
+    .hide-original,
+    .hide-additional {
       grid-column: 3/4;
       button li {
         justify-content: right;
@@ -102,6 +105,11 @@
           clip-path: inset(0 0 0 100%);
         }
       }
+    }
+
+    .hide-original button:nth-child(2),
+    .hide-additional button:nth-child(1) {
+      display: none;
     }
 
     div button {
@@ -166,14 +174,13 @@
     display: grid;
     grid-row: 2/3;
     grid-column: 1/6;
-
+    grid-template-columns: 1fr;
     grid-template-rows: 23px 1fr;
-    grid-template-columns: repeat(10, 117px);
 
-    //--|▼| Green Buttons |▼|--//
-    div[class*='green'] {
-      /*filter: drop-shadow(0 -16px 8px $green-neon-rgba);*/
-      li {
+    //--|▼| Button Styling (Individual) |▼|--//
+    nav[class*='original'] {
+      //--|▼| Green Buttons |▼|--//
+      div[class*='green'] li {
         background: linear-gradient(to top, $green-neon, $green-dark);
         button {
           a svg {
@@ -188,18 +195,15 @@
           }
         }
       }
-    }
-    .green-sheet {
-      grid-column: 1/2;
-    }
-    .green-edit {
-      grid-column: 2/3;
-    }
-    //--|▲| Green Buttons |▲|--//
-    //--|▼| Pink Buttons |▼|--//
-    div[class*='pink'] {
-      /*filter: drop-shadow(0 -16px 8px $pink-neon-rgba);*/
-      li {
+      .green-sheet {
+        grid-column: 1/2;
+      }
+      .green-edit {
+        grid-column: 2/3;
+      }
+      //--|▲| Green Buttons |▲|--//
+      //--|▼| Pink Buttons |▼|--//
+      div[class*='pink'] li {
         background: linear-gradient(to top, $pink-neon, $pink-dark);
         button {
           a svg {
@@ -214,18 +218,15 @@
           }
         }
       }
-    }
-    .pink-sheet {
-      grid-column: 3/4;
-    }
-    .pink-edit {
-      grid-column: 4/5;
-    }
-    //--|▲| Pink Buttons |▲|--//
-    //--|▼| Yellow Buttons |▼|--//
-    div[class*='yellow'] {
-      /*filter: drop-shadow(0 -16px 8px $yellow-neon-rgba);*/
-      li {
+      .pink-sheet {
+        grid-column: 3/4;
+      }
+      .pink-edit {
+        grid-column: 4/5;
+      }
+      //--|▲| Pink Buttons |▲|--//
+      //--|▼| Yellow Buttons |▼|--//
+      div[class*='yellow'] li {
         background: linear-gradient(to top, $yellow-neon, $yellow-dark);
         button {
           a svg {
@@ -240,18 +241,15 @@
           }
         }
       }
-    }
-    .yellow-sheet {
-      grid-column: 5/6;
-    }
-    .yellow-edit {
-      grid-column: 6/7;
-    }
-    //--|▲| Yellow Buttons |▲|--//
-    //--|▼| Orange Buttons |▼|--//
-    div[class*='orange'] {
-      /*filter: drop-shadow(0 -16px 8px $orange-neon-rgba);*/
-      li {
+      .yellow-sheet {
+        grid-column: 5/6;
+      }
+      .yellow-edit {
+        grid-column: 6/7;
+      }
+      //--|▲| Yellow Buttons |▲|--//
+      //--|▼| Orange Buttons |▼|--//
+      div[class*='orange'] li {
         background: linear-gradient(to top, $orange-neon, $orange-dark);
         button {
           a svg {
@@ -266,18 +264,15 @@
           }
         }
       }
-    }
-    .orange-sheet {
-      grid-column: 7/8;
-    }
-    .orange-edit {
-      grid-column: 8/9;
-    }
-    //--|▲| Orange Buttons |▲|--//
-    //--|▼| Blue Buttons |▼|--//
-    div[class*='blue'] {
-      /*filter: drop-shadow(0 -16px 8px $blue-neon-rgba);*/
-      li {
+      .orange-sheet {
+        grid-column: 7/8;
+      }
+      .orange-edit {
+        grid-column: 8/9;
+      }
+      //--|▲| Orange Buttons |▲|--//
+      //--|▼| Blue Buttons |▼|--//
+      div[class*='blue'] li {
         background: linear-gradient(to top, $blue-neon, $blue-dark);
         button {
           a svg {
@@ -292,39 +287,179 @@
           }
         }
       }
+      .blue-sheet {
+        grid-column: 9/10;
+      }
+      .blue-edit {
+        grid-column: 10/11;
+      }
+      //--|▲| Blue Buttons |▲|--//
+      div[class*='purple'],
+      div[class*='red'],
+      div[class*='brown'],
+      div[class*='grey'],
+      div[class*='turquoise'] {
+        display: none;
+      }
     }
-    .blue-sheet {
-      grid-column: 9/10;
-    }
-    .blue-edit {
-      grid-column: 10/11;
-    }
-    //--|▲| Blue Buttons |▲|--//
-
-    div {
-      grid-row: 2/3;
-      li {
-        height: 100%;
-        display: flex;
-        list-style-type: none;
-        justify-content: center;
-        transition: clip-path 0.25s;
-        clip-path: inset(100% 0 0 0);
+    nav[class*='additional'] {
+      //--|▼| Purple Buttons |▼|--//
+      div[class*='purple'] li {
+        background: linear-gradient(to top, $purple-neon, $purple-dark);
         button {
-          border: none;
-          outline: none;
-          background: none;
-          text-decoration: none;
           a svg {
-            cursor: pointer;
-            font-size: 4rem;
+            color: $purple-light;
+            transition: color 1s;
+            transition: drop-shadow() 2s;
+            filter: drop-shadow(0 0 8px $purple-dark);
+          }
+          a svg:hover {
+            color: $purple-dark;
+            filter: drop-shadow(0 0 4px $purple-neon);
           }
         }
       }
+      .purple-sheet {
+        grid-column: 1/2;
+      }
+      .purple-edit {
+        grid-column: 2/3;
+      }
+      //--|▲| Purple Buttons |▲|--//
+      //--|▼| Red Buttons |▼|--//
+      div[class*='red'] li {
+        background: linear-gradient(to top, $red-neon, $red-dark);
+        button {
+          a svg {
+            color: $red-light;
+            transition: color 1s;
+            transition: drop-shadow() 2s;
+            filter: drop-shadow(0 0 8px $red-dark);
+          }
+          a svg:hover {
+            color: $red-dark;
+            filter: drop-shadow(0 0 4px $red-neon);
+          }
+        }
+      }
+      .red-sheet {
+        grid-column: 3/4;
+      }
+      .red-edit {
+        grid-column: 4/5;
+      }
+      //--|▲| Red Buttons |▲|--//
+      //--|▼| Brown Buttons |▼|--//
+      div[class*='brown'] li {
+        background: linear-gradient(to top, $brown-neon, $brown-dark);
+        button {
+          a svg {
+            color: $brown-light;
+            transition: color 1s;
+            transition: drop-shadow() 2s;
+            filter: drop-shadow(0 0 8px $brown-dark);
+          }
+          a svg:hover {
+            color: $brown-dark;
+            filter: drop-shadow(0 0 4px $brown-neon);
+          }
+        }
+      }
+      .brown-sheet {
+        grid-column: 5/6;
+      }
+      .brown-edit {
+        grid-column: 6/7;
+      }
+      //--|▲| Brown Buttons |▲|--//
+      //--|▼| Grey Buttons |▼|--//
+      div[class*='grey'] li {
+        background: linear-gradient(to top, $grey-neon, $grey-dark);
+        button {
+          a svg {
+            color: $grey-light;
+            transition: color 1s;
+            transition: drop-shadow() 2s;
+            filter: drop-shadow(0 0 8px $grey-dark);
+          }
+          a svg:hover {
+            color: $grey-dark;
+            filter: drop-shadow(0 0 4px $grey-neon);
+          }
+        }
+      }
+      .grey-sheet {
+        grid-column: 7/8;
+      }
+      .grey-edit {
+        grid-column: 8/9;
+      }
+      //--|▲| Grey Buttons |▲|--//
+      //--|▼| Turquoise Buttons |▼|--//
+      div[class*='turquoise'] li {
+        background: linear-gradient(to top, $turquoise-neon, $turquoise-dark);
+        button {
+          a svg {
+            color: $turquoise-light;
+            transition: color 1s;
+            transition: drop-shadow() 2s;
+            filter: drop-shadow(0 0 8px $turquoise-dark);
+          }
+          a svg:hover {
+            color: $turquoise-dark;
+            filter: drop-shadow(0 0 4px $turquoise-neon);
+          }
+        }
+      }
+      .turquoise-sheet {
+        grid-column: 9/10;
+      }
+      .turquoise-edit {
+        grid-column: 10/11;
+      }
+      //--|▲| Turquoise Buttons |▲|--//
+      div[class*='green'],
+      div[class*='pink'],
+      div[class*='yellow'],
+      div[class*='orange'],
+      div[class*='blue'] {
+        display: none;
+      }
     }
-    div:hover li {
-      clip-path: inset(0 0 0 0);
+    //--|▲| Button Styling (Individual) |▲|--//
+    //--|▼| Button Styling (Global) |▼|--//
+    nav {
+      grid-row: 2/3;
+      grid-column: 1/2;
+      display: inherit;
+      grid-template-rows: 235px;
+      grid-template-columns: repeat(10, 117px);
+      div {
+        grid-row: 1/2;
+        li {
+          height: 100%;
+          display: flex;
+          list-style-type: none;
+          justify-content: center;
+          transition: clip-path 0.25s;
+          clip-path: inset(100% 0 0 0);
+          button {
+            border: none;
+            outline: none;
+            background: none;
+            text-decoration: none;
+            a svg {
+              cursor: pointer;
+              font-size: 4rem;
+            }
+          }
+        }
+      }
+      div:hover li {
+        clip-path: inset(0 0 0 0);
+      }
     }
+    //--|▲| Button Styling (Global) |▲|--//
   }
 
   #opdatering-sheets {
@@ -340,19 +475,30 @@
       grid-column: 1/6;
       overflow: hidden;
       iframe {
-        height: 358px;
+        height: 593px;
         width: 1187px;
+      }
+      #original {
+        //--▼ Confirmed Measurements ▼--//
         margin: -32px 0 0 -3px;
-        clip-path: inset(32px 0 73px 3px);
+        clip-path: inset(32px 18px 307px 3px);
+        //--▲ Confirmed Measurements ▲--//
+      }
+      #additional {
+        //--▼ Confirmed Measurements ▼--//
+        margin: -312px 0 0 -3px;
+        clip-path: inset(312px 18px 28px 3px);
+        //--▲ Confirmed Measurements ▲--//
       }
     }
+
     footer {
       grid-row: 2/3;
       grid-column: 1/7;
       iframe {
         width: 1187px;
         position: fixed;
-        margin: -32px 0 0 -3px;
+        margin: -33px 0 0 -3px;
         clip-path: inset(32px 20px 28px 3px);
       }
     }
@@ -360,6 +506,7 @@
   }
 
   .background {
+    z-index: -1;
     grid-row: 1/4;
     grid-column: 1/6;
     background: linear-gradient(to left, $primary-dark, $primary-medium);

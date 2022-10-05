@@ -29,13 +29,15 @@
 .login-main i:nth-child(3n+1){background:linear-gradient(transparent,#0e1e3b)}.login-main i:nth-child(3n+2){background:linear-gradient(transparent,#6e7889)}
 .login-main i:nth-child(3n+3){background:linear-gradient(transparent,#cfd2d8)}@keyframes animate{0%{transform:translateY(-200px)}
 100%{transform:translateY(calc(100vh + 200px))}}.opdatering-main #opdatering-date{display:grid;grid-row:1/2;cursor:default;grid-column:1/6;color:#cfd2d8;grid-template-rows:44px;grid-template-columns:234px 1fr 234px;filter:drop-shadow(0 0 8px #0e1e3b);background:linear-gradient(to left,#0e1e3b,#6e7889)}
-.opdatering-main #opdatering-date .screensaver{grid-column:1/2}.opdatering-main #opdatering-date .screensaver button li{justify-content:left}
-.opdatering-main #opdatering-date .screensaver button li svg{margin-left:16px;padding-right:16px}
-.opdatering-main #opdatering-date .screensaver button li h3{padding:9.5px 16px 9.5px 64px;clip-path:inset(0 100% 0 0)}
+.opdatering-main #opdatering-date .hide-numbers{grid-column:1/2}.opdatering-main #opdatering-date .hide-numbers button li{justify-content:left}
+.opdatering-main #opdatering-date .hide-numbers button li svg{margin-left:16px;padding-right:16px}
+.opdatering-main #opdatering-date .hide-numbers button li h3{padding:9.5px 16px 9.5px 64px;clip-path:inset(0 100% 0 0)}
 .opdatering-main #opdatering-date h1{display:flex;cursor:default;grid-column:2/3;align-items:center;justify-content:center}
-.opdatering-main #opdatering-date .additional{grid-column:3/4}.opdatering-main #opdatering-date .additional button li{justify-content:right}
-.opdatering-main #opdatering-date .additional button li svg{margin:0 16px 0 16px}
-.opdatering-main #opdatering-date .additional button li h3{padding:9.5px 64px 9.5px 16px;clip-path:inset(0 0 0 100%)}
+.opdatering-main #opdatering-date .hide-original,.opdatering-main #opdatering-date .hide-additional{grid-column:3/4}
+.opdatering-main #opdatering-date .hide-original button li,.opdatering-main #opdatering-date .hide-additional button li{justify-content:right}
+.opdatering-main #opdatering-date .hide-original button li svg,.opdatering-main #opdatering-date .hide-additional button li svg{margin:0 16px 0 16px}
+.opdatering-main #opdatering-date .hide-original button li h3,.opdatering-main #opdatering-date .hide-additional button li h3{padding:9.5px 64px 9.5px 16px;clip-path:inset(0 0 0 100%)}
+.opdatering-main #opdatering-date .hide-original button:nth-child(2),.opdatering-main #opdatering-date .hide-additional button:nth-child(1){display:none}
 .opdatering-main #opdatering-date div button{border:0;outline:0;background:0}.opdatering-main #opdatering-date div button li{height:44px;width:234px;display:flex;align-items:center;text-decoration:none}
 .opdatering-main #opdatering-date div button li svg{z-index:1;cursor:pointer;font-size:2rem;position:fixed}
 .opdatering-main #opdatering-date div button li h3{color:#cfd2d8;transition:color .25s;padding:9.5px 0 9.5px 0;transition:clip-path .25s}
@@ -45,35 +47,69 @@
 .opdatering-main #opdatering-date div button li:hover svg:nth-child(2){opacity:100;filter:drop-shadow(0 0 .75rem #be9e7e)}
 .opdatering-main #opdatering-date div button li:hover h3{color:#fcd5aa;clip-path:inset(0 0 0 0);filter:drop-shadow(0 0 .75rem #be9e7e)}
 .opdatering-main #opdatering-date div button .visible{display:flex}.opdatering-main #opdatering-date div button .hidden{display:none}
-.opdatering-main #opdatering-buttons{z-index:1;display:grid;grid-row:2/3;grid-column:1/6;grid-template-rows:23px 1fr;grid-template-columns:repeat(10,117px)}
-.opdatering-main #opdatering-buttons div[class*=green] li{background:linear-gradient(to top,#0f0,#274e13)}
-.opdatering-main #opdatering-buttons div[class*=green] li button a svg{color:#b6d7a8;transition:color 1s;transition:drop-shadow() 2s;filter:drop-shadow(0 0 8px #274e13)}
-.opdatering-main #opdatering-buttons div[class*=green] li button a svg:hover{color:#274e13;filter:drop-shadow(0 0 4px #0f0)}
-.opdatering-main #opdatering-buttons .green-sheet{grid-column:1/2}.opdatering-main #opdatering-buttons .green-edit{grid-column:2/3}
-.opdatering-main #opdatering-buttons div[class*=pink] li{background:linear-gradient(to top,#f0f,#4c1130)}
-.opdatering-main #opdatering-buttons div[class*=pink] li button a svg{color:#d5a6bd;transition:color 1s;transition:drop-shadow() 2s;filter:drop-shadow(0 0 8px #4c1130)}
-.opdatering-main #opdatering-buttons div[class*=pink] li button a svg:hover{color:#4c1130;filter:drop-shadow(0 0 4px #f0f)}
-.opdatering-main #opdatering-buttons .pink-sheet{grid-column:3/4}.opdatering-main #opdatering-buttons .pink-edit{grid-column:4/5}
-.opdatering-main #opdatering-buttons div[class*=yellow] li{background:linear-gradient(to top,#ff0,#7f6000)}
-.opdatering-main #opdatering-buttons div[class*=yellow] li button a svg{color:#ffe599;transition:color 1s;transition:drop-shadow() 2s;filter:drop-shadow(0 0 8px #7f6000)}
-.opdatering-main #opdatering-buttons div[class*=yellow] li button a svg:hover{color:#7f6000;filter:drop-shadow(0 0 4px #ff0)}
-.opdatering-main #opdatering-buttons .yellow-sheet{grid-column:5/6}.opdatering-main #opdatering-buttons .yellow-edit{grid-column:6/7}
-.opdatering-main #opdatering-buttons div[class*=orange] li{background:linear-gradient(to top,#f90,#783f04)}
-.opdatering-main #opdatering-buttons div[class*=orange] li button a svg{color:#f9cb9c;transition:color 1s;transition:drop-shadow() 2s;filter:drop-shadow(0 0 8px #783f04)}
-.opdatering-main #opdatering-buttons div[class*=orange] li button a svg:hover{color:#783f04;filter:drop-shadow(0 0 4px #f90)}
-.opdatering-main #opdatering-buttons .orange-sheet{grid-column:7/8}.opdatering-main #opdatering-buttons .orange-edit{grid-column:8/9}
-.opdatering-main #opdatering-buttons div[class*=blue] li{background:linear-gradient(to top,#3c90ff,#073763)}
-.opdatering-main #opdatering-buttons div[class*=blue] li button a svg{color:#9fc5e8;transition:color 1s;transition:drop-shadow() 2s;filter:drop-shadow(0 0 8px #073763)}
-.opdatering-main #opdatering-buttons div[class*=blue] li button a svg:hover{color:#073763;filter:drop-shadow(0 0 4px #3c90ff)}
-.opdatering-main #opdatering-buttons .blue-sheet{grid-column:9/10}.opdatering-main #opdatering-buttons .blue-edit{grid-column:10/11}
-.opdatering-main #opdatering-buttons div{grid-row:2/3}.opdatering-main #opdatering-buttons div li{height:100%;display:flex;list-style-type:none;justify-content:center;transition:clip-path .25s;clip-path:inset(100% 0 0 0)}
-.opdatering-main #opdatering-buttons div li button{border:0;outline:0;background:0;text-decoration:none}
-.opdatering-main #opdatering-buttons div li button a svg{cursor:pointer;font-size:4rem}
-.opdatering-main #opdatering-buttons div:hover li{clip-path:inset(0 0 0 0)}.opdatering-main #opdatering-sheets{display:grid;grid-row:2/4;grid-column:1/6;grid-template-rows:258px 1fr;grid-template-columns:repeat(5,234px) 1fr}
+.opdatering-main #opdatering-buttons{z-index:1;display:grid;grid-row:2/3;grid-column:1/6;grid-template-columns:1fr;grid-template-rows:23px 1fr}
+.opdatering-main #opdatering-buttons nav[class*=original] div[class*=green] li{background:linear-gradient(to top,#0f0,#274e13)}
+.opdatering-main #opdatering-buttons nav[class*=original] div[class*=green] li button a svg{color:#b6d7a8;transition:color 1s;transition:drop-shadow() 2s;filter:drop-shadow(0 0 8px #274e13)}
+.opdatering-main #opdatering-buttons nav[class*=original] div[class*=green] li button a svg:hover{color:#274e13;filter:drop-shadow(0 0 4px #0f0)}
+.opdatering-main #opdatering-buttons nav[class*=original] .green-sheet{grid-column:1/2}
+.opdatering-main #opdatering-buttons nav[class*=original] .green-edit{grid-column:2/3}
+.opdatering-main #opdatering-buttons nav[class*=original] div[class*=pink] li{background:linear-gradient(to top,#f0f,#4c1130)}
+.opdatering-main #opdatering-buttons nav[class*=original] div[class*=pink] li button a svg{color:#d5a6bd;transition:color 1s;transition:drop-shadow() 2s;filter:drop-shadow(0 0 8px #4c1130)}
+.opdatering-main #opdatering-buttons nav[class*=original] div[class*=pink] li button a svg:hover{color:#4c1130;filter:drop-shadow(0 0 4px #f0f)}
+.opdatering-main #opdatering-buttons nav[class*=original] .pink-sheet{grid-column:3/4}
+.opdatering-main #opdatering-buttons nav[class*=original] .pink-edit{grid-column:4/5}
+.opdatering-main #opdatering-buttons nav[class*=original] div[class*=yellow] li{background:linear-gradient(to top,#ff0,#7f6000)}
+.opdatering-main #opdatering-buttons nav[class*=original] div[class*=yellow] li button a svg{color:#ffe599;transition:color 1s;transition:drop-shadow() 2s;filter:drop-shadow(0 0 8px #7f6000)}
+.opdatering-main #opdatering-buttons nav[class*=original] div[class*=yellow] li button a svg:hover{color:#7f6000;filter:drop-shadow(0 0 4px #ff0)}
+.opdatering-main #opdatering-buttons nav[class*=original] .yellow-sheet{grid-column:5/6}
+.opdatering-main #opdatering-buttons nav[class*=original] .yellow-edit{grid-column:6/7}
+.opdatering-main #opdatering-buttons nav[class*=original] div[class*=orange] li{background:linear-gradient(to top,#f90,#783f04)}
+.opdatering-main #opdatering-buttons nav[class*=original] div[class*=orange] li button a svg{color:#f9cb9c;transition:color 1s;transition:drop-shadow() 2s;filter:drop-shadow(0 0 8px #783f04)}
+.opdatering-main #opdatering-buttons nav[class*=original] div[class*=orange] li button a svg:hover{color:#783f04;filter:drop-shadow(0 0 4px #f90)}
+.opdatering-main #opdatering-buttons nav[class*=original] .orange-sheet{grid-column:7/8}
+.opdatering-main #opdatering-buttons nav[class*=original] .orange-edit{grid-column:8/9}
+.opdatering-main #opdatering-buttons nav[class*=original] div[class*=blue] li{background:linear-gradient(to top,#3c90ff,#073763)}
+.opdatering-main #opdatering-buttons nav[class*=original] div[class*=blue] li button a svg{color:#9fc5e8;transition:color 1s;transition:drop-shadow() 2s;filter:drop-shadow(0 0 8px #073763)}
+.opdatering-main #opdatering-buttons nav[class*=original] div[class*=blue] li button a svg:hover{color:#073763;filter:drop-shadow(0 0 4px #3c90ff)}
+.opdatering-main #opdatering-buttons nav[class*=original] .blue-sheet{grid-column:9/10}
+.opdatering-main #opdatering-buttons nav[class*=original] .blue-edit{grid-column:10/11}
+.opdatering-main #opdatering-buttons nav[class*=original] div[class*=purple],.opdatering-main #opdatering-buttons nav[class*=original] div[class*=red],.opdatering-main #opdatering-buttons nav[class*=original] div[class*=brown],.opdatering-main #opdatering-buttons nav[class*=original] div[class*=grey],.opdatering-main #opdatering-buttons nav[class*=original] div[class*=turquoise]{display:none}
+.opdatering-main #opdatering-buttons nav[class*=additional] div[class*=purple] li{background:linear-gradient(to top,#90f,#20124d)}
+.opdatering-main #opdatering-buttons nav[class*=additional] div[class*=purple] li button a svg{color:#b4a7d6;transition:color 1s;transition:drop-shadow() 2s;filter:drop-shadow(0 0 8px #20124d)}
+.opdatering-main #opdatering-buttons nav[class*=additional] div[class*=purple] li button a svg:hover{color:#20124d;filter:drop-shadow(0 0 4px #90f)}
+.opdatering-main #opdatering-buttons nav[class*=additional] .purple-sheet{grid-column:1/2}
+.opdatering-main #opdatering-buttons nav[class*=additional] .purple-edit{grid-column:2/3}
+.opdatering-main #opdatering-buttons nav[class*=additional] div[class*=red] li{background:linear-gradient(to top,#f00,#600)}
+.opdatering-main #opdatering-buttons nav[class*=additional] div[class*=red] li button a svg{color:#ea9999;transition:color 1s;transition:drop-shadow() 2s;filter:drop-shadow(0 0 8px #600)}
+.opdatering-main #opdatering-buttons nav[class*=additional] div[class*=red] li button a svg:hover{color:#600;filter:drop-shadow(0 0 4px #f00)}
+.opdatering-main #opdatering-buttons nav[class*=additional] .red-sheet{grid-column:3/4}
+.opdatering-main #opdatering-buttons nav[class*=additional] .red-edit{grid-column:4/5}
+.opdatering-main #opdatering-buttons nav[class*=additional] div[class*=brown] li{background:linear-gradient(to top,#a97142,#4f341d)}
+.opdatering-main #opdatering-buttons nav[class*=additional] div[class*=brown] li button a svg{color:#ffd3af;transition:color 1s;transition:drop-shadow() 2s;filter:drop-shadow(0 0 8px #4f341d)}
+.opdatering-main #opdatering-buttons nav[class*=additional] div[class*=brown] li button a svg:hover{color:#4f341d;filter:drop-shadow(0 0 4px #a97142)}
+.opdatering-main #opdatering-buttons nav[class*=additional] .brown-sheet{grid-column:5/6}
+.opdatering-main #opdatering-buttons nav[class*=additional] .brown-edit{grid-column:6/7}
+.opdatering-main #opdatering-buttons nav[class*=additional] div[class*=grey] li{background:linear-gradient(to top,#bec2cb,#434343)}
+.opdatering-main #opdatering-buttons nav[class*=additional] div[class*=grey] li button a svg{color:#efefef;transition:color 1s;transition:drop-shadow() 2s;filter:drop-shadow(0 0 8px #434343)}
+.opdatering-main #opdatering-buttons nav[class*=additional] div[class*=grey] li button a svg:hover{color:#434343;filter:drop-shadow(0 0 4px #bec2cb)}
+.opdatering-main #opdatering-buttons nav[class*=additional] .grey-sheet{grid-column:7/8}
+.opdatering-main #opdatering-buttons nav[class*=additional] .grey-edit{grid-column:8/9}
+.opdatering-main #opdatering-buttons nav[class*=additional] div[class*=turquoise] li{background:linear-gradient(to top,#0ff,#0c343d)}
+.opdatering-main #opdatering-buttons nav[class*=additional] div[class*=turquoise] li button a svg{color:#a2c4c9;transition:color 1s;transition:drop-shadow() 2s;filter:drop-shadow(0 0 8px #0c343d)}
+.opdatering-main #opdatering-buttons nav[class*=additional] div[class*=turquoise] li button a svg:hover{color:#0c343d;filter:drop-shadow(0 0 4px #0ff)}
+.opdatering-main #opdatering-buttons nav[class*=additional] .turquoise-sheet{grid-column:9/10}
+.opdatering-main #opdatering-buttons nav[class*=additional] .turquoise-edit{grid-column:10/11}
+.opdatering-main #opdatering-buttons nav[class*=additional] div[class*=green],.opdatering-main #opdatering-buttons nav[class*=additional] div[class*=pink],.opdatering-main #opdatering-buttons nav[class*=additional] div[class*=yellow],.opdatering-main #opdatering-buttons nav[class*=additional] div[class*=orange],.opdatering-main #opdatering-buttons nav[class*=additional] div[class*=blue]{display:none}
+.opdatering-main #opdatering-buttons nav{grid-row:2/3;grid-column:1/2;display:inherit;grid-template-rows:235px;grid-template-columns:repeat(10,117px)}
+.opdatering-main #opdatering-buttons nav div{grid-row:1/2}.opdatering-main #opdatering-buttons nav div li{height:100%;display:flex;list-style-type:none;justify-content:center;transition:clip-path .25s;clip-path:inset(100% 0 0 0)}
+.opdatering-main #opdatering-buttons nav div li button{border:0;outline:0;background:0;text-decoration:none}
+.opdatering-main #opdatering-buttons nav div li button a svg{cursor:pointer;font-size:4rem}
+.opdatering-main #opdatering-buttons nav div:hover li{clip-path:inset(0 0 0 0)}.opdatering-main #opdatering-sheets{display:grid;grid-row:2/4;grid-column:1/6;grid-template-rows:258px 1fr;grid-template-columns:repeat(5,234px) 1fr}
 .opdatering-main #opdatering-sheets header{grid-row:1/2;grid-column:1/6;overflow:hidden}
-.opdatering-main #opdatering-sheets header iframe{height:358px;width:1187px;margin:-32px 0 0 -3px;clip-path:inset(32px 0 73px 3px)}
-.opdatering-main #opdatering-sheets footer{grid-row:2/3;grid-column:1/7}.opdatering-main #opdatering-sheets footer iframe{width:1187px;position:fixed;margin:-32px 0 0 -3px;clip-path:inset(32px 20px 28px 3px)}
-.opdatering-main .background{grid-row:1/4;grid-column:1/6;background:linear-gradient(to left,#0e1e3b,#6e7889)}
+.opdatering-main #opdatering-sheets header iframe{height:593px;width:1187px}.opdatering-main #opdatering-sheets header #original{margin:-32px 0 0 -3px;clip-path:inset(32px 18px 307px 3px)}
+.opdatering-main #opdatering-sheets header #additional{margin:-312px 0 0 -3px;clip-path:inset(312px 18px 28px 3px)}
+.opdatering-main #opdatering-sheets footer{grid-row:2/3;grid-column:1/7}.opdatering-main #opdatering-sheets footer iframe{width:1187px;position:fixed;margin:-33px 0 0 -3px;clip-path:inset(32px 20px 28px 3px)}
+.opdatering-main .background{z-index:-1;grid-row:1/4;grid-column:1/6;background:linear-gradient(to left,#0e1e3b,#6e7889)}
 @media only screen and (max-height:2160px){main[id*=index] section[id*=sheets] footer iframe{height:1836px}
 }@media only screen and (max-height:2159px){main[id*=index] section[id*=sheets] footer iframe{height:1835px}
 }@media only screen and (max-height:2158px){main[id*=index] section[id*=sheets] footer iframe{height:1834px}
