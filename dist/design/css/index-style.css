@@ -107,24 +107,23 @@
 .opdatering-main #opdatering-sheets header #additional{margin:-311px 0 0 -3px;clip-path:inset(311px 18px 28px 3px)}
 .opdatering-main #opdatering-sheets footer{grid-row:2/3;grid-column:1/7}.opdatering-main #opdatering-sheets footer iframe{width:1187px;position:fixed;margin:-32px 0 0 -3px;clip-path:inset(32px 18px 28px 3px)}
 .opdatering-main .background{z-index:-1;grid-row:1/4;grid-column:1/6;background:linear-gradient(to left,#0e1e3b,#6e7889)}
-.rain-main{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:44px repeat(3,1fr);background:linear-gradient(to bottom left,#cfd2d8,#0e1e3b)}
+.rain-main{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:44px repeat(3,1fr);background:linear-gradient(to bottom left,#6e7889,#0e1e3b)}
 .rain-main .show-numbers{grid-row:1/2;grid-column:1/2}.rain-main .show-numbers button{border:0;outline:0;background:0}
 .rain-main .show-numbers button li{height:44px;width:234px;display:flex;align-items:center;justify-content:left;text-decoration:none}
 .rain-main .show-numbers button li svg{z-index:1;cursor:pointer;font-size:2rem;position:fixed;margin-left:16px;padding-right:16px;filter:drop-shadow(0 0 4px #0e1e3b)}
 .rain-main .show-numbers button li svg:nth-child(1){opacity:100;color:#cfd2d8;transition:opacity .25s}
 .rain-main .show-numbers button li svg:nth-child(2){opacity:0;color:#935e28;transition:opacity .25s}
-.rain-main .show-numbers button li h3{color:#cfd2d8;transition:color .25s;padding:9.5px 0 9.5px 0;transition:clip-path .25s;clip-path:inset(0 100% 0 0);padding:9.5px 16px 9.5px 64px}
+.rain-main .show-numbers button li h3{color:#cfd2d8;transition:clip-path .25s;clip-path:inset(0 100% 0 0);padding:9.5px 16px 9.5px 64px}
 .rain-main .show-numbers button li:hover svg:nth-child(1){opacity:0}.rain-main .show-numbers button li:hover svg:nth-child(2){opacity:100;filter:drop-shadow(0 0 .75rem #be9e7e)}
-.rain-main .show-numbers button li:hover h3{color:#fcd5aa;clip-path:inset(0 0 0 0);filter:drop-shadow(0 0 .75rem #be9e7e)}
-@keyframes animate{0%{transform:translateY(-400px)}100%{transform:translateY(calc(100vh + 800px))}
-}.rain-main #company-logo{display:flex;grid-row:1/5;grid-column:2/3;align-items:center;justify-content:center}
+.rain-main .show-numbers button li:hover h3{color:#fcd5aa;clip-path:inset(0 -16px -16px 0);filter:drop-shadow(0 0 .75rem #be9e7e)}
+.rain-main #company-logo{display:flex;grid-row:1/5;grid-column:2/3;align-items:center;justify-content:center}
 .rain-main #company-logo img{height:33.33%;filter:drop-shadow(0 0 16px #cfd2d8)}.rain-main .rain-bottom{filter:blur(2px)}
+.rain-main section{display:flex;grid-row:1/5;grid-column:1/4}.rain-main section i{height:125px;position:absolute;border-bottom-left-radius:5px;border-bottom-right-radius:5px;animation:animate 5s linear infinite}
+.rain-main section i:nth-child(3n+1){background:linear-gradient(transparent,#cfd2d8)}
+.rain-main section i:nth-child(3n+2){background:linear-gradient(transparent,#6e7889)}
+.rain-main section i:nth-child(3n+3){background:linear-gradient(transparent,#0e1e3b)}
 @keyframes animate{0%{transform:translateY(-200px)}100%{transform:translateY(calc(100vh + 200px))}
-}.rain-main section{display:flex;grid-row:1/5;grid-column:1/4}.rain-main section i{height:125px;position:absolute;border-bottom-left-radius:5px;border-bottom-right-radius:5px;animation:animate 5s linear infinite;background:linear-gradient(transparent,#6e7889)}
-.rain-main section i:nth-child(3n+1){filter:drop-shadow(-2px 2px 4px rgba(14,30,59,0.5));background:linear-gradient(transparent,#cfd2d8)}
-.rain-main section i:nth-child(3n+2){filter:drop-shadow(-2px 2px 4px rgba(110,120,137,0.5));background:linear-gradient(transparent,#6e7889)}
-.rain-main section i:nth-child(3n+3){filter:drop-shadow(-2px 2px 4px rgba(207,210,216,0.5));background:linear-gradient(transparent,#0e1e3b)}
-@media only screen and (max-height:2160px){main[id*=index] section[id*=sheets] footer iframe{height:1836px}
+}@media only screen and (max-height:2160px){main[id*=index] section[id*=sheets] footer iframe{height:1836px}
 }@media only screen and (max-height:2159px){main[id*=index] section[id*=sheets] footer iframe{height:1835px}
 }@media only screen and (max-height:2158px){main[id*=index] section[id*=sheets] footer iframe{height:1834px}
 }@media only screen and (max-height:2157px){main[id*=index] section[id*=sheets] footer iframe{height:1833px}
@@ -1979,7 +1978,7 @@
 .header-overlay nav[id*=departemente]{grid-row:1/4;grid-column:4/5;grid-template-rows:repeat(3,1fr)}
 .header-overlay nav[id*=departemente] #akademici{grid-row:1/2}.header-overlay nav[id*=departemente] #administrasie{grid-row:2/3}
 .header-overlay nav[id*=departemente] #operasioneel{grid-row:3/4;border-radius:0 0 8px 8px}
-.header-overlay .background{z-index:-2;grid-row:1/13;grid-column:1/8;background:linear-gradient(to bottom,rgba(14,30,59,0.5),rgba(110,120,137,0.5))}
+.header-overlay .background{z-index:-2;grid-row:1/13;grid-column:1/8;background:linear-gradient(to bottom,rgba(14,30,59,0.8),rgba(14,30,59,0.4))}
 .sidebar-overlay nav{display:grid;grid-column:1/11;grid-template-rows:repeat(5,1fr);grid-template-columns:repeat(10,1fr);filter:drop-shadow(0 0 8px #6e7889)}
 .sidebar-overlay nav a div,.sidebar-overlay nav ul li{height:100%;display:flex;align-items:center;justify-content:center}
 .sidebar-overlay nav a div button,.sidebar-overlay nav ul li button{text-decoration:none;background:0;outline:0;border:0}
@@ -2078,7 +2077,7 @@
 .sidebar-overlay #november #tu-cloud-nov div,.sidebar-overlay #november .tu-cloud li{border-top-right-radius:8px}
 .sidebar-overlay #december{grid-row:8/13}.sidebar-overlay #december #tu-sheet-dec div,.sidebar-overlay #december .tu-sheet li{border-bottom-right-radius:8px}
 .sidebar-overlay #december #tu-cloud-dec div,.sidebar-overlay #december .tu-cloud li{border-top-right-radius:8px}
-.sidebar-overlay .background{z-index:-2;grid-row:1/13;grid-column:1/12;background:linear-gradient(to bottom right,rgba(207,210,216,0.5),rgba(110,120,137,0.5))}
+.sidebar-overlay .background{z-index:-2;grid-row:1/13;grid-column:1/12;background:linear-gradient(to bottom right,rgba(14,30,59,0.8),rgba(14,30,59,0.4))}
 @media only screen and (max-height:2160px){section[class*=sidebar]{grid-template-columns:repeat(10,171.3333333333px) 1fr;grid-template-rows:repeat(12,171.3333333333px)}
 }@media only screen and (max-height:2159px){section[class*=sidebar]{grid-template-columns:repeat(10,171.25px) 1fr;grid-template-rows:repeat(12,171.25px)}
 }@media only screen and (max-height:2158px){section[class*=sidebar]{grid-template-columns:repeat(10,171.1666666667px) 1fr;grid-template-rows:repeat(12,171.1666666667px)}

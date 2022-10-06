@@ -488,7 +488,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 44px repeat(3, 1fr);
-  background: linear-gradient(to bottom left, $primary-light, $primary-dark);
+  background: linear-gradient(to bottom left, $primary-medium, $primary-dark);
 
   .show-numbers {
     grid-row: 1/2;
@@ -504,7 +504,6 @@
         align-items: center;
         justify-content: left;
         text-decoration: none;
-
         svg {
           z-index: 1;
           cursor: pointer;
@@ -526,8 +525,6 @@
         }
         h3 {
           color: $primary-light;
-          transition: color 0.25s;
-          padding: 9.5px 0 9.5px 0;
           transition: clip-path 0.25s;
           clip-path: inset(0 100% 0 0);
           padding: 9.5px 16px 9.5px 64px;
@@ -543,32 +540,12 @@
         }
         h3 {
           color: $secondary-light;
-          clip-path: inset(0 0 0 0);
+          clip-path: inset(0 -16px -16px 0);
           filter: drop-shadow(0 0 0.75rem $secondary-medium);
         }
       }
     }
   }
-  // div button {
-  //   li {
-  //     svg {
-  //     }
-  //     h3 {
-  //     }
-  //   }
-  // }
-
-  .rain-top {
-    @keyframes animate {
-      0% {
-        transform: translateY(-400px);
-      }
-      100% {
-        transform: translateY(calc(100vh + 800px));
-      }
-    }
-  }
-
   #company-logo {
     display: flex;
     grid-row: 1/5;
@@ -581,16 +558,13 @@
     }
   }
 
+  /*
+  .rain-top {
+  }
+  */
+
   .rain-bottom {
     filter: blur(2px);
-    @keyframes animate {
-      0% {
-        transform: translateY(-200px);
-      }
-      100% {
-        transform: translateY(calc(100vh + 200px));
-      }
-    }
   }
 
   section {
@@ -603,19 +577,24 @@
       border-bottom-left-radius: 5px;
       border-bottom-right-radius: 5px;
       animation: animate 5s linear infinite;
-      background: linear-gradient(transparent, $primary-medium);
+      // background: linear-gradient(transparent, $primary-medium);
     }
     i:nth-child(3n + 1) {
-      filter: drop-shadow(-2px 2px 4px $primary-dark-rgba);
       background: linear-gradient(transparent, $primary-light);
     }
     i:nth-child(3n + 2) {
-      filter: drop-shadow(-2px 2px 4px $primary-medium-rgba);
       background: linear-gradient(transparent, $primary-medium);
     }
     i:nth-child(3n + 3) {
-      filter: drop-shadow(-2px 2px 4px $primary-light-rgba);
       background: linear-gradient(transparent, $primary-dark);
+    }
+    @keyframes animate {
+      0% {
+        transform: translateY(-200px);
+      }
+      100% {
+        transform: translateY(calc(100vh + 200px));
+      }
     }
   }
 }
