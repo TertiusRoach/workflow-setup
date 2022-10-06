@@ -6,12 +6,14 @@ export namespace Index {
       new GetDesign.forPage(`default-header`);
       //===========================//
       /*new GetDesign.forPage(`default-main`);*/
-      new GetDesign.forPage(`rain-main`);
-      // new GetDesign.forPage(`opdatering-main`);
+      // new GetDesign.forPage(`rain-main`);
+      new GetDesign.forPage(`opdatering-main`);
       //===========================//
       new GetDesign.forPage(`default-sidebar`);
       new GetDesign.forPage(`default-footer`);
       new GetDesign.forPage(`default-overlay`);
+      new GetDesign.forPage(`default-data`);
+
       //--► console.log('--index.js Loaded'); ◄--//
     }
   }
