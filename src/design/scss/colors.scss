@@ -3,9 +3,9 @@ $primary-dark: #0e1e3b; /*--► rgba(14, 30, 59, 1) ◄--*/
 $primary-medium: #6e7889; /*--► rgba(14, 30, 59, 0.6) ◄--*/
 $primary-light: #cfd2d8; /*--► rgba(14, 30, 59, 0.2) ◄--*/
 
-$primary-dark-rgba: rgba(14, 30, 59, 0.5); /*--►  ◄--*/
-$primary-medium-rgba: rgba(110, 120, 137, 0.5); /*--►  ◄--*/
-$primary-light-rgba: rgba(207, 210, 216, 0.5); /*--►  ◄--*/
+$primary-dark-rgba: rgba(14, 30, 59, 0.5); /*--► #0e1e3b ◄--*/
+$primary-medium-rgba: rgba(110, 120, 137, 0.5); /*--► #6e7889 ◄--*/
+$primary-light-rgba: rgba(207, 210, 216, 0.5); /*--► #cfd2d8 ◄--*/
 
 $secondary-dark: #935e28; /*--► rgba(147, 94, 40, 1) ◄--*/
 $secondary-medium: #be9e7e; /*--► rgba(147, 94, 40, 0.6) ◄--*/
@@ -76,7 +76,7 @@ $akademiaPrimary: '../../images/svg/akademia/akademia-blue.svg';
 $akademiaSecondary: '../../images/svg/akademia/akademia-bronze.svg';
 
 .rain-main {
-  #load-midground {
+  #company-logo {
     img[src*='images/svg/**/*.svg'] {
       content: url($akademiaPrimary);
     }
