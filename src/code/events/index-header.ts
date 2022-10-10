@@ -16,6 +16,10 @@ export namespace IndexHeader {
           let departementeButton: HTMLDivElement = indexHeader.querySelector('#departemente-button div');
 
           $(indexHeader).on('mouseenter', () => {
+            //--▼ Bug: When entering <header> the overlay displays incorrectly, this fixes it. ▼--//
+            if (indexOverlay.className === 'sidebar-overlay') {
+              indexOverlay.style.display = 'none';
+            }
             indexOverlay.className = 'header-overlay';
           });
 

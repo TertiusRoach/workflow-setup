@@ -6,8 +6,8 @@ export namespace Index {
       new GetDesign.forPage('default-header');
       //===========================//
       // new GetDesign.forPage('opdatering-main');
-      new GetDesign.forPage('rooster-main');
-      // new GetDesign.forPage('statistieke-main');
+      // new GetDesign.forPage('rooster-main');
+      new GetDesign.forPage('statistieke-main');
       //===========================//
       new GetDesign.forPage('default-sidebar');
       new GetDesign.forPage('default-footer');
