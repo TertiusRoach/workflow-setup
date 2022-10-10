@@ -9,6 +9,8 @@ export namespace IndexMain {
     const indexFooter: HTMLElement = document.getElementById('index-footer');
     const indexData: HTMLElement = document.getElementById('index-data');
 
+    indexMain.querySelector(`#${pageName.split('-')[0]}-date h1`).innerHTML = IndexMain.getPresent('Weekday, 00 Month YYYY');
+
     switch (pageName) {
       case 'default-main':
         break;
@@ -73,15 +75,15 @@ export namespace IndexMain {
         };
         toggleNumbers(indexMain, indexData);
 
-        //--|▼| Clears and resets containers to hide data |▼|--//
+        //--|▼| Clears data by showing screensaver on button click |▼|--//
         IndexMain.showScreensaver('opdatering', indexMain, indexFooter, indexData);
         break;
       case 'rooster-main':
-        //--|▼| Clears and resets containers to hide data |▼|--//
+        //--|▼| Clears data by showing screensaver on button click |▼|--//
         IndexMain.showScreensaver('rooster', indexMain, indexFooter, indexData);
         break;
       case 'statistieke-main':
-        //--|▼| Clears and resets containers to hide data |▼|--//
+        //--|▼| Clears data by showing screensaver on button click |▼|--//
         IndexMain.showScreensaver('statistieke', indexMain, indexFooter, indexData);
         break;
       case 'rain-main':
@@ -156,5 +158,36 @@ export namespace IndexMain {
       toggleButtons(footerButtons, indexFooter, indexData);
       new GetDesign.forPage('rain-main');
     });
+  }
+
+  export function getPresent(format: String | '2000-01-01' | 'Weekday, 00 Month YYYY' | '00 Weekday, Month YYYY') {
+    const presentDate: String = Date();
+    let monthDay: String | Number = presentDate.split(' ')[2];
+
+    const weekdayEN: Array<String> = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const weekdagAF: Array<String> = ['Sondag', 'Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrydag', 'Saterdag'];
+    let weekday = weekdayEN[new Date().getDay()];
+    let weekdag = weekdagAF[new Date().getDay()];
+
+    const monthEN: Array<String> = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    const maandAF: Array<String> = ['Januarie', 'Februarie', 'Maart', 'April', 'Mei', 'Junie', 'Julie', 'Augustus', 'September', 'Oktober', 'November', 'Desember'];
+    let month = monthEN[new Date().getMonth()];
+    let maand = maandAF[new Date().getMonth()];
+
+    const monthNumber: Array<String> = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
+    let monthNumerical: String = monthNumber[new Date().getMonth()];
+
+    let year: String = presentDate.split(' ')[3];
+
+    switch (format) {
+      case '2000-01-01':
+        return `${year}-${monthNumerical}-${monthDay}`;
+      case 'Weekday, 00 Month YYYY':
+        return `${weekdag}, ${monthDay} ${maand} ${year}`;
+      case '00 Weekday, Month YYYY':
+        return `${monthDay} ${weekdag}, ${maand} ${year}`;
+      default:
+        return 'Undefined date format';
+    }
   }
 }
