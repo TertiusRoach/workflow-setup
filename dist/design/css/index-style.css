@@ -23,8 +23,7 @@
 .rain-main #company-logo img[src*="images/svg/**/*.svg"]{content:url("../../images/svg/akademia/akademia-blue.svg")}
 .default-header nav div button a img[src*="images/svg/**/*-white.svg"]{content:url("../../images/svg/akademia/akademia-white.svg")}
 .default-header nav div button a img[src*="images/svg/**/*-secondary.svg"]{content:url("../../images/svg/akademia/akademia-bronze.svg")}
-#index-main{grid-row:2/3;grid-column:2/4}#index-main div[class*=blur]{filter:blur(4px)}
-.opdatering-main{display:grid;background:#0e1e3b;grid-template-rows:44px 258px 1fr;grid-template-columns:repeat(5,234px) 1fr 145px}
+#index-main{grid-row:2/3;grid-column:2/4}.opdatering-main{display:grid;background:#0e1e3b;grid-template-rows:44px 258px 1fr;grid-template-columns:repeat(5,234px) 1fr 145px}
 .opdatering-main #opdatering-date{display:grid;grid-row:1/2;cursor:default;grid-column:1/6;color:#cfd2d8;grid-template-rows:44px;grid-template-columns:234px 1fr 234px;filter:drop-shadow(0 0 8px #0e1e3b);background:linear-gradient(to left,#0e1e3b,#6e7889)}
 .opdatering-main #opdatering-date .hide-numbers{grid-column:1/2}.opdatering-main #opdatering-date .hide-numbers button li{justify-content:left}
 .opdatering-main #opdatering-date .hide-numbers button li svg{margin-left:16px;padding-right:16px}
@@ -124,6 +123,7 @@
 .rooster-main #rooster-date header div button .visible{display:flex}.rooster-main #rooster-date header div button .hidden{display:none}
 .rooster-main #rooster-sheets{display:grid;grid-row:2/3;grid-column:1/13;grid-template-rows:1fr;grid-template-columns:128px 52px repeat(10,99px)}
 .rooster-main #rooster-sheets iframe{width:1189px;position:fixed;margin:-32px 0 0 -3px;clip-path:inset(32px 18px 28px 3px)}
+.rooster-main .background{z-index:-1;grid-row:1/4;grid-column:1/13;background:linear-gradient(to left,#0e1e3b,#6e7889)}
 .statistieke-main{display:grid;background:#0e1e3b;grid-template-rows:44px 258px 1fr;grid-template-columns:repeat(5,234px) 1fr 145px}
 .statistieke-main #statistieke-date{display:grid;grid-row:1/2;cursor:default;grid-column:1/6;color:#cfd2d8;grid-template-rows:44px;grid-template-columns:234px 1fr 234px;filter:drop-shadow(0 0 8px #0e1e3b);background:linear-gradient(to left,#0e1e3b,#6e7889)}
 .statistieke-main #statistieke-date .hide-numbers{grid-column:1/2}.statistieke-main #statistieke-date .hide-numbers button{border:0;outline:0;background:0}
@@ -3767,7 +3767,7 @@
 }@media only screen and (max-height:362px){main[class*=rooster] section[id*=sheets] iframe{height:272px}
 }@media only screen and (max-height:361px){main[class*=rooster] section[id*=sheets] iframe{height:271px}
 }@media only screen and (max-height:360px){main[class*=rooster] section[id*=sheets] iframe{height:270px}
-}.rain-main #company-logo img[src*="images/svg/**/*.svg"]{content:url("../../images/svg/akademia/akademia-blue.svg")}
+}main[class*=blur]{filter:blur(8px)}.rain-main #company-logo img[src*="images/svg/**/*.svg"]{content:url("../../images/svg/akademia/akademia-blue.svg")}
 .default-header nav div button a img[src*="images/svg/**/*-white.svg"]{content:url("../../images/svg/akademia/akademia-white.svg")}
 .default-header nav div button a img[src*="images/svg/**/*-secondary.svg"]{content:url("../../images/svg/akademia/akademia-bronze.svg")}
 #index-sidebar{z-index:3;grid-row:1/4;grid-column:1/2;background:#0e1e3b;grid-template-rows:40px repeat(12,1fr) 64px}

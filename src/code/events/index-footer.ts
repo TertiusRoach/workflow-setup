@@ -32,7 +32,7 @@ export namespace IndexFooter {
             new GetDesign.forPage('opdatering-main');
             toggleButtons(footerButtons, footerOpdatering);
 
-            //--▼ Reverts to previously displayed info & buttons ▼--//
+            //--▼ Reverts to previously displayed info by using the data container ▼--//
             if (indexData.querySelector('main p') !== null) {
               var button: HTMLDivElement = indexMain.querySelector('#opdatering-date div:nth-child(3)');
               var navigation: HTMLElement = indexMain.querySelector('#opdatering-buttons nav');
@@ -70,7 +70,6 @@ export namespace IndexFooter {
           });
         };
         toggleFooter(indexFooter);
-
         break;
     }
     //--► console.log(`--${pageName} Loaded`); ◄--//

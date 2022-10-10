@@ -1,12 +1,8 @@
 @import 'colors.scss';
-/*--|►| #index-main <main> |◄|--*/
+//--|►| #index-main <main> |◄|--//
 #index-main {
   grid-row: 2/3;
   grid-column: 2/4;
-
-  div[class*='blur'] {
-    filter: blur(4px);
-  }
 }
 
 /*--▼ .default-main ▼--//
@@ -595,6 +591,13 @@
       clip-path: inset(32px 18px 28px 3px);
     }
     //--|▲| iFrame Cropping |▲|--//
+  }
+
+  .background {
+    z-index: -1;
+    grid-row: 1/4;
+    grid-column: 1/13;
+    background: linear-gradient(to left, $primary-dark, $primary-medium);
   }
 }
 
@@ -18912,4 +18915,9 @@ main[class*='rooster'] {
       height: 270px;
     }
   }
+}
+
+//--▼ Container Changes ▼--//
+main[class*='blur'] {
+  filter: blur(8px);
 }
