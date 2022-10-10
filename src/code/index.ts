@@ -5,9 +5,9 @@ export namespace Index {
       //--|▼| The pages can be found inside the 'code/events' folder |▼|--//
       new GetDesign.forPage('default-header');
       //===========================//
-      // new GetDesign.forPage('opdatering-main');
+      new GetDesign.forPage('opdatering-main');
       // new GetDesign.forPage('rooster-main');
-      new GetDesign.forPage('statistieke-main');
+      // new GetDesign.forPage('statistieke-main');
       //===========================//
       new GetDesign.forPage('default-sidebar');
       new GetDesign.forPage('default-footer');

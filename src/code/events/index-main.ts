@@ -14,11 +14,13 @@ export namespace IndexMain {
         break;
       case 'opdatering-main':
         //--|▼| Toggles between sheets to show extra figures |▼|--//
-        const toggleNumbers = (indexMain: HTMLElement) => {
+        const toggleNumbers = (indexMain: HTMLElement, indexData: HTMLElement) => {
           let button: HTMLDivElement = indexMain.querySelector('#opdatering-date div:nth-child(3)');
           let navigation: HTMLElement = indexMain.querySelector('#opdatering-buttons nav');
           let information: HTMLIFrameElement = indexMain.querySelector('#opdatering-sheets header iframe');
+
           $(button).on('click', () => {
+            //--▼ Toggles the button when clicked ▼--//
             switch (information.id) {
               case 'original':
                 button.classList.remove('hide-original');
@@ -39,51 +41,48 @@ export namespace IndexMain {
                 information.id = 'original';
                 break;
             }
+            indexData.querySelector('main p').innerHTML = `${indexMain.querySelector('#opdatering-date div:nth-child(3)').className.split('-')[1]}`;
           });
-        };
-        toggleNumbers(indexMain);
 
-        //--|▼| Clears and resets containers to hide data |▼|--//
-        const showScreenOne = (indexMain: HTMLElement, indexFooter: HTMLElement, indexData: HTMLElement) => {
-          let hideInfo: HTMLElement = indexMain.querySelector('#opdatering-date .hide-numbers');
-          let footerButtons: Object = indexFooter.getElementsByTagName('nav');
+          //--▼ Defaults to the last viewed information ▼--//
+          if (indexData.querySelector('main p') !== null) {
+            var studios = indexData.querySelector('main p').textContent;
+            switch (studios) {
+              case 'original':
+                button.classList.remove('hide-additional');
+                button.classList.add('hide-original');
 
-          function toggleButtons(buttons: Object, indexFooter: HTMLElement, indexData: HTMLElement) {
-            indexData.querySelector('footer p').innerHTML = `${indexFooter.querySelector('nav .active h3').textContent.toLowerCase()}`;
-            //--▼ Deactivates Footer Buttons ▼--//
-            for (let i = 0; i < Object.keys(buttons).length; i++) {
-              buttons[i].querySelector('div').className = '';
+                navigation.classList.remove('show-additional');
+                navigation.classList.add('show-original');
+
+                information.id = 'original';
+                // console.log();
+                break;
+              case 'additional':
+                button.classList.remove('hide-original');
+                button.classList.add('hide-additional');
+
+                navigation.classList.remove('show-original');
+                navigation.classList.add('show-additional');
+
+                information.id = 'additional';
+
+                break;
             }
           }
-          $(hideInfo).on('click', () => {
-            toggleButtons(footerButtons, indexFooter, indexData);
-            new GetDesign.forPage(`rain-main`);
-          });
         };
-        showScreenOne(indexMain, indexFooter, indexData);
+        toggleNumbers(indexMain, indexData);
 
+        //--|▼| Clears and resets containers to hide data |▼|--//
+        IndexMain.showScreensaver('opdatering', indexMain, indexFooter, indexData);
         break;
       case 'rooster-main':
         //--|▼| Clears and resets containers to hide data |▼|--//
-        const showScreenTwo = (indexMain: HTMLElement, indexFooter: HTMLElement, indexData: HTMLElement) => {
-          let hideInfo: HTMLElement = indexMain.querySelector('#rooster-date .hide-numbers');
-          let footerButtons: Object = indexFooter.getElementsByTagName('nav');
-
-          function toggleButtons(buttons: Object, indexFooter: HTMLElement, indexData: HTMLElement) {
-            indexData.querySelector('footer p').innerHTML = `${indexFooter.querySelector('nav .active h3').textContent.toLowerCase()}`;
-            //--▼ Deactivates Footer Buttons ▼--//
-            for (let i = 0; i < Object.keys(buttons).length; i++) {
-              buttons[i].querySelector('div').className = '';
-            }
-          }
-          $(hideInfo).on('click', () => {
-            toggleButtons(footerButtons, indexFooter, indexData);
-            new GetDesign.forPage(`rain-main`);
-          });
-        };
-        showScreenTwo(indexMain, indexFooter, indexData);
+        IndexMain.showScreensaver('rooster', indexMain, indexFooter, indexData);
         break;
       case 'statistieke-main':
+        //--|▼| Clears and resets containers to hide data |▼|--//
+        IndexMain.showScreensaver('statistieke', indexMain, indexFooter, indexData);
         break;
       case 'rain-main':
         //--|▼| Appends rain droplets into containers |▼|--//
@@ -141,5 +140,21 @@ export namespace IndexMain {
         break;
     }
     //--► console.log(`--${pageName} Loaded`); ◄--//
+  }
+  export function showScreensaver(container: 'opdatering' | 'rooster' | 'statistieke', indexMain: HTMLElement, indexFooter: HTMLElement, indexData: HTMLElement) {
+    let hideInfo: HTMLElement = indexMain.querySelector(`#${container}-date  .hide-numbers`);
+    let footerButtons: Object = indexFooter.getElementsByTagName('nav');
+
+    function toggleButtons(buttons: Object, indexFooter: HTMLElement, indexData: HTMLElement) {
+      indexData.querySelector('footer p').innerHTML = `${indexFooter.querySelector('nav .active h3').textContent.toLowerCase()}`;
+      //--▼ Deactivates Footer Buttons ▼--//
+      for (let i = 0; i < Object.keys(buttons).length; i++) {
+        buttons[i].querySelector('div').className = '';
+      }
+    }
+    $(hideInfo).on('click', () => {
+      toggleButtons(footerButtons, indexFooter, indexData);
+      new GetDesign.forPage('rain-main');
+    });
   }
 }

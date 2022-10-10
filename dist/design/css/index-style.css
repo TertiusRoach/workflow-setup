@@ -146,7 +146,7 @@
 .statistieke-main #statistieke-buttons nav[class*=statistics] div:hover li{clip-path:inset(0 0 0 0)}
 .statistieke-main #statistieke-sheets{display:grid;grid-row:2/4;grid-column:1/6;grid-template-rows:258px 1fr;grid-template-columns:repeat(5,234px) 1fr}
 .statistieke-main #statistieke-sheets header{grid-row:1/2;grid-column:1/6;overflow:hidden}
-.statistieke-main #statistieke-sheets header iframe{height:315px;width:1187px;margin:-32px 0 0 -3px;clip-path:inset(32px 18px 28px 3px)}
+.statistieke-main #statistieke-sheets header iframe{height:330px;width:1187px;margin:-32px 0 0 -3px;clip-path:inset(32px 18px 28px 3px)}
 .statistieke-main #statistieke-sheets footer{grid-row:2/3;grid-column:1/7}.statistieke-main #statistieke-sheets footer iframe{width:1187px;position:fixed;margin:-32px 0 0 -3px;clip-path:inset(32px 18px 28px 3px)}
 .statistieke-main .background{z-index:-1;grid-row:1/4;grid-column:1/6;background:linear-gradient(to left,#0e1e3b,#6e7889)}
 .rain-main{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:44px repeat(3,1fr);background:linear-gradient(to bottom left,#6e7889,#0e1e3b)}
