@@ -156,6 +156,10 @@ const copyHTML = (pageName) => {
   //--|▲| Copy the main HTML file into the 'dist' folder |▲|--//
 };
 
+gulp.task('copyCode', async (callback) => {
+  compileCode(callback);
+});
+
 gulp.task('copyIndex', async (callback) => {
   let pageName = 'index';
 

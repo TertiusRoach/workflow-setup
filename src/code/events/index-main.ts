@@ -9,12 +9,13 @@ export namespace IndexMain {
     const indexFooter: HTMLElement = document.getElementById('index-footer');
     const indexData: HTMLElement = document.getElementById('index-data');
 
-    indexMain.querySelector(`#${pageName.split('-')[0]}-date h1`).innerHTML = IndexMain.getPresent('Weekday, 00 Month YYYY');
-
     switch (pageName) {
       case 'default-main':
         break;
       case 'opdatering-main':
+        //--|▼| Change header date to present |▼|--//
+        indexMain.querySelector(`#${pageName.split('-')[0]}-date h1`).innerHTML = IndexMain.getPresent('Weekday, 00 Month YYYY');
+
         //--|▼| Toggles between sheets to show extra figures |▼|--//
         const toggleNumbers = (indexMain: HTMLElement, indexData: HTMLElement) => {
           let button: HTMLDivElement = indexMain.querySelector('#opdatering-date div:nth-child(3)');
@@ -79,18 +80,24 @@ export namespace IndexMain {
         IndexMain.showScreensaver('opdatering', indexMain, indexFooter, indexData);
         break;
       case 'rooster-main':
+        //--|▼| Change header date to present |▼|--//
+        indexMain.querySelector(`#${pageName.split('-')[0]}-date h1`).innerHTML = IndexMain.getPresent('Weekday, 00 Month YYYY');
+
         //--|▼| Clears data by showing screensaver on button click |▼|--//
         IndexMain.showScreensaver('rooster', indexMain, indexFooter, indexData);
         break;
       case 'statistieke-main':
+        //--|▼| Change header date to present |▼|--//
+        indexMain.querySelector(`#${pageName.split('-')[0]}-date h1`).innerHTML = IndexMain.getPresent('Weekday, 00 Month YYYY');
+
         //--|▼| Clears data by showing screensaver on button click |▼|--//
         IndexMain.showScreensaver('statistieke', indexMain, indexFooter, indexData);
         break;
       case 'rain-main':
         //--|▼| Appends rain droplets into containers |▼|--//
         const rainEffect = (indexMain: HTMLElement) => {
-          let topContainer: HTMLElement = document.querySelector('body .rain-main .rain-top');
-          let bottomContainer: HTMLElement = document.querySelector('body .rain-main .rain-bottom');
+          let topContainer: HTMLElement = indexMain.querySelector('.rain-top');
+          let bottomContainer: HTMLElement = indexMain.querySelector('.rain-bottom');
           function addRain(container: HTMLElement, amount: number) {
             let i: number = 0;
             let rainDrops: Number = amount;
