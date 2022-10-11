@@ -156,12 +156,19 @@ const copyHTML = (pageName) => {
   //--|▲| Copy the main HTML file into the 'dist' folder |▲|--//
 };
 
-gulp.task('copyCode', async (callback) => {
-  compileCode(callback);
-});
-
 gulp.task('copyIndex', async (callback) => {
   let pageName = 'index';
+
+  compileCode(callback);
+  compileSASS(pageName);
+  cleanupCSS(pageName);
+  concatCSS(pageName);
+  deleteCSS(pageName);
+  copyHTML(pageName);
+});
+
+gulp.task('copyUitsendings', async (callback) => {
+  let pageName = 'uitsendings';
 
   compileCode(callback);
   compileSASS(pageName);

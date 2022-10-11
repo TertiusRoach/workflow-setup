@@ -145,7 +145,6 @@ export namespace IndexMain {
           });
         };
         showInfo(indexMain, indexFooter, indexData);
-
         break;
     }
     //--► console.log(`--${pageName} Loaded`); ◄--//

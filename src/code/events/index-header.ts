@@ -139,7 +139,6 @@ export namespace IndexHeader {
           });
         };
         showDropdown(indexHeader, indexMain, indexOverlay);
-
         break;
     }
     //--► console.log(`--${pageName} Loaded`); ◄--//
