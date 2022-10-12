@@ -156,6 +156,28 @@ const copyHTML = (pageName) => {
   //--|▲| Copy the main HTML file into the 'dist' folder |▲|--//
 };
 
+gulp.task('copyAdministrasie', async (callback) => {
+  let pageName = 'administrasie';
+
+  compileCode(callback);
+  compileSASS(pageName);
+  cleanupCSS(pageName);
+  concatCSS(pageName);
+  deleteCSS(pageName);
+  copyHTML(pageName);
+});
+
+gulp.task('copyAkademici', async (callback) => {
+  let pageName = 'administrasie';
+
+  compileCode(callback);
+  compileSASS(pageName);
+  cleanupCSS(pageName);
+  concatCSS(pageName);
+  deleteCSS(pageName);
+  copyHTML(pageName);
+});
+
 gulp.task('copyIndex', async (callback) => {
   let pageName = 'index';
 
@@ -178,8 +200,17 @@ gulp.task('copyUitsendings', async (callback) => {
   copyHTML(pageName);
 });
 
-// gulp.task('copyDesign', async () => {});
-// gulp.task('compileCode', function (callback) {});
+gulp.task('copyOperasioneel', async (callback) => {
+  let pageName = 'operasioneel';
+
+  compileCode(callback);
+  compileSASS(pageName);
+  cleanupCSS(pageName);
+  concatCSS(pageName);
+  deleteCSS(pageName);
+  copyHTML(pageName);
+});
+
 gulp.task('backupDependencies', async () => {
   //--|▼| Copy images to 'dist' folder |▼|--//
   gulp
