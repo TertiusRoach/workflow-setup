@@ -168,7 +168,7 @@ gulp.task('copyAdministrasie', async (callback) => {
 });
 
 gulp.task('copyAkademici', async (callback) => {
-  let pageName = 'administrasie';
+  let pageName = 'akademici';
 
   compileCode(callback);
   compileSASS(pageName);
