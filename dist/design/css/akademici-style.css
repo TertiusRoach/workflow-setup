@@ -3846,13 +3846,10 @@
 .sidebar-overlay nav[class*=first-semester] a[id*=book],.sidebar-overlay nav[class*=first-semester] ul[class*=book]{grid-row:1/2}
 .sidebar-overlay nav[class*=first-semester] a[id*=edit],.sidebar-overlay nav[class*=first-semester] ul[class*=edit]{grid-row:2/3}
 .sidebar-overlay nav[class*=second-semester] main{grid-row:1/2;grid-column:1/6;border-top-right-radius:8px}
-.sidebar-overlay nav[class*=second-semester] .trigger{opacity:0;grid-row:1/2;grid-column:6/11}
 .sidebar-overlay nav[class*=second-semester] a div{clip-path:inset(0 0 0 0);transition:clip-path .25s}
 .sidebar-overlay nav[class*=second-semester] a:hover div{clip-path:inset(0 0 100% 0)}
-.sidebar-overlay nav[class*=second-semester] a[id*=sheet],.sidebar-overlay nav[class*=second-semester] ul[class*=sheet]{grid-row:5/6}
-.sidebar-overlay nav[class*=second-semester] a[id*=edit],.sidebar-overlay nav[class*=second-semester] ul[class*=edit]{grid-row:4/5}
 .sidebar-overlay nav[class*=second-semester] a[id*=book],.sidebar-overlay nav[class*=second-semester] ul[class*=book]{grid-row:3/4}
-.sidebar-overlay nav[class*=second-semester] a[id*=cloud],.sidebar-overlay nav[class*=second-semester] ul[class*=cloud]{grid-row:2/3}
+.sidebar-overlay nav[class*=second-semester] a[id*=edit],.sidebar-overlay nav[class*=second-semester] ul[class*=edit]{grid-row:2/3}
 .sidebar-overlay nav[class*=true] a[id*=gr] div{background:#274e13}.sidebar-overlay nav[class*=true] a[id*=gr] div button h1,.sidebar-overlay nav[class*=true] a[id*=gr] div button svg{color:#b6d7a8}
 .sidebar-overlay nav[class*=true] a[id*=gr] div button:hover h1,.sidebar-overlay nav[class*=true] a[id*=gr] div button:hover svg{filter:drop-shadow(0 0 .75rem #0f0)}
 .sidebar-overlay nav[class*=true] a[id*=pi] div{background:#4c1130}.sidebar-overlay nav[class*=true] a[id*=pi] div button h1,.sidebar-overlay nav[class*=true] a[id*=pi] div button svg{color:#d5a6bd}
@@ -3886,28 +3883,18 @@
 .sidebar-overlay nav[class*=false] a div{background:#0e1e3b}.sidebar-overlay nav[class*=false] a div button h1,.sidebar-overlay nav[class*=false] a div button svg{color:#cfd2d8}
 .sidebar-overlay nav[class*=false] a div button:hover h1,.sidebar-overlay nav[class*=false] a div button:hover svg{filter:drop-shadow(0 0 .75rem #6e7889)}
 .sidebar-overlay nav[class*=false] ul li{background:#cfd2d8}.sidebar-overlay nav[class*=false] ul li button svg{color:#0e1e3b;filter:drop-shadow(0 0 .75rem #6e7889)}
-.sidebar-overlay #january{grid-row:1/4}.sidebar-overlay #february{grid-row:2/7}.sidebar-overlay #february #tu-sheet-feb div,.sidebar-overlay #february .tu-sheet li{border-top-right-radius:8px}
-.sidebar-overlay #february #tu-cloud-feb div,.sidebar-overlay #february .tu-cloud li{border-bottom-right-radius:8px}
-.sidebar-overlay #march{grid-row:3/8}.sidebar-overlay #march #tu-sheet-mar div,.sidebar-overlay #march .tu-sheet li{border-top-right-radius:8px}
-.sidebar-overlay #march #tu-cloud-mar div,.sidebar-overlay #march .tu-cloud li{border-bottom-right-radius:8px}
-.sidebar-overlay #april{grid-row:4/9}.sidebar-overlay #april #tu-sheet-apr div,.sidebar-overlay #april .tu-sheet li{border-top-right-radius:8px}
-.sidebar-overlay #april #tu-cloud-apr div,.sidebar-overlay #april .tu-cloud li{border-bottom-right-radius:8px}
-.sidebar-overlay #may{grid-row:5/10}.sidebar-overlay #may #tu-sheet-may div,.sidebar-overlay #may .tu-sheet li{border-top-right-radius:8px}
-.sidebar-overlay #may #tu-cloud-may div,.sidebar-overlay #may .tu-cloud li{border-bottom-right-radius:8px}
-.sidebar-overlay #june{grid-row:6/11}.sidebar-overlay #june #tu-sheet-jun div,.sidebar-overlay #june .tu-sheet li{border-top-right-radius:8px}
-.sidebar-overlay #june #tu-cloud-jun div,.sidebar-overlay #june .tu-cloud li{border-bottom-right-radius:8px}
-.sidebar-overlay #july{grid-row:3/8}.sidebar-overlay #july #tu-sheet-jul div,.sidebar-overlay #july .tu-sheet li{border-bottom-right-radius:8px}
-.sidebar-overlay #july #tu-cloud-jul div,.sidebar-overlay #july .tu-cloud li{border-top-right-radius:8px}
-.sidebar-overlay #august{grid-row:4/9}.sidebar-overlay #august #tu-sheet-aug div,.sidebar-overlay #august .tu-sheet li{border-bottom-right-radius:8px}
-.sidebar-overlay #august #tu-cloud-aug div,.sidebar-overlay #august .tu-cloud li{border-top-right-radius:8px}
-.sidebar-overlay #september{grid-row:5/10}.sidebar-overlay #september #tu-sheet-sep div,.sidebar-overlay #september .tu-sheet li{border-bottom-right-radius:8px}
-.sidebar-overlay #september #tu-cloud-sep div,.sidebar-overlay #september .tu-cloud li{border-top-right-radius:8px}
-.sidebar-overlay #october{grid-row:6/11}.sidebar-overlay #october #tu-sheet-oct div,.sidebar-overlay #october .tu-sheet li{border-bottom-right-radius:8px}
-.sidebar-overlay #october #tu-cloud-oct div,.sidebar-overlay #october .tu-cloud li{border-top-right-radius:8px}
-.sidebar-overlay #november{grid-row:7/12}.sidebar-overlay #november #tu-sheet-nov div,.sidebar-overlay #november .tu-sheet li{border-bottom-right-radius:8px}
-.sidebar-overlay #november #tu-cloud-nov div,.sidebar-overlay #november .tu-cloud li{border-top-right-radius:8px}
-.sidebar-overlay #december{grid-row:8/13}.sidebar-overlay #december #tu-sheet-dec div,.sidebar-overlay #december .tu-sheet li{border-bottom-right-radius:8px}
-.sidebar-overlay #december #tu-cloud-dec div,.sidebar-overlay #december .tu-cloud li{border-top-right-radius:8px}
+.sidebar-overlay #january{grid-row:1/4}.sidebar-overlay #january #bl-book-jan div,.sidebar-overlay #january .bl-book li{border-top-right-radius:8px}
+.sidebar-overlay #february{grid-row:2/5}.sidebar-overlay #february #bl-book-feb div,.sidebar-overlay #february .bl-book li{border-top-right-radius:8px}
+.sidebar-overlay #march{grid-row:3/6}.sidebar-overlay #march #bl-book-mar div,.sidebar-overlay #march .bl-book li{border-top-right-radius:8px}
+.sidebar-overlay #april{grid-row:4/7}.sidebar-overlay #april #bl-book-apr div,.sidebar-overlay #april .bl-book li{border-top-right-radius:8px}
+.sidebar-overlay #may{grid-row:5/8}.sidebar-overlay #may #bl-book-may div,.sidebar-overlay #may .bl-book li{border-top-right-radius:8px}
+.sidebar-overlay #june{grid-row:6/9}.sidebar-overlay #june #bl-book-jun div,.sidebar-overlay #june .bl-book li{border-top-right-radius:8px}
+.sidebar-overlay #july{grid-row:5/8}.sidebar-overlay #july #bl-book-jul div,.sidebar-overlay #july .bl-book li{border-bottom-right-radius:8px}
+.sidebar-overlay #august{grid-row:6/9}.sidebar-overlay #august #bl-book-aug div,.sidebar-overlay #august .bl-book li{border-bottom-right-radius:8px}
+.sidebar-overlay #september{grid-row:7/10}.sidebar-overlay #september #bl-book-sep div,.sidebar-overlay #september .bl-book li{border-bottom-right-radius:8px}
+.sidebar-overlay #october{grid-row:8/11}.sidebar-overlay #october #bl-book-oct div,.sidebar-overlay #october .bl-book li{border-bottom-right-radius:8px}
+.sidebar-overlay #november{grid-row:9/12}.sidebar-overlay #november #bl-book-nov div,.sidebar-overlay #november .bl-book li{border-bottom-right-radius:8px}
+.sidebar-overlay #december{grid-row:10/13}.sidebar-overlay #december #bl-book-dec div,.sidebar-overlay #december .bl-book li{border-bottom-right-radius:8px}
 .sidebar-overlay .background{z-index:-2;grid-row:1/13;grid-column:1/12;background:linear-gradient(to bottom right,rgba(14,30,59,0.8),rgba(14,30,59,0.4))}
 @media only screen and (max-height:2160px){section[class*=sidebar]{grid-template-columns:repeat(5,171.3333333333px) 1fr;grid-template-rows:repeat(12,171.3333333333px)}
 }@media only screen and (max-height:2159px){section[class*=sidebar]{grid-template-columns:repeat(5,171.25px) 1fr;grid-template-rows:repeat(12,171.25px)}
