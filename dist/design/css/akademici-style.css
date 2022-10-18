@@ -27,7 +27,7 @@
 .default-header nav div button a img[src*="images/svg/**/*-white.svg"]{content:url("../../images/svg/akademia/akademia-white.svg")}
 .default-header nav div button a img[src*="images/svg/**/*-secondary.svg"]{content:url("../../images/svg/akademia/akademia-bronze.svg")}
 #akademici-main{grid-row:2/3;grid-column:2/4}.rooster-main{display:grid;background:#0e1e3b;grid-template-rows:44px 1fr;grid-template-columns:128px 52px repeat(10,99px) 1fr 145px}
-.rooster-main #rooster-date{grid-row:1/2;grid-column:1/13}.rooster-main #rooster-date header{z-index:1;display:grid;grid-row:1/2;cursor:default;grid-column:1/4;color:#cfd2d8;grid-template-rows:44px;grid-template-columns:234px 1fr 234px;background:linear-gradient(to bottom left,#6e7889,#0e1e3b)}
+.rooster-main #rooster-date{grid-row:1/2;grid-column:1/13}.rooster-main #rooster-date header{z-index:1;display:grid;grid-row:1/2;cursor:default;grid-column:1/4;color:#cfd2d8;grid-template-rows:44px;grid-template-columns:234px 1fr 234px;background:linear-gradient(to left,#0e1e3b,#6e7889)}
 .rooster-main #rooster-date header .hide-numbers{grid-column:1/2}.rooster-main #rooster-date header .hide-numbers button li{justify-content:left}
 .rooster-main #rooster-date header .hide-numbers button li svg{margin-left:16px;padding-right:16px}
 .rooster-main #rooster-date header .hide-numbers button li h3{padding:9.5px 16px 9.5px 64px;clip-path:inset(0 100% 0 0)}

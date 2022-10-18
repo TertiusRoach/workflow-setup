@@ -28,7 +28,7 @@
       color: $primary-light;
       grid-template-rows: 44px;
       grid-template-columns: 234px 1fr 234px;
-      background: linear-gradient(to bottom left, $primary-medium, $primary-dark);
+      background: linear-gradient(to left, $primary-dark, $primary-medium);
 
       .hide-numbers {
         grid-column: 1/2;
