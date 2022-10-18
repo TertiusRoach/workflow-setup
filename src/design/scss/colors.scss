@@ -57,7 +57,8 @@ $akademiaLogo: '../../images/svg/akademia/akademia-white.svg';
 $akademiaPrimary: '../../images/svg/akademia/akademia-blue.svg';
 $akademiaSecondary: '../../images/svg/akademia/akademia-bronze.svg';
 
-.rain-main {
+.rain-main,
+.stars-main {
   #company-logo {
     img[src*='images/svg/**/*.svg'] {
       content: url($akademiaPrimary);

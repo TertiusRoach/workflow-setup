@@ -1,3 +1,4 @@
+import { GetDesign } from 'code/utilities/GetDesign';
 export namespace AkademiciData {
   export function eventsFor(pageName: String | 'default-data') {
     const akademiciBody: HTMLElement = document.getElementById('akademici-body');
