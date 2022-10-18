@@ -2,8 +2,8 @@
 .default-header nav div button a img[src*="images/svg/**/*-white.svg"]{content:url("../../images/svg/akademia/akademia-white.svg")}
 .default-header nav div button a img[src*="images/svg/**/*-secondary.svg"]{content:url("../../images/svg/akademia/akademia-bronze.svg")}
 *{font-family:"Baloo Bhai 2",arial;padding:0;margin:0}#akademici-body{display:grid;height:100vh;overflow:hidden;grid-template-rows:40px 1fr 64px;grid-template-columns:145px 1fr 145px}
-#akademici-body #loading-screen{grid-row:1/4;grid-column:1/4;display:inherit;overflow:visible;grid-template-rows:1fr 250px 1fr;grid-template-columns:1fr 250px 1fr;background:linear-gradient(to bottom left,#6e7889,#0e1e3b)}
-#akademici-body #loading-screen img{height:100%;grid-row:2/3;grid-column:2/3;filter:drop-shadow(0 0 32px #cfd2d8)}
+#akademici-body #loading-screen{grid-row:1/4;grid-column:1/4;display:inherit;grid-template-rows:1fr 250px 1fr;grid-template-columns:1fr 250px 1fr;background:linear-gradient(to bottom left,#6e7889,#0e1e3b)}
+#akademici-body #loading-screen img{height:100%;grid-row:2/3;grid-column:2/3;filter:drop-shadow(0 0 8px #cfd2d8)}
 .rain-main #company-logo img[src*="images/svg/**/*.svg"],.stars-main #company-logo img[src*="images/svg/**/*.svg"]{content:url("../../images/svg/akademia/akademia-blue.svg")}
 .default-header nav div button a img[src*="images/svg/**/*-white.svg"]{content:url("../../images/svg/akademia/akademia-white.svg")}
 .default-header nav div button a img[src*="images/svg/**/*-secondary.svg"]{content:url("../../images/svg/akademia/akademia-bronze.svg")}
