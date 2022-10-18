@@ -120,7 +120,7 @@
 .rooster-main #rooster-date header div button li:hover h3{color:#fcd5aa;clip-path:inset(0 0 0 0);filter:drop-shadow(0 0 .75rem #be9e7e)}
 .rooster-main #rooster-date header div button .visible{display:flex}.rooster-main #rooster-date header div button .hidden{display:none}
 .rooster-main #rooster-sheets{display:grid;grid-row:2/3;grid-column:1/13;grid-template-rows:1fr;grid-template-columns:128px 52px repeat(10,99px)}
-.rooster-main #rooster-sheets iframe{width:1189px;position:fixed;margin:-32px 0 0 -3px;clip-path:inset(32px 18px 28px 3px)}
+.rooster-main #rooster-sheets iframe{width:1189px;position:fixed;margin:-35px 0 0 -3px;clip-path:inset(35px 18px 28px 3px)}
 .rooster-main .background{z-index:-1;grid-row:1/4;grid-column:1/13;background:linear-gradient(to left,#0e1e3b,#6e7889)}
 .statistieke-main{display:grid;background:#0e1e3b;grid-template-rows:44px 258px 1fr;grid-template-columns:repeat(5,234px) 1fr 145px}
 .statistieke-main #statistieke-date{display:grid;grid-row:1/2;cursor:default;grid-column:1/6;color:#cfd2d8;grid-template-rows:44px;grid-template-columns:234px 1fr 234px;filter:drop-shadow(0 0 8px #0e1e3b);background:linear-gradient(to left,#0e1e3b,#6e7889)}
