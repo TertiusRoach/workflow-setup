@@ -9,7 +9,14 @@ export namespace AkademiciData {
     const akademiciData: HTMLElement = document.getElementById('akademici-data');
     switch (pageName) {
       case 'default-data':
-        akademiciBody.querySelector('#loading-screen').remove();
+        let fadeLoader = () => {
+          $('#loading-screen').fadeTo('slow', 0);
+          var removeLoader = () => {
+            akademiciBody.querySelector('#loading-screen').remove();
+          };
+          setTimeout(removeLoader, 2000);
+        };
+        setTimeout(fadeLoader, 3000);
         break;
     }
     //--► console.log(`--${pageName} Loaded`); ◄--//

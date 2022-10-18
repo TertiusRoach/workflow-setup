@@ -9,7 +9,14 @@ export namespace UitsendingsData {
   export function eventsFor(pageName: String | 'default-data') {
     switch (pageName) {
       case 'default-data':
-        uitsendingsBody.querySelector('#loading-screen').remove();
+        let fadeLoader = () => {
+          $('#loading-screen').fadeTo('slow', 0);
+          var removeLoader = () => {
+            uitsendingsBody.querySelector('#loading-screen').remove();
+          };
+          setTimeout(removeLoader, 2000);
+        };
+        setTimeout(fadeLoader, 3000);
         break;
     }
     //--► console.log(`--${pageName} Loaded`); ◄--//
