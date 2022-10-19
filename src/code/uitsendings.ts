@@ -13,7 +13,6 @@ export namespace Uitsendings {
       new GetDesign.forPage('default-overlay');
 
       new GetDesign.forPage('default-data');
-
       //--► console.log('--uitsendings.js Loaded'); ◄--//
     }
   }
