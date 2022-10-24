@@ -3737,7 +3737,7 @@
 #operasioneel-footer nav div[class*=active] button li svg:nth-child(1){opacity:0}
 #operasioneel-footer nav div[class*=active] button li svg:nth-child(2){opacity:100;color:#935e28;filter:drop-shadow(0 0 .75rem #fcd5aa)}
 #operasioneel-footer nav div[class*=active] h3{cursor:default;color:#be9e7e;transform:translateY(0) scaleY(1);filter:drop-shadow(0 0 .75rem #fcd5aa)}
-.default-footer{background:#0e1e3b}.default-footer #rooster{grid-column:2/3}.default-footer #statistieke{grid-column:4/5}
+.default-footer{background:#0e1e3b}.default-footer #projekte{grid-column:2/3}.default-footer #ateljees{grid-column:4/5}
 .rain-main #company-logo img[src*="images/svg/**/*.svg"],.stars-main #company-logo img[src*="images/svg/**/*.svg"]{content:url("../../images/svg/akademia/akademia-blue.svg")}
 .default-header nav div button a img[src*="images/svg/**/*-white.svg"]{content:url("../../images/svg/akademia/akademia-white.svg")}
 .default-header nav div button a img[src*="images/svg/**/*-secondary.svg"]{content:url("../../images/svg/akademia/akademia-bronze.svg")}
