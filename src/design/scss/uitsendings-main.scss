@@ -9,6 +9,21 @@
 .default-main {
 }*/
 
+//--▼ .login-main ▼--//
+.login-main {
+  background: darkred;
+  #g_id_onload {
+    // display: none;
+    // grid-row: 1/2;
+    // grid-column: 1/2;
+  }
+  #g_id_signin {
+    // display: none;
+    // grid-row: 1/2;
+    // grid-column: 1/2;
+  }
+}
+
 //--▼ .opdatering-main ▼--//
 .opdatering-main {
   display: grid;

@@ -4,7 +4,9 @@ export namespace Uitsendings {
     constructor(page: String) {
       //--|▼| Pages for events are inside 'code/events/*.ts' |▼|--//
       new GetDesign.forPage('default-header');
-      new GetDesign.forPage('opdatering-main');
+      // new GetDesign.forPage('opdatering-main');
+      new GetDesign.forPage('login-main');
+
       new GetDesign.forPage('default-sidebar');
       new GetDesign.forPage('default-footer');
 

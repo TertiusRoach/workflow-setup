@@ -21,7 +21,7 @@
 .rain-main #company-logo img[src*="images/svg/**/*.svg"],.stars-main #company-logo img[src*="images/svg/**/*.svg"]{content:url("../../images/svg/akademia/akademia-blue.svg")}
 .default-header nav div button a img[src*="images/svg/**/*-white.svg"]{content:url("../../images/svg/akademia/akademia-white.svg")}
 .default-header nav div button a img[src*="images/svg/**/*-secondary.svg"]{content:url("../../images/svg/akademia/akademia-bronze.svg")}
-#uitsendings-main{grid-row:2/3;grid-column:2/4}.opdatering-main{display:grid;background:#0e1e3b;grid-template-rows:44px 258px 1fr;grid-template-columns:repeat(5,234px) 1fr 145px}
+#uitsendings-main{grid-row:2/3;grid-column:2/4}.login-main{background:darkred}.opdatering-main{display:grid;background:#0e1e3b;grid-template-rows:44px 258px 1fr;grid-template-columns:repeat(5,234px) 1fr 145px}
 .opdatering-main #opdatering-date{display:grid;grid-row:1/2;cursor:default;grid-column:1/6;color:#cfd2d8;grid-template-rows:44px;grid-template-columns:234px 1fr 234px;filter:drop-shadow(0 0 8px #0e1e3b);background:linear-gradient(to left,#0e1e3b,#6e7889)}
 .opdatering-main #opdatering-date .hide-numbers{grid-column:1/2}.opdatering-main #opdatering-date .hide-numbers button li{justify-content:left}
 .opdatering-main #opdatering-date .hide-numbers button li svg{margin-left:16px;padding-right:16px}
