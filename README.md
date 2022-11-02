@@ -7,6 +7,7 @@ Paperwork is an integral part for any company and that's where this system comes
 [Index](https://tertiusroach.github.io/workflow-setup/dist/index.html)
 [Akademici](https://tertiusroach.github.io/workflow-setup/dist/akademici.html)
 [Administrasie](https://tertiusroach.github.io/workflow-setup/dist/administrasie.html)
+[Operasioneel](https://tertiusroach.github.io/workflow-setup/dist/operasioneel.html)
 [Uitsendings](https://tertiusroach.github.io/workflow-setup/dist/uitsendings.html)
 
 ## NPM Install Commands for workflow (Gulp, Sass, jQuery & TypeScript)
