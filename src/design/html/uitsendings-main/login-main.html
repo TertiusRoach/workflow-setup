@@ -6,12 +6,30 @@
   <div
     id="g_id_onload"
     data-client_id="366326979915-i7bshbvc5dl3kbnb8dnp6kiksfjtjaq4.apps.googleusercontent.com"
-    data-callback="handleCredentialResponse"
     data-login_uri="https://tertiusroach.github.io"
+    data-callback="handleCredentialResponse"
     data-auto_prompt="false"
   ></div>
 
   <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline" data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="left"></div>
+
+  <script type="text/javascript">
+    function onSignIn(googleUser) {
+      var profile = googleUser.getBasicProfile();
+      console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+      console.log('Name: ' + profile.getName());
+      console.log('Image URL: ' + profile.getImageUrl());
+      console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+    }
+    /*
+    function signOut() {
+      var auth2 = gapi.auth2.getAuthInstance();
+      auth2.signOut().then(function () {
+        console.log('User signed out.');
+      });
+    }
+    */
+  </script>
 </section>
 
 <main id="company-logo" style="z-index: 1">
