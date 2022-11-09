@@ -10,7 +10,12 @@ export namespace UitsendingsMain {
     const uitsendingsData: HTMLElement = document.getElementById('uitsendings-data');
 
     switch (pageName) {
-      case 'login-main':
+      case 'default-main':
+        //--|▼| Displays progress update  |▼|--//
+        $('.show-numbers button').on('click', () => {
+          uitsendingsFooter.querySelector('#opdatering div').className = 'active';
+          new GetDesign.forPage('opdatering-main');
+        });
         break;
       case 'opdatering-main':
         //--|▼| Change header date to present |▼|--//
